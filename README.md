@@ -2,6 +2,11 @@
 
 Welcome to the **Nx Enterprise** monorepo. This project is a production-ready, scalable workspace designed for modern web development, utilizing a modular architecture to share code effectively between applications.
 
+## 📚 Documentation
+
+- **[ARCHITECTURE.md](./ARCHITECTURE.md)**: Comprehensive architecture documentation explaining how the system works and why it's designed this way
+- **[Implementation Guide](./docs/IMPLEMENTATION_GUIDE.md)**: Step-by-step guides for common development tasks
+
 ## 🏗️ Architecture Overview
 
 Our monorepo is structured to maximize code reuse and maintainability through a layered approach:
