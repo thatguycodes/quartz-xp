@@ -4,9 +4,15 @@ Welcome to the **Nx Enterprise** monorepo. This project is a production-ready, s
 
 ## 📚 Documentation
 
-- **[ARCHITECTURE.md](./ARCHITECTURE.md)**: Comprehensive architecture documentation explaining how the system works and why it's designed this way
-- **[Figma Setup Guide](./docs/FIGMA_SETUP.md)**: Complete setup instructions for Figma token sync
-- **[Implementation Guide](./docs/IMPLEMENTATION_GUIDE.md)**: Step-by-step guides for common development tasks
+| File | Audience |
+|---|---|
+| [docs/DEVELOPER_GUIDE.md](./docs/DEVELOPER_GUIDE.md) | Setup, Nx commands, git workflow, commit messages, releases |
+| [docs/DESIGNER_GUIDE.md](./docs/DESIGNER_GUIDE.md) | Figma token workflow, naming conventions, sync process |
+| [docs/CONTRIBUTION_GUIDE.md](./docs/CONTRIBUTION_GUIDE.md) | How to contribute code, tokens, or docs |
+| [docs/CODE_OF_CONDUCT.md](./docs/CODE_OF_CONDUCT.md) | Expected behaviour for all contributors |
+| [docs/ARCHITECTURE.md](./docs/ARCHITECTURE.md) | System design, ADRs, and architectural decisions |
+| [docs/DEPLOYMENT.md](./docs/DEPLOYMENT.md) | Publishing the tokens package to npm |
+| [docs/IMPLEMENTATION_GUIDE.md](./docs/IMPLEMENTATION_GUIDE.md) | Component and token implementation patterns |
 
 ## 🏗️ Architecture Overview
 
