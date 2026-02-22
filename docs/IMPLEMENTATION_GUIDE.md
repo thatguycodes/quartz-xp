@@ -199,7 +199,7 @@ export * from './lib/card/Card';
 **Create**: `apps/web/src/app/about/page.tsx`
 
 ```typescript
-import { Button } from '@nx-enterprise/ui';
+import { Button } from '@nx/quartz-ui';
 import styles from './page.module.css';
 
 export default function AboutPage() {
@@ -262,7 +262,7 @@ npx nx e2e web-e2e
 
 **Solution**:
 1. Verify export in `libs/shared/ui/src/index.ts`
-2. Check import path: `import { Component } from '@nx-enterprise/ui'`
+2. Check import path: `import { Component } from '@nx/quartz-ui'`
 
 ---
 

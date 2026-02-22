@@ -16,15 +16,7 @@
     ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@nx-enterprise/ui": [
-        "libs/shared/ui/src/index.ts"
-      ],
-      "@nx-enterprise/tokens": [
-        "libs/shared/tokens/src/index.ts"
-      ]
-    }
+    "baseUrl": "."
   },
   "exclude": [
     "node_modules",

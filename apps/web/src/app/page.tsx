@@ -1,5 +1,5 @@
 import styles from './page.module.css';
-import { Button } from '@nx-enterprise/ui';
+import { Button } from '@thatguycodes/quartz-ui';
 
 export default function Index() {
   return (

@@ -103,7 +103,7 @@ To maintain a consistent and beautiful design system:
 
 ### Level 3: Web Application (The Consumption)
 *Use this when: You are building a new page or feature.*
-1. **Import**: Use `@nx-enterprise/ui` to bring in components.
+1. **Import**: Use `@nx/quartz-ui` to bring in components.
 2. **Compose**: Lay out your components in the Next.js App Router (`apps/web/src/app`).
 3. **Local Styles**: Use page-specific `.module.css` for layout-only styles.
 4. **Run**: Verify at http://localhost:3000 with `npx nx dev web`.

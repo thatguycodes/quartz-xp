@@ -152,14 +152,14 @@ graph TD
     end
     
     subgraph shared["Shared Libraries Layer"]
-        subgraph ui["@nx-enterprise/ui"]
+        subgraph ui["@nx/quartz-ui"]
             button["Button"]
             card["Card"]
             input["Input"]
             more["..."]
         end
         
-        subgraph tokens["@nx-enterprise/tokens"]
+        subgraph tokens["@nx/design-tokens"]
             subgraph generated["Generated Assets<br/>(Build-time)"]
                 css["variables.css<br/>(CSS Custom Properties)"]
                 ts["tokens.ts<br/>(TypeScript constants)"]
@@ -198,7 +198,7 @@ graph TD
    - Build type-safe components
 
 4. **Application Integration** (Developer)
-   - Import components from `@nx-enterprise/ui`
+   - Import components from `@nx/quartz-ui`
    - Import `variables.css` in root layout
    - Compose application pages
 
@@ -300,7 +300,7 @@ The token system is built on **Style Dictionary**, a build-time tool that transf
 
 #### In TypeScript
 ```typescript
-import { brandPrimary, spacingMd } from '@nx-enterprise/tokens';
+import { brandPrimary, spacingMd } from '@nx/design-tokens';
 
 const inlineStyles = {
   backgroundColor: brandPrimary,
@@ -467,7 +467,7 @@ apps/web/src/app/
 
 ```typescript
 // Import shared components
-import { Button } from '@nx-enterprise/ui';
+import { Button } from '@nx/quartz-ui';
 
 export default function Page() {
   return (
@@ -596,7 +596,7 @@ Nx optimizes builds through:
    
 2. Import components:
    ```typescript
-   import { Button, Card } from '@nx-enterprise/ui';
+   import { Button, Card } from '@nx/quartz-ui';
    ```
 
 3. Add page styles (`page.module.css`)
