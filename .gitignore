@@ -63,3 +63,6 @@ libs/shared/tokens/src/tokens/.figma-sync-metadata.json
 .opencode/
 AGENTS.md
 opencode.json
+
+# npm auth
+.npmrc

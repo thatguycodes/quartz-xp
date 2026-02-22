@@ -171,14 +171,14 @@ Update all component stylesheets accordingly.
 
 ## Release
 
-Releases are managed via Nx release config in `nx.json`. Tokens are the only published project and must run `npx nx run tokens:build` before versioning.
+Releases are managed via Nx release config in `nx.json`. Tokens and UI are published packages and must run builds before versioning.
 
-### Preferred flow (Nx release for tokens):
+### Preferred flow (Nx release for tokens and UI):
 
 1. Ensure working tree is clean and up to date with `main`.
-2. Build tokens happens automatically via Nx preVersion command.
-3. Run `npx nx release version` to bump version and tag.
-4. Run `npx nx release publish` to publish `tokens` (requires MFA OTP when prompted).
+2. Builds run automatically via Nx preVersion command (`nx run-many -t build --projects tokens,ui`).
+3. Run `npx nx release version` to bump versions and tag.
+4. Run `npx nx release publish` to publish packages (tokens + quartz-ui). MFA/OTP required unless using an automation token.
 
 ### Manual publish (emergency only):
 
@@ -186,11 +186,14 @@ Releases are managed via Nx release config in `nx.json`. Tokens are the only pub
 # 1. Build tokens via Nx
 npx nx run tokens:build
 
-# 2. Bump version in libs/shared/tokens/package.json
+# 2. Build UI via Nx
+npx nx run ui:build
 
-# 3. Publish with MFA OTP
-cd libs/shared/tokens
-npm publish --access public --otp=<your-otp>
+# 3. Bump versions in the respective package.json files if needed
+
+# 4. Publish with MFA OTP
+cd dist/libs/shared/tokens && npm publish --access public --otp=<your-otp>
+cd dist/libs/shared/ui && npm publish --access public --otp=<your-otp>
 ```
 
 ### Nx cache
@@ -219,5 +222,3 @@ npx nx run ui:storybook
 
 **CSS variables not defined**
 Confirm `variables.css` is imported in `apps/web/src/app/layout.tsx` and in `.storybook/preview.ts`.
-
-
