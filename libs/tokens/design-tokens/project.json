@@ -9,7 +9,12 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "npx ts-node -T libs/tokens/design-tokens/scripts/build-tokens.ts"
+        "outputPath": "dist/libs/tokens/design-tokens",
+        "commands": [
+          "npx ts-node -T libs/tokens/design-tokens/scripts/build-tokens.ts",
+          "cp libs/tokens/design-tokens/package.json dist/libs/tokens/design-tokens/package.json",
+          "cp libs/tokens/design-tokens/README.md dist/libs/tokens/design-tokens/README.md"
+        ]
       },
       "configurations": {},
       "parallelism": true
@@ -19,7 +24,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "npm publish --access public --otp=$NPM_OTP",
-        "cwd": "libs/tokens/design-tokens"
+        "cwd": "dist/libs/tokens/design-tokens"
       },
       "configurations": {},
       "parallelism": true

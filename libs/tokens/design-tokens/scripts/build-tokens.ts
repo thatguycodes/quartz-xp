@@ -6,7 +6,8 @@ import * as path from 'path';
 register(StyleDictionary);
 
 const projectRoot = path.join(__dirname, '..');
-const outputPath = path.join(projectRoot, 'generated');
+// Update output path to use standard dist folder
+const outputPath = path.join(projectRoot, '../../../../dist/libs/tokens/design-tokens');
 
 const sd = new StyleDictionary({
     source: [path.join(projectRoot, 'src/tokens/**/*.json')],
@@ -14,7 +15,7 @@ const sd = new StyleDictionary({
         css: {
             transformGroup: 'tokens-studio',
             transforms: ['name/kebab'],
-            buildPath: path.join(outputPath, 'css/'),
+            buildPath: path.join(outputPath, 'generated/css/'),
             files: [
                 {
                     destination: 'variables.css',
@@ -25,7 +26,7 @@ const sd = new StyleDictionary({
         ts: {
             transformGroup: 'tokens-studio',
             transforms: ['name/camel'],
-            buildPath: path.join(outputPath, 'ts/'),
+            buildPath: path.join(outputPath, 'generated/ts/'),
             files: [
                 {
                     destination: 'tokens.ts',
