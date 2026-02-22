@@ -58,3 +58,8 @@ libs/shared/tokens/src/tokens/.figma-sync-metadata.json
 .env.*.local
 .env.production.local
 
+# AI agent/skills artifacts
+.codex/
+.opencode/
+AGENTS.md
+opencode.json
