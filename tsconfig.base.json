@@ -19,7 +19,8 @@
     "baseUrl": ".",
     "paths": {
       "@thatguycodes/quartz-ui": ["libs/ui/quartz-ui/src/index.ts"],
-      "@thatguycodes/design-tokens": ["libs/tokens/design-tokens/src/index.ts"]
+      "@thatguycodes/design-tokens": ["libs/tokens/design-tokens/src/index.ts"],
+      "@thatguycodes/design-tokens/css": ["libs/tokens/design-tokens/src/generated/css/variables.css"]
     }
   },
   "exclude": [

@@ -1,3 +1,4 @@
+import '@thatguycodes/design-tokens/css';
 import './global.css';
 
 export const metadata = {

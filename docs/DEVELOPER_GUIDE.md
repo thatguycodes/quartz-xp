@@ -20,7 +20,7 @@ npm install
 Build tokens before running any app for the first time:
 
 ```bash
-npx nx run tokens:build
+npx nx run design-tokens:build
 ```
 
 ---
@@ -31,12 +31,12 @@ All application commands go through Nx.
 
 | What | Command |
 |---|---|
-| Web app (dev server) | `npx nx run web:dev` |
-| Storybook | `npx nx run ui:storybook` |
-| Build tokens | `npx nx run tokens:build` |
+| Docs site (dev server) | `npx nx run docs:dev` |
+| Storybook | `npx nx run quartz-ui:storybook` |
+| Build tokens | `npx nx run design-tokens:build` |
 | Unit tests | `npx nx run <project>:test` |
 | Lint | `npx nx run <project>:lint` |
-| E2E tests | `npx nx run web-e2e:e2e` |
+| E2E tests | `npx nx run docs-e2e:e2e` |
 | Run all tests | `npx nx run-many -t test` |
 | Run all builds | `npx nx run-many -t build` |
 | Build affected only | `npx nx affected -t build` |
@@ -51,12 +51,13 @@ All application commands go through Nx.
 ```
 nx-enterprise/
 ├── apps/
-│   ├── web/              # Next.js application
-│   └── web-e2e/          # Playwright E2E tests
+│   ├── docs/             # Next.js documentation site
+│   └── docs-e2e/         # Playwright E2E tests
 ├── libs/
-│   └── shared/
-│       ├── tokens/       # Design tokens (@thatguycodes/design-tokens)
-│       └── ui/           # React component library
+│   ├── tokens/
+│   │   └── design-tokens/ # Design tokens (@thatguycodes/design-tokens)
+│   └── ui/
+│       └── quartz-ui/     # React component library (@thatguycodes/quartz-ui)
 ├── docs/                 # All project documentation
 └── .github/
 
@@ -138,19 +139,19 @@ Use the project name from `project.json` as the scope.
 
 | Scope | Project |
 |---|---|
-| `tokens` | `libs/shared/tokens` |
-| `ui` | `libs/shared/ui` |
-| `web` | `apps/web` |
+| `design-tokens` | `libs/tokens/design-tokens` |
+| `quartz-ui` | `libs/ui/quartz-ui` |
+| `docs` | `apps/docs` |
 
 ### Examples
 
 ```
-feat(ui): add Button size variants
-fix(tokens): correct spacing-xl value
-chore(web): upgrade Next.js to 16.1
-test(ui): add Button accessibility tests
+feat(quartz-ui): add Button size variants
+fix(design-tokens): correct spacing-xl value
+chore(docs): upgrade Next.js to 16.1
+test(quartz-ui): add Button accessibility tests
 docs: update developer guide
-refactor(tokens): simplify build script
+refactor(design-tokens): simplify build script
 ```
 
 ### Rules
@@ -215,16 +216,16 @@ npx nx reset
 ## Troubleshooting
 
 **Token changes not showing in the browser**
-1. Rebuild: `npx nx run tokens:build`
-2. Restart the dev server: `npx nx run web:dev`
+1. Rebuild: `npx nx run design-tokens:build`
+2. Restart the dev server: `npx nx run docs:dev`
 3. Hard-refresh the browser
 
 **Storybook fails to start**
 Kill any process already on the Storybook port, then retry:
 ```bash
 pkill -f storybook
-npx nx run ui:storybook
+npx nx run quartz-ui:storybook
 ```
 
 **CSS variables not defined**
-Confirm `variables.css` is imported in `apps/web/src/app/layout.tsx` and in `.storybook/preview.ts`.
+Confirm `variables.css` is imported in `apps/docs/src/app/layout.tsx` and in `.storybook/preview.ts`.

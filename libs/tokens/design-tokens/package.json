@@ -13,13 +13,13 @@
   ],
   "exports": {
     ".": {
-      "types": "./generated/ts/tokens.d.ts",
-      "default": "./generated/ts/tokens.ts"
+      "types": "./src/generated/ts/tokens.d.ts",
+      "default": "./src/generated/ts/tokens.ts"
     },
     "./css": {
-      "default": "./generated/css/variables.css"
+      "default": "./src/generated/css/variables.css"
     }
   },
-  "types": "./generated/ts/tokens.d.ts",
-  "main": "./generated/ts/tokens.ts"
+  "types": "./src/generated/ts/tokens.d.ts",
+  "main": "./src/generated/ts/tokens.ts"
 }
