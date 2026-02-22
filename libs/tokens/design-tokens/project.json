@@ -10,14 +10,10 @@
       "executor": "nx:run-commands",
       "options": {
         "outputPath": "dist/libs/tokens/design-tokens",
-        "commands": [
-          "npx ts-node -T libs/tokens/design-tokens/scripts/build-tokens.ts",
-          "cp libs/tokens/design-tokens/package.json dist/libs/tokens/design-tokens/package.json",
-          "cp libs/tokens/design-tokens/README.md dist/libs/tokens/design-tokens/README.md"
-        ]
+        "command": "node libs/tokens/design-tokens/scripts/build-tokens.mjs && rm -rf dist/libs/tokens/design-tokens && mkdir -p dist/libs/tokens/design-tokens/generated && cp libs/tokens/design-tokens/package.json dist/libs/tokens/design-tokens/package.json && cp libs/tokens/design-tokens/README.md dist/libs/tokens/design-tokens/README.md && cp -R libs/tokens/design-tokens/src/generated/* dist/libs/tokens/design-tokens/generated/"
       },
       "configurations": {},
-      "parallelism": true
+      "parallelism": false
     },
     "publish": {
       "dependsOn": ["build"],

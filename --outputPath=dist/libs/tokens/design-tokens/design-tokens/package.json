@@ -1,0 +1,25 @@
+{
+  "name": "@thatguycodes/design-tokens",
+  "version": "0.1.0",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "private": false,
+  "sideEffects": false,
+  "files": [
+    "generated/**",
+    "README.md"
+  ],
+  "exports": {
+    ".": {
+      "types": "./generated/ts/tokens.d.ts",
+      "default": "./generated/ts/tokens.ts"
+    },
+    "./css": {
+      "default": "./generated/css/variables.css"
+    }
+  },
+  "types": "./generated/ts/tokens.d.ts",
+  "main": "./generated/ts/tokens.ts"
+}

@@ -1,4 +1,4 @@
-# 🏛️ Architecture Documentation
+ # 🏛️ Architecture Documentation
 
 ## Table of Contents
 
@@ -267,7 +267,7 @@ The token system is built on **Style Dictionary**, a build-time tool that transf
 **Command**: `npx nx build tokens`
 
 **Process**:
-1. Script `scripts/build-tokens.ts` runs
+1. Script `scripts/build-tokens.mjs` runs
 2. Style Dictionary loads source JSON files
 3. Tokens are processed through transforms:
    - `name/kebab` for CSS (e.g., `brand-primary`)
