@@ -173,9 +173,14 @@ Update all component stylesheets accordingly.
 
 Releases are managed via Nx release config in `nx.json`. Tokens are the only published project and must run `npx nx run tokens:build` before versioning.
 
-### Publishing the tokens package manually
+### Preferred flow (Nx release for tokens):
 
-Preferred: use Nx release (`nx.json` release block) so builds run before versioning. Manual publish is only for emergencies. See [DEPLOYMENT.md](./DEPLOYMENT.md) for full instructions. The short version:
+1. Ensure working tree is clean and up to date with `main`.
+2. Build tokens happens automatically via Nx preVersion command.
+3. Run `npx nx release version` to bump version and tag.
+4. Run `npx nx release publish` to publish `tokens` (requires MFA OTP when prompted).
+
+### Manual publish (emergency only):
 
 ```bash
 # 1. Build tokens via Nx
@@ -214,3 +219,5 @@ npx nx run ui:storybook
 
 **CSS variables not defined**
 Confirm `variables.css` is imported in `apps/web/src/app/layout.tsx` and in `.storybook/preview.ts`.
+
+
