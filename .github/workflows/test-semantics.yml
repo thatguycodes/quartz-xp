@@ -1,0 +1,25 @@
+name: Test Semantics
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  test-semantics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci --legacy-peer-deps
+
+      - name: Run Semantic Tests
+        run: npx nx affected -t test --base=origin/main --head=HEAD --exclude=quartz-ui
