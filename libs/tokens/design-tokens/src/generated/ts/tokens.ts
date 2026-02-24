@@ -25,6 +25,7 @@ export const spacingSm = "0.5rem";
 export const spacingMd = "1rem";
 export const spacingLg = "1.5rem";
 export const spacingXl = "2rem";
+export const spacing2xl = "3rem";
 export const borderRadiusSm = "0.25rem";
 export const borderRadiusMd = "0.375rem";
 export const borderRadiusLg = "0.5rem";

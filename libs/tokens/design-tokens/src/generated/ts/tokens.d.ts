@@ -25,6 +25,7 @@ export const spacingSm: string;
 export const spacingMd: string;
 export const spacingLg: string;
 export const spacingXl: string;
+export const spacing2xl: string;
 export const borderRadiusSm: string;
 export const borderRadiusMd: string;
 export const borderRadiusLg: string;
