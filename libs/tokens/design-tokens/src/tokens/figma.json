@@ -25,6 +25,11 @@
                 "600": { "$value": "#4b5563", "$type": "color" },
                 "700": { "$value": "#374151", "$type": "color" }
             },
+            "red": {
+                "500": { "$value": "#ef4444", "$type": "color" },
+                "600": { "$value": "#dc2626", "$type": "color" },
+                "700": { "$value": "#b91c1c", "$type": "color" }
+            },
             "purple": {
                 "500": { "$value": "#8b5cf6", "$type": "color" },
                 "600": { "$value": "#7c3aed", "$type": "color" },
@@ -49,8 +54,8 @@
     },
     "semantic/default": {
         "brand": {
-            "primary": { "$value": "{color.blue.600}", "$type": "color" },
-            "hover":   { "$value": "{color.blue.700}", "$type": "color" }
+            "primary": { "$value": "{color.red.600}", "$type": "color" },
+            "hover":   { "$value": "{color.red.700}", "$type": "color" }
         },
         "surface": {
             "base":  { "$value": "{color.white}",     "$type": "color" },

@@ -64,6 +64,20 @@
                 "$type": "color"
             }
         },
+        "red": {
+            "500": {
+                "$value": "#ef4444",
+                "$type": "color"
+            },
+            "600": {
+                "$value": "#dc2626",
+                "$type": "color"
+            },
+            "700": {
+                "$value": "#b91c1c",
+                "$type": "color"
+            }
+        },
         "purple": {
             "500": {
                 "$value": "#8b5cf6",
