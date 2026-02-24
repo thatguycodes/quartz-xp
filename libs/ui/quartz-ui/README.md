@@ -35,12 +35,12 @@ Button props:
 
 ## Development
 
-- Build: `npx nx run ui:build`
-- Storybook: `npx nx run ui:storybook`
-- Tests: `npx nx run ui:test`
+- Build: `npx nx run quartz-ui:build`
+- Storybook: `npx nx run quartz-ui:storybook`
+- Tests: `npx nx run quartz-ui:test`
 
 ## Publishing (maintainers)
 
 Release per package via Nx:
-- Version: `npx nx release version --projects ui`
-- Publish: `npx nx release publish --projects ui`
+- Version: `npx nx release version --projects quartz-ui`
+- Publish: `npx nx release publish --projects quartz-ui`

@@ -16,17 +16,17 @@
 Always build before publishing to ensure generated files are up to date:
 
 ```bash
-npx nx run tokens:build
+npx nx run design-tokens:build
 ```
 
 Verify the following files were generated:
-- `libs/shared/tokens/generated/css/variables.css`
-- `libs/shared/tokens/generated/ts/tokens.ts`
-- `libs/shared/tokens/generated/ts/tokens.d.ts`
+- `libs/tokens/design-tokens/src/generated/css/variables.css`
+- `libs/tokens/design-tokens/src/generated/ts/tokens.ts`
+- `libs/tokens/design-tokens/src/generated/ts/tokens.d.ts`
 
 ### 2. Bump the version
 
-Edit `libs/shared/tokens/package.json` and increment the version. Follow semver:
+Edit `libs/tokens/design-tokens/package.json` and increment the version. Follow semver:
 
 | Change type | Example |
 |---|---|
@@ -37,7 +37,7 @@ Edit `libs/shared/tokens/package.json` and increment the version. Follow semver:
 Or use npm from the tokens directory:
 
 ```bash
-cd libs/shared/tokens
+cd libs/tokens/design-tokens
 
 # pick one:
 npm version patch   # 0.0.2 → 0.0.3
@@ -50,7 +50,7 @@ npm version major   # 0.0.2 → 1.0.0
 Confirm only the right files are included before actually publishing:
 
 ```bash
-cd libs/shared/tokens
+cd libs/tokens/design-tokens
 npm publish --access public --dry-run
 ```
 
@@ -72,13 +72,13 @@ Open your authenticator app and get the current 6-digit OTP for npm. **You have 
 #### Option A — via Nx (from monorepo root)
 
 ```bash
-NPM_OTP=<your-otp> npx nx run tokens:publish
+NPM_OTP=<your-otp> npx nx run design-tokens:publish
 ```
 
 #### Option B — directly from the tokens folder
 
 ```bash
-cd libs/shared/tokens
+cd libs/tokens/design-tokens
 npm publish --access public --otp=<your-otp>
 ```
 
@@ -96,8 +96,8 @@ npm view @thatguycodes/design-tokens
 
 | Error | Fix |
 |---|---|
-| `You cannot publish over the previously published versions` | Bump the version in `libs/shared/tokens/package.json` |
+| `You cannot publish over the previously published versions` | Bump the version in `libs/tokens/design-tokens/package.json` |
 | `EOTP` / OTP invalid or expired | Get a fresh OTP and re-run immediately |
 | `403 Forbidden` | Ensure you are logged in (`npm login`) and own `@thatguycodes` |
-| Wrong files published | Check the `files` field in `libs/shared/tokens/package.json` |
+| Wrong files published | Check the `files` field in `libs/tokens/design-tokens/package.json` |
 

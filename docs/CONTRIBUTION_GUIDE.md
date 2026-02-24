@@ -44,7 +44,7 @@ Tokens are managed in Figma — not in this repository.
 2. Trigger a token sync from GitHub Actions
 3. The sync creates a PR automatically — review and merge it
 
-Never edit `libs/shared/tokens/src/tokens/*.json` manually.
+Never edit `libs/tokens/design-tokens/src/tokens/*.json` manually.
 
 ### Documentation
 

@@ -19,11 +19,11 @@ Welcome to the **Nx Enterprise** monorepo. This project is a production-ready, s
 Our monorepo is structured to maximize code reuse and maintainability through a layered approach:
 
 - **`apps/`**: End-user applications.
-  - **`web`**: A high-performance Next.js 16 (TypeScript) application.
-  - **`web-e2e`**: Automated end-to-end tests using Playwright.
+  - **`docs`**: A high-performance Next.js documentation site (TypeScript).
+  - **`docs-e2e`**: Automated end-to-end tests using Playwright.
 - **`libs/`**: Shared libraries and business logic.
-  - **`shared/tokens`**: The "Source of Truth" for design. Contains primitive and semantic tokens managed by Style Dictionary.
-  - **`shared/ui`**: A curated library of React components styled with vanilla CSS Modules and documented via Storybook.
+  - **`tokens/design-tokens`**: The "Source of Truth" for design. Contains primitive and semantic tokens managed by Style Dictionary.
+  - **`ui/quartz-ui`**: A curated library of React components styled with vanilla CSS Modules and documented via Storybook.
 
 ## 🛠️ Tech Stack
 
@@ -60,7 +60,7 @@ Figma (Design) → GitHub Actions (Sync) → PR (Review) → Merge (Build)
 
 ### Setup Required
 
-See the [Figma Setup Guide](./docs/FIGMA_SETUP.md) to:
+See the [Designer Guide](./docs/DESIGNER_GUIDE.md) to:
 - Create Figma API token
 - Add GitHub secrets
 
@@ -91,22 +91,22 @@ To maintain a consistent and beautiful design system:
 3. **Review PR**: Design team reviews the token sync PR
 4. **Merge**: After approval, merge to `main` to trigger build
 
-⚠️ **Do not manually edit** `libs/shared/tokens/src/tokens/core.json` or `semantic.json` - these are auto-generated from Figma
+⚠️ **Do not manually edit** `libs/tokens/design-tokens/src/tokens/core.json` or `semantic.json` - these are auto-generated from Figma
 
 ### Level 2: UI Library (The Components)
 *Use this when: You need to build a new reusable UI element or update an existing one.*
-1. **Generate**: `npx nx g @nx/react:component MyComponent --project=shared-ui`.
+1. **Generate**: `npx nx g @nx/react:component MyComponent --project=quartz-ui`.
 2. **Style**: Use `MyComponent.module.css`. Reference tokens with `var(--your-token)`.
 3. **Document**: Add `MyComponent.stories.tsx`.
-4. **Test**: Run `npx nx storybook ui` and verify the visuals across different variants.
-5. **Export**: Ensure the component is exported from `libs/shared/ui/src/index.ts`.
+4. **Test**: Run `npx nx run quartz-ui:storybook` and verify the visuals across different variants.
+5. **Export**: Ensure the component is exported from `libs/ui/quartz-ui/src/index.ts`.
 
 ### Level 3: Web Application (The Consumption)
 *Use this when: You are building a new page or feature.*
-1. **Import**: Use `@nx/quartz-ui` to bring in components.
-2. **Compose**: Lay out your components in the Next.js App Router (`apps/web/src/app`).
+1. **Import**: Use `@thatguycodes/quartz-ui` to bring in components.
+2. **Compose**: Lay out your components in the Next.js App Router (`apps/docs/src/app`).
 3. **Local Styles**: Use page-specific `.module.css` for layout-only styles.
-4. **Run**: Verify at http://localhost:3000 with `npx nx dev web`.
+4. **Run**: Verify at http://localhost:3000 with `npx nx run docs:dev`.
 
 ---
 
@@ -114,11 +114,11 @@ To maintain a consistent and beautiful design system:
 
 | Component | Command | Description |
 |-----------|---------|-------------|
-| **Web App** | `npx nx dev web` | Starts the Next.js dev server at http://localhost:3000 |
-| **Storybook** | `npx nx storybook ui` | Starts Storybook for the UI library at http://localhost:6006 |
-| **Tokens Build**| `npx nx build tokens` | Rebuilds the CSS/TS token outputs |
-| **Tests** | `npx nx test <project>`| Runs unit tests with Jest |
-| **Lint** | `npx nx lint <project>`| Runs linting checks |
+| **Docs App** | `npx nx run docs:dev` | Starts the Next.js dev server at http://localhost:3000 |
+| **Storybook** | `npx nx run quartz-ui:storybook` | Starts Storybook for the UI library at http://localhost:6006 |
+| **Tokens Build**| `npx nx run design-tokens:build` | Rebuilds the CSS/TS token outputs |
+| **Tests** | `npx nx run <project>:test`| Runs unit tests with Jest |
+| **Lint** | `npx nx run <project>:lint`| Runs linting checks |
 
 ---
 
@@ -133,7 +133,7 @@ To maintain a consistent and beautiful design system:
 2. Trigger sync from Actions → "Figma Token Sync"
 3. Design team reviews and merges PR
 
-See [Figma Setup Guide](./docs/FIGMA_SETUP.md) for complete instructions.
+See [Designer Guide](./docs/DESIGNER_GUIDE.md) for complete instructions.
 
 ### "Nx is acting weird (Cache issues)."
 **Fix**: Sometimes the Nx daemon or cache can get out of sync. Use the reset command:
@@ -148,7 +148,7 @@ pkill -f storybook
 ```
 
 ### "The CSS variables aren't defined."
-**Fix**: Ensure `variables.css` is being imported in the root of your app (`apps/web/src/app/layout.tsx`) or in Storybook's `preview.ts`.
+**Fix**: Ensure `variables.css` is being imported in the root of your app (`apps/docs/src/app/layout.tsx`) or in Storybook's `preview.ts`.
 
 ---
 

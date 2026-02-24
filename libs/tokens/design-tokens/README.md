@@ -180,4 +180,4 @@ Tokens are managed in Figma. Changes flow automatically via the sync pipeline:
 Figma → GitHub Actions (on-demand sync) → PR review → Merge → Rebuild
 ```
 
-Do not edit the generated files directly. See the [Figma Setup Guide](../../docs/FIGMA_SETUP.md) to trigger a sync.
+Do not edit the generated files directly. See the [Designer Guide](../../docs/DESIGNER_GUIDE.md) to trigger a sync.

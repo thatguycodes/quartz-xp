@@ -22,9 +22,9 @@ This Nx Enterprise monorepo implements a **token-first design system** architect
 
 ### Key Components
 
-- **Design Tokens Layer** (`libs/shared/tokens`): Source of truth for all design decisions
-- **UI Component Library** (`libs/shared/ui`): Reusable React components styled with CSS Modules
-- **Applications Layer** (`apps/web`): Next.js applications consuming shared libraries
+- **Design Tokens Layer** (`libs/tokens/design-tokens`): Source of truth for all design decisions
+- **UI Component Library** (`libs/ui/quartz-ui`): Reusable React components styled with CSS Modules
+- **Applications Layer** (`apps/docs`): Next.js documentation site consuming shared libraries
 - **Testing Infrastructure**: Unit tests (Jest) and E2E tests (Playwright)
 
 ---
@@ -117,12 +117,13 @@ graph TD
 **Structure**:
 ```
 apps/           # Deployable applications
-  web/          # Next.js web application
-  web-e2e/      # E2E tests for web
+  docs/         # Next.js documentation site
+  docs-e2e/     # E2E tests for docs
 libs/           # Shared libraries
-  shared/       # Cross-cutting concerns
-    tokens/     # Design system tokens
-    ui/         # Component library
+  tokens/       # Design system tokens
+    design-tokens/
+  ui/           # Component library
+    quartz-ui/
 ```
 
 ### 4. Build-Time Generation
@@ -152,14 +153,14 @@ graph TD
     end
     
     subgraph shared["Shared Libraries Layer"]
-        subgraph ui["@nx/quartz-ui"]
+        subgraph ui["@thatguycodes/quartz-ui"]
             button["Button"]
             card["Card"]
             input["Input"]
             more["..."]
         end
         
-        subgraph tokens["@nx/design-tokens"]
+        subgraph tokens["@thatguycodes/design-tokens"]
             subgraph generated["Generated Assets<br/>(Build-time)"]
                 css["variables.css<br/>(CSS Custom Properties)"]
                 ts["tokens.ts<br/>(TypeScript constants)"]
@@ -198,7 +199,7 @@ graph TD
    - Build type-safe components
 
 4. **Application Integration** (Developer)
-   - Import components from `@nx/quartz-ui`
+   - Import components from `@thatguycodes/quartz-ui`
    - Import `variables.css` in root layout
    - Compose application pages
 
@@ -214,7 +215,7 @@ The token system is built on **Style Dictionary**, a build-time tool that transf
 
 #### Layer 1: Core Tokens (Primitives)
 
-**File**: `libs/shared/tokens/src/tokens/core.json`
+**File**: `libs/tokens/design-tokens/src/tokens/core.json`
 
 **Purpose**: Define raw, context-agnostic values.
 
@@ -240,7 +241,7 @@ The token system is built on **Style Dictionary**, a build-time tool that transf
 
 #### Layer 2: Semantic Tokens (Aliases)
 
-**File**: `libs/shared/tokens/src/tokens/semantic.json`
+**File**: `libs/tokens/design-tokens/src/tokens/semantic.json`
 
 **Purpose**: Create meaningful, context-aware aliases to core tokens.
 
@@ -264,7 +265,7 @@ The token system is built on **Style Dictionary**, a build-time tool that transf
 
 ### Build Pipeline
 
-**Command**: `npx nx build tokens`
+**Command**: `npx nx run design-tokens:build`
 
 **Process**:
 1. Script `scripts/build-tokens.mjs` runs
@@ -300,7 +301,7 @@ The token system is built on **Style Dictionary**, a build-time tool that transf
 
 #### In TypeScript
 ```typescript
-import { brandPrimary, spacingMd } from '@nx/design-tokens';
+import { brandPrimary, spacingMd } from '@thatguycodes/design-tokens';
 
 const inlineStyles = {
   backgroundColor: brandPrimary,
@@ -323,12 +324,12 @@ const inlineStyles = {
 
 ### Architecture
 
-The UI library (`libs/shared/ui`) follows a **component-per-directory** structure with co-located styles, tests, and stories.
+The UI library (`libs/ui/quartz-ui`) follows a **component-per-directory** structure with co-located styles, tests, and stories.
 
 ### Component Structure
 
 ```
-libs/shared/ui/src/lib/button/
+libs/ui/quartz-ui/src/lib/button/
   ├── Button.tsx           # Component implementation
   ├── Button.module.css    # Scoped styles
   ├── Button.spec.tsx      # Unit tests
@@ -396,12 +397,12 @@ export interface ButtonProps {
 
 ### Component Development Workflow
 
-1. **Generate**: `npx nx g @nx/react:component MyComponent --project=shared-ui`
+1. **Generate**: `npx nx g @nx/react:component MyComponent --project=quartz-ui`
 2. **Implement**: Build component using tokens in CSS Module
 3. **Test**: Write unit tests in `.spec.tsx`
 4. **Document**: Create Storybook stories in `.stories.tsx`
-5. **Export**: Add to `libs/shared/ui/src/index.ts`
-6. **Verify**: Run `npx nx storybook ui` to preview
+5. **Export**: Add to `libs/ui/quartz-ui/src/index.ts`
+6. **Verify**: Run `npx nx run quartz-ui:storybook` to preview
 
 ### Storybook Integration
 
@@ -422,7 +423,7 @@ export interface ButtonProps {
 
 ### Next.js Architecture
 
-The web application (`apps/web`) uses **Next.js 16 App Router** architecture.
+The docs application (`apps/docs`) uses **Next.js App Router** architecture.
 
 ### Key Decisions
 
@@ -446,8 +447,8 @@ The web application (`apps/web`) uses **Next.js 16 App Router** architecture.
 
 **How**: Import `variables.css` in root layout:
 ```typescript
-// apps/web/src/app/layout.tsx
-import '../../../../libs/shared/tokens/generated/css/variables.css';
+// apps/docs/src/app/layout.tsx
+import '@thatguycodes/design-tokens/css';
 ```
 
 **Result**: All CSS custom properties available globally in app.
@@ -455,7 +456,7 @@ import '../../../../libs/shared/tokens/generated/css/variables.css';
 ### Application Structure
 
 ```
-apps/web/src/app/
+apps/docs/src/app/
   ├── layout.tsx        # Root layout (imports tokens)
   ├── page.tsx          # Home page
   ├── global.css        # Global styles
@@ -467,7 +468,7 @@ apps/web/src/app/
 
 ```typescript
 // Import shared components
-import { Button } from '@nx/quartz-ui';
+import { Button } from '@thatguycodes/quartz-ui';
 
 export default function Page() {
   return (
@@ -508,12 +509,12 @@ graph TD
 
 | Task | Command | Purpose |
 |------|---------|---------|
-| Build tokens | `npx nx build tokens` | Generate CSS/TS from JSON |
-| Build UI | `npx nx build ui` | Compile component library |
-| Build web | `npx nx build web` | Build Next.js production bundle |
-| Test all | `npx nx test <project>` | Run Jest unit tests |
-| E2E tests | `npx nx e2e web-e2e` | Run Playwright E2E tests |
-| Storybook | `npx nx storybook ui` | Launch component gallery |
+| Build tokens | `npx nx run design-tokens:build` | Generate CSS/TS from JSON |
+| Build UI | `npx nx run quartz-ui:build` | Compile component library |
+| Build docs | `npx nx run docs:build` | Build Next.js production bundle |
+| Test all | `npx nx run <project>:test` | Run Jest unit tests |
+| E2E tests | `npx nx run docs-e2e:e2e` | Run Playwright E2E tests |
+| Storybook | `npx nx run quartz-ui:storybook` | Launch component gallery |
 
 ### CI/CD Integration
 
@@ -545,7 +546,7 @@ Nx optimizes builds through:
 **When**: Need a new color, spacing, or design value.
 
 **Steps**:
-1. Edit `libs/shared/tokens/src/tokens/core.json` (primitive) or `semantic.json` (alias)
+1. Edit `libs/tokens/design-tokens/src/tokens/core.json` (primitive) or `semantic.json` (alias)
 2. Add new token:
    ```json
    {
@@ -556,7 +557,7 @@ Nx optimizes builds through:
      }
    }
    ```
-3. Run `npx nx build tokens`
+3. Run `npx nx run design-tokens:build`
 4. Verify in `generated/css/variables.css`
 5. Use in components: `var(--color-purple-500)`
 
@@ -567,7 +568,7 @@ Nx optimizes builds through:
 **Steps**:
 1. Generate component:
    ```bash
-   npx nx g @nx/react:component Card --project=shared-ui
+   npx nx g @nx/react:component Card --project=quartz-ui
    ```
 
 2. Implement with tokens:
@@ -584,24 +585,24 @@ Nx optimizes builds through:
 3. Add tests (`Card.spec.tsx`)
 4. Document in Storybook (`Card.stories.tsx`)
 5. Export from `index.ts`
-6. Verify in Storybook: `npx nx storybook ui`
+6. Verify in Storybook: `npx nx run quartz-ui:storybook`
 
 ### Adding a New Page
 
-**When**: Creating new functionality in the web app.
+**When**: Creating new functionality in the docs app.
 
 **Steps**:
-1. Create route in `apps/web/src/app/`
+1. Create route in `apps/docs/src/app/`
    - File: `about/page.tsx`
    
 2. Import components:
    ```typescript
-   import { Button, Card } from '@nx/quartz-ui';
+   import { Button, Card } from '@thatguycodes/quartz-ui';
    ```
 
 3. Add page styles (`page.module.css`)
 4. Reference tokens as needed
-5. Test locally: `npx nx dev web`
+5. Test locally: `npx nx run docs:dev`
 
 ### Updating an Existing Token
 
@@ -609,9 +610,9 @@ Nx optimizes builds through:
 
 **Steps**:
 1. Modify token value in source JSON
-2. Rebuild tokens: `npx nx build tokens`
+2. Rebuild tokens: `npx nx run design-tokens:build`
 3. Test affected components in Storybook
-4. Test affected pages in web app
+4. Test affected pages in docs app
 5. Commit as atomic change
 
 ---
@@ -813,7 +814,7 @@ Git commit hash: a3f8b92c1d4e5f6g7h8i9j0k1l2m3n4o
 
 Previous workflow (manual):
 ```
-Edit core.json → Run npx nx build tokens → Commit → Create PR
+Edit core.json → Run npx nx run design-tokens:build → Commit → Create PR
 ```
 
 **New workflow (Figma-first)**:
@@ -822,7 +823,7 @@ Edit in Figma → Trigger sync from GitHub UI → Design team reviews PR → Mer
 ```
 
 **Key differences**:
-- ❌ **Never manually edit** `libs/shared/tokens/src/tokens/*.json` - these are now auto-generated
+- ❌ **Never manually edit** `libs/tokens/design-tokens/src/tokens/*.json` - these are now auto-generated
 - ✅ **All changes start in Figma**
 - ✅ **Automatic PR creation** with design team auto-assigned
 - ✅ **Non-blocking validation** of naming conventions

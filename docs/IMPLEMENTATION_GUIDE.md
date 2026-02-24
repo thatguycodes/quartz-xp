@@ -18,7 +18,7 @@ This guide provides step-by-step instructions for implementing common tasks in t
 
 ### Prerequisites
 
-- Node.js 18+ and npm
+- Node.js 22+ and npm
 - Git
 - Code editor (VS Code recommended)
 
@@ -33,18 +33,18 @@ This guide provides step-by-step instructions for implementing common tasks in t
 
 2. **Build tokens** (required before first run):
    ```bash
-   npx nx build tokens
+   npx nx run design-tokens:build
    ```
 
 3. **Start development server**:
    ```bash
-   npx nx dev web
+   npx nx run docs:dev
    ```
    Visit http://localhost:3000
 
 4. **Start Storybook** (optional):
    ```bash
-   npx nx storybook ui
+   npx nx run quartz-ui:storybook
    ```
    Visit http://localhost:6006
 
@@ -53,14 +53,14 @@ This guide provides step-by-step instructions for implementing common tasks in t
 ```
 nx-enterprise/
 ├── apps/
-│   ├── web/              # Next.js application
-│   └── web-e2e/          # E2E tests
+│   ├── docs/             # Next.js documentation site
+│   └── docs-e2e/         # E2E tests
 ├── libs/
-│   └── shared/
-│       ├── tokens/       # Design tokens
-│       └── ui/           # Component library
-├── ARCHITECTURE.md       # Architecture documentation
-├── README.md             # Getting started guide
+│   ├── tokens/
+│   │   └── design-tokens/ # Design tokens
+│   └── ui/
+│       └── quartz-ui/     # Component library
+├── docs/                 # All project documentation
 └── package.json          # Dependencies
 ```
 
@@ -84,7 +84,7 @@ Tokens have two layers:
 
 ### Adding a New Color Token
 
-**File**: `libs/shared/tokens/src/tokens/core.json`
+**File**: `libs/tokens/design-tokens/src/tokens/core.json`
 
 Add to the color section:
 ```json
@@ -104,7 +104,7 @@ Add to the color section:
 
 **Build and verify**:
 ```bash
-npx nx build tokens
+npx nx run design-tokens:build
 ```
 
 ### Token Naming Conventions
@@ -131,7 +131,7 @@ npx nx build tokens
 ### Generating a Component
 
 ```bash
-npx nx g @nx/react:component Card --project=shared-ui
+npx nx g @nx/react:component Card --project=quartz-ui
 ```
 
 ### Component Implementation
@@ -183,7 +183,7 @@ export default Card;
 
 ### Exporting Components
 
-**libs/shared/ui/src/index.ts**:
+**libs/ui/quartz-ui/src/index.ts**:
 ```typescript
 export * from './lib/ui';
 export * from './lib/button/Button';
@@ -196,10 +196,10 @@ export * from './lib/card/Card';
 
 ### Adding a New Route
 
-**Create**: `apps/web/src/app/about/page.tsx`
+**Create**: `apps/docs/src/app/about/page.tsx`
 
 ```typescript
-import { Button } from '@nx/quartz-ui';
+import { Button } from '@thatguycodes/quartz-ui';
 import styles from './page.module.css';
 
 export default function AboutPage() {
@@ -219,14 +219,14 @@ export default function AboutPage() {
 ### Unit Testing
 
 ```bash
-npx nx test ui              # Test UI library
-npx nx test web             # Test web app
+npx nx run quartz-ui:test    # Test UI library
+npx nx run docs:test         # Test docs app
 ```
 
 ### E2E Testing
 
 ```bash
-npx nx e2e web-e2e
+npx nx run docs-e2e:e2e
 ```
 
 ---
@@ -254,15 +254,15 @@ npx nx e2e web-e2e
 ### Token Changes Not Reflecting
 
 **Solution**:
-1. Rebuild tokens: `npx nx build tokens`
-2. Restart dev server: `npx nx dev web`
+1. Rebuild tokens: `npx nx run design-tokens:build`
+2. Restart dev server: `npx nx run docs:dev`
 3. Clear browser cache
 
 ### Component Not Found
 
 **Solution**:
-1. Verify export in `libs/shared/ui/src/index.ts`
-2. Check import path: `import { Component } from '@nx/quartz-ui'`
+1. Verify export in `libs/ui/quartz-ui/src/index.ts`
+2. Check import path: `import { Component } from '@thatguycodes/quartz-ui'`
 
 ---
 
