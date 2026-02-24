@@ -1,0 +1,29 @@
+name: Test UI
+
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  test-ui:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci --legacy-peer-deps
+      - run: npx playwright install --with-deps
+
+      - name: Run UI Tests
+        run: npx nx affected -t test --base=origin/main --head=HEAD --exclude=design-tokens
+
+      - name: Run E2E
+        run: npx nx affected -t e2e --base=origin/main --head=HEAD

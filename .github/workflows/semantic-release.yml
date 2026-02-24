@@ -1,0 +1,50 @@
+name: Semantic Release
+
+on:
+  workflow_call:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no publish)'
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      NPM_TOKEN:
+        required: false
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  semantic-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci --legacy-peer-deps
+      - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      - run: git config --global user.name "github-actions[bot]"
+
+      - name: Release Design Tokens (dry-run)
+        if: inputs.dry_run
+        run: npx nx release --dry-run --projects=design-tokens
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Release Design Tokens
+        if: ${{ !inputs.dry_run }}
+        run: npx nx release --yes --projects=design-tokens
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: true

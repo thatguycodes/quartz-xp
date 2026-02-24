@@ -15,7 +15,15 @@
       "!{projectRoot}/**/*.md",
       "!{projectRoot}/**/*.mdx"
     ],
-    "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
+    "sharedGlobals": [
+      "{workspaceRoot}/.github/workflows/ci.yml",
+      "{workspaceRoot}/.github/workflows/lint.yml",
+      "{workspaceRoot}/.github/workflows/build.yml",
+      "{workspaceRoot}/.github/workflows/test-ui.yml",
+      "{workspaceRoot}/.github/workflows/test-semantics.yml",
+      "{workspaceRoot}/.github/workflows/ui-release.yml",
+      "{workspaceRoot}/.github/workflows/semantic-release.yml"
+    ]
   },
   "targetDefaults": {
     "build": {
