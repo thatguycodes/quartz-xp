@@ -51,6 +51,11 @@ jobs:
   ui-release-dry-run:
     if: github.event_name == 'pull_request'
     needs: [test-ui, test-semantics]
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     uses: ./.github/workflows/ui-release.yml
     with:
       dry_run: true
@@ -58,6 +63,11 @@ jobs:
   semantic-release-dry-run:
     if: github.event_name == 'pull_request'
     needs: [test-ui, test-semantics]
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
     uses: ./.github/workflows/semantic-release.yml
     with:
       dry_run: true
