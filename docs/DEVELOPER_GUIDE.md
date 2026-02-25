@@ -288,13 +288,22 @@ Local release commands should **only** be used by maintainers in emergency situa
 1. **Ensure Clean State**: Pull latest `main` and ensure working tree is clean.
 2. **Dry Run**: Always verify what will happen first.
    ```bash
-   npx nx release --dry-run
+   npx nx release --dry-run --projects=design-tokens
    ```
-3. **Perform Release**:
+3. **Version + Tags (No Publish)**: Create versions, changelogs, commit, and tags.
    ```bash
-   # This will prompt for version bumps and OTPs
-   npx nx release
+   npx nx release --skip-publish --projects=design-tokens
    ```
+4. **Publish**: Publish the tagged versions.
+   ```bash
+   npx nx release publish -p design-tokens,quartz-ui
+   ```
+
+#### Important Publishing Rules
+
+- **Nx publish uses npm** under the hood. Switching to `pnpm` or `bun` does not change the publish behavior.
+- **Local `file:` dependencies cannot be published with npm.** Make sure `libs/ui/quartz-ui/package.json` uses a **semver** version for `@thatguycodes/design-tokens` (for example `^0.2.2`) before publishing.
+- **Publish order**: publish `design-tokens` first, then `quartz-ui`, since `quartz-ui` depends on it.
 
 > **Note**: You must have a valid `NPM_TOKEN` or be logged in to npm with access to the `@thatguycodes` organization.
 
@@ -335,3 +344,7 @@ import '../../../tokens/design-tokens/src/generated/css/variables-purple-dark.cs
 ```
 
 If the CSS files are missing, run `npx nx run design-tokens:generate` first.
+
+**Publish fails with `ENOTFOUND registry.npmjs.org`**
+
+This is a network/DNS issue. Check your connection, proxy settings, or corporate VPN/DNS. Retry the publish after connectivity is restored.
