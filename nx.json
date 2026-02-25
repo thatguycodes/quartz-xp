@@ -67,15 +67,20 @@
     "groups": {
       "design-system": {
         "projects": ["design-tokens", "quartz-ui"],
-        "version": {},
+        "version": {
+          "conventionalCommits": true
+        },
         "releaseTagPattern": "{projectName}@{version}",
         "changelog": {
+          "automaticFromRef": true,
           "workspaceChangelog": false,
           "projectChangelogs": true
         }
       }
     },
     "version": {
+      "conventionalCommits": true,
+      "fallbackCurrentVersionResolver": "disk",
       "preVersionCommand": "npx nx run-many -t build --projects design-tokens,quartz-ui"
     }
   },

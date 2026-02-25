@@ -28,7 +28,7 @@ jobs:
 
   ui-release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [test-ui, test-semantics]
+    needs: [test-ui, test-semantics, semantic-release]
     permissions:
       contents: write
       issues: write
