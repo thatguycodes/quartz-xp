@@ -2,8 +2,8 @@ import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 // Import design tokens CSS variables
-import '../../../design-tokens/src/generated/css/variables-default-light.css';
-import '../../../design-tokens/src/generated/css/variables-default-dark.css';
+import '../../../design-tokens/src/generated/css/variables-light.css';
+import '../../../design-tokens/src/generated/css/variables-dark.css';
 import '../../../design-tokens/src/generated/css/variables-purple-light.css';
 import '../../../design-tokens/src/generated/css/variables-purple-dark.css';
 
@@ -22,8 +22,8 @@ const preview: Preview = {
   decorators: [
     withThemeByDataAttribute({
       themes: {
-        'Default Light': 'default-light',
-        'Default Dark': 'default-dark',
+        'Default Light': 'light',
+        'Default Dark': 'dark',
         'Purple Light': 'purple-light',
         'Purple Dark': 'purple-dark',
       },
