@@ -31,7 +31,7 @@
     "@nx/workspace": "22.5.2",
     "@playwright/test": "^1.36.0",
     "@storybook/addon-docs": "10.2.10",
-    "@storybook/addon-themes": "^10.2.12",
+    "@storybook/addon-themes": "10.2.10",
     "@storybook/react": "10.2.10",
     "@storybook/react-vite": "10.2.10",
     "@swc-node/core": "^1.14.1",
