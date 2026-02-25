@@ -22,7 +22,7 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "@thatguycodes/design-tokens": "file:../../tokens/design-tokens"
+    "@thatguycodes/design-tokens": "^0.2.2"
   },
   "peerDependencies": {
     "react": ">=18",
