@@ -2,7 +2,7 @@
     "imports": ["../../semantic/dark.json"],
     "color": {
         "background": {
-            "primary": { "$type": "color", "$value": "{color.vivid-purple}" }
+            "primary": { "$type": "color", "$value": "{color.deep-purple}" }
         },
         "text": {
             "primary": { "$type": "color", "$value": "{color.white}" }

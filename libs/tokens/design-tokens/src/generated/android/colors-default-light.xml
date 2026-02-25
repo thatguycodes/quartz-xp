@@ -13,11 +13,17 @@
   <color name="color_muted_silver">#ffa3a3a3</color>
   <color name="color_gainsboro">#fff5f5f5</color>
   <color name="color_white">#ffffffff</color>
+  <color name="color_blue_50">#ffeff6ff</color>
+  <color name="color_blue_100">#ffdbeafe</color>
+  <color name="color_blue_500">#ff3b82f6</color>
+  <color name="color_blue_600">#ff2563eb</color>
+  <color name="color_blue_700">#ff1d4ed8</color>
   <color name="color_electric_cyan">#ff00f0ff</color>
   <color name="color_vivid_purple">#ff7000ff</color>
-  <color name="color_background_primary">#ffffffff</color>
-  <color name="color_background_secondary">#fff5f5f5</color>
-  <color name="color_text_primary">#ff1a1a1a</color>
-  <color name="color_text_secondary">#ff555555</color>
-  <color name="color_border_primary">#ffa3a3a3</color>
+  <color name="color_deep_purple">#ff3b007a</color>
+  <color name="color_background_primary">#ff2563eb</color>
+  <color name="color_background_secondary">#ffeff6ff</color>
+  <color name="color_text_primary">#ffffffff</color>
+  <color name="color_text_secondary">#ffdbeafe</color>
+  <color name="color_border_primary">#ff3b82f6</color>
 </resources>
