@@ -1,3 +1,13 @@
+## 0.3.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- patch ([bf415f2](https://github.com/thatguycodes/nx-enterprise/commit/bf415f2))
+
+### ❤️ Thank You
+
+- obonye_t
+
 ## 0.2.3 (2026-02-25)
 
 This was a version bump only for design-tokens to align it with other projects, there were no code changes.

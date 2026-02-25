@@ -1,3 +1,17 @@
+## 0.0.8 (2026-02-25)
+
+### 🩹 Fixes
+
+- patch ([bf415f2](https://github.com/thatguycodes/nx-enterprise/commit/bf415f2))
+
+### 🧱 Updated Dependencies
+
+- Updated design-tokens to 0.3.1
+
+### ❤️ Thank You
+
+- obonye_t
+
 ## 0.0.7 (2026-02-25)
 
 ### 🧱 Updated Dependencies
