@@ -94,7 +94,7 @@ test(ui): add snapshot tests for Button variants
 ## Code Standards
 
 - **TypeScript** — no `any` unless unavoidable; prefer explicit types
-- **CSS** — CSS Modules only; always use semantic tokens (`var(--brand-primary)`) rather than hardcoded values
+- **CSS** — CSS Modules only; always use semantic tokens (e.g. `var(--color-background-primary)`, `var(--color-text-primary)`) rather than hardcoded values or base/primitive tokens
 - **Components** — each component gets its own folder with `.tsx`, `.module.css`, `.spec.tsx`, and `.stories.tsx`
 - **No barrel re-exports** inside lib folders — export explicitly from the root `index.ts`
 
@@ -105,4 +105,3 @@ test(ui): add snapshot tests for Button variants
 - Open a GitHub Discussion for questions
 - Open an issue for bugs or proposals
 - Tag `@design-team` for token-related questions
-

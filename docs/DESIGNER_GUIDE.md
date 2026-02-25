@@ -9,48 +9,30 @@ As a designer, Figma is your workspace. You own the design tokens — the colour
 ## Token Workflow
 
 ```
-Figma (your changes)
-  → Export JSON with free plugin
-  → Commit figma.json to a branch
-  → GitHub Actions auto-transforms and builds tokens
-  → PR review → Merge → Live in the product
+Edit tokens in Figma
+  → Trigger sync from GitHub Actions
+  → Automated PR created on tokens/figma-sync branch
+  → Design team reviews and merges
+  → CI builds tokens and publishes package
+  → Changes are live
 ```
 
 You never write code. Everything starts in Figma.
 
 ---
 
-## Exporting Tokens from Figma
+## Triggering a Token Sync
 
-Use the free **Variables to JSON** plugin (no subscription required).
-
-### Step-by-step
-
-1. Open your Figma file.
-2. Go to **Plugins → Variables to JSON**.
-3. Click **Export** to download `figma.json`.
-4. In the repository, replace the file at:
-   ```
-   libs/tokens/design-tokens/src/tokens/figma.json
-   ```
-5. Commit the file to a new branch (e.g. `tokens/my-update`) and push it.
-
-GitHub Actions will detect the change, run the transformation and build scripts automatically, and open a pull request for review.
-
-> **Tip:** Do not edit any other files under `src/generated/` manually — those are generated automatically from `src/tokens/figma.json`.
-
----
-
-## Triggering a Sync Manually
-
-If you need to trigger the token sync without pushing a new `figma.json`:
+When you're ready to push token changes from Figma into the codebase:
 
 1. Go to the repository on GitHub.
 2. Click the **Actions** tab.
 3. Select **"Figma Token Sync (On-Demand)"**.
 4. Click **"Run workflow"** → **"Run workflow"**.
 
-A pull request will be created automatically and assigned to you for review.
+A pull request will be created automatically on the `tokens/figma-sync` branch and assigned to the design team for review.
+
+> No Figma plugin or manual file export is needed. The sync fetches tokens directly from the Figma API.
 
 ---
 
@@ -60,73 +42,85 @@ Tokens must follow **kebab-case with at least one group**. This is required for 
 
 **Format:** `group-name` or `group-subgroup-name`
 
-| ✅ Valid | ❌ Invalid | Reason |
-|---|---|---|
-| `color-primary` | `primary` | Missing group |
-| `spacing-md` | `SpacingMd` | Must be lowercase |
-| `typography-heading-lg` | `color_primary` | Use dashes, not underscores |
-| `border-radius-sm` | `color--primary` | No double dashes |
+| ✅ Valid                | ❌ Invalid       | Reason                      |
+| ----------------------- | ---------------- | --------------------------- |
+| `color-primary`         | `primary`        | Missing group               |
+| `spacing-md`            | `SpacingMd`      | Must be lowercase           |
+| `typography-heading-lg` | `color_primary`  | Use dashes, not underscores |
+| `border-radius-sm`      | `color--primary` | No double dashes            |
 
 ---
 
 ## Token Layers
 
-Tokens are organised in two layers. You should only need to touch **semantic tokens** for day-to-day work.
+Tokens are organised in three layers. As a designer, you work primarily in the **semantic** layer.
 
-| Layer | Example | Rule |
-|---|---|---|
-| **Core** | `color-blue-600 = #2563eb` | Raw values. Rarely change. |
-| **Semantic** | `brand-primary = {color-blue-600}` | Purposeful names. Reference core tokens. |
+| Layer        | Location                                  | Rule                                                        |
+| ------------ | ----------------------------------------- | ----------------------------------------------------------- |
+| **Base**     | `tokens/base/*.json`                      | Raw values (hex, rem, etc.). Auto-generated. Rarely change. |
+| **Semantic** | `tokens/semantic/light.json`, `dark.json` | Purpose-driven names per theme. This is what you edit.      |
+| **Brand**    | `tokens/brands/<brand>/<theme>.json`      | Overrides for specific brands (default, purple).            |
 
-Components use semantic tokens. A rebrand means updating the semantic layer only — without touching any component.
+Components reference semantic tokens only — never base tokens directly. A rebrand means updating the semantic or brand layer without touching any component.
 
 ---
 
-## Multi-Brand Support
+## Themes and Brands
 
-The `figma.json` export supports multiple semantic modes (brands). Add additional top-level keys using the `semantic/<brand-name>` pattern:
+The system supports multiple theme/brand combinations. Each combination is built separately:
 
-```json
-{
-  "global": { ... },
-  "semantic/default": { ... },
-  "semantic/brand-purple": { ... }
-}
-```
+| Theme         | Applied via                  |
+| ------------- | ---------------------------- |
+| Default Light | `data-theme="default-light"` |
+| Default Dark  | `data-theme="default-dark"`  |
+| Purple Light  | `data-theme="purple-light"`  |
+| Purple Dark   | `data-theme="purple-dark"`   |
 
-Each brand mode is written to `src/tokens/brands/` and can be used as a source for a per-brand Style Dictionary build configuration.
+To add a new brand, the development team creates a new folder under `tokens/brands/` and adds it to the build script.
 
 ---
 
 ## Available Token Categories
 
-| Category | Example tokens |
-|---|---|
-| Brand colours | `brand-primary`, `brand-hover` |
-| Surface colours | `surface-base`, `surface-muted` |
-| Text colours | `text-base`, `text-muted`, `text-on-brand` |
-| Border | `border-default` |
-| Spacing | `spacing-xs`, `spacing-sm`, `spacing-md`, `spacing-lg`, `spacing-xl` |
-| Border radius | `border-radius-sm`, `border-radius-md`, `border-radius-lg` |
+These are the semantic tokens components use. Reference them in Figma under these categories:
+
+| Category                 | CSS variable examples                                                                      |
+| ------------------------ | ------------------------------------------------------------------------------------------ |
+| Background colours       | `--color-background-primary`, `--color-background-secondary`                               |
+| Text colours             | `--color-text-primary`, `--color-text-secondary`                                           |
+| Border colours           | `--color-border-primary`                                                                   |
+| Spacing                  | `--spacing-1` through `--spacing-8` (0.25rem to 4rem)                                      |
+| Border radius            | `--border-radius-sm`, `--border-radius-md`, `--border-radius-lg`, `--border-radius-full`   |
+| Border width             | `--border-width-sm`, `--border-width-md`                                                   |
+| Typography — font family | `--font-family-sans`, `--font-family-serif`, `--font-family-mono`                          |
+| Typography — font size   | `--font-size-xs` through `--font-size-4xl`                                                 |
+| Typography — font weight | `--font-weight-regular` through `--font-weight-bold`                                       |
+| Line height              | `--line-height-none`, `--line-height-tight`, `--line-height-normal`, `--line-height-loose` |
+| Shadow                   | `--shadow-sm`, `--shadow-md`, `--shadow-lg`                                                |
 
 ---
 
 ## Reviewing the Sync PR
 
-After the sync runs you'll receive a GitHub notification. In the PR you'll find:
+After the sync runs you'll receive a GitHub notification. The PR includes:
 
 - A diff of every changed token
-- Updated CSS variables (`generated/css/variables.css`)
-- Updated TypeScript constants (`generated/ts/tokens.ts`)
+- Updated CSS variable files for all 4 theme combinations:
+  - `generated/css/variables-default-light.css`
+  - `generated/css/variables-default-dark.css`
+  - `generated/css/variables-purple-light.css`
+  - `generated/css/variables-purple-dark.css`
+- Updated TypeScript constants (one file per theme + a `tokens.ts` shorthand)
+- Any naming convention violations logged as warnings
 
-**When ready:** Approve and merge. The tokens will be live in the next deployment.
+**When ready:** Approve and merge. The tokens will be live after CI completes.
 
 ---
 
 ## Merge Policy
 
-- A new sync **closes the previous open PR** and creates a fresh one
-- If a PR is auto-closed, just push a new `figma.json` or trigger a manual sync
+- A new sync **closes any previous open PR** on `tokens/figma-sync` and creates a fresh one
+- PRs that remain unmerged for **7 days** are automatically closed — trigger a new sync if needed
 
 ---
 
@@ -135,7 +129,7 @@ After the sync runs you'll receive a GitHub notification. In the PR you'll find:
 Reverting is done through Figma — not through git.
 
 1. Update the token in Figma to its previous value.
-2. Export a new `figma.json` and commit it.
+2. Trigger a new sync from GitHub Actions.
 3. A new PR will be created — review and merge it.
 
 ---
@@ -143,4 +137,3 @@ Reverting is done through Figma — not through git.
 ## Questions
 
 For anything token-related, tag `@design-team` in the PR or open an issue in the repository.
-

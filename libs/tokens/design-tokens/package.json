@@ -16,6 +16,18 @@
       "types": "./src/generated/ts/tokens.d.ts",
       "default": "./src/generated/ts/tokens.ts"
     },
+    "./generated/css/variables-default-light.css": {
+      "default": "./src/generated/css/variables-default-light.css"
+    },
+    "./generated/css/variables-default-dark.css": {
+      "default": "./src/generated/css/variables-default-dark.css"
+    },
+    "./generated/css/variables-purple-light.css": {
+      "default": "./src/generated/css/variables-purple-light.css"
+    },
+    "./generated/css/variables-purple-dark.css": {
+      "default": "./src/generated/css/variables-purple-dark.css"
+    },
     "./css": {
       "default": "./src/generated/css/variables.css"
     }

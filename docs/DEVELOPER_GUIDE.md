@@ -29,18 +29,18 @@ npx nx run design-tokens:build
 
 All application commands go through Nx.
 
-| What | Command |
-|---|---|
-| Docs site (dev server) | `npx nx run docs:dev` |
-| Storybook | `npx nx run quartz-ui:storybook` |
-| Build tokens | `npx nx run design-tokens:build` |
-| Unit tests | `npx nx run <project>:test` |
-| Lint | `npx nx run <project>:lint` |
-| E2E tests | `npx nx run docs-e2e:e2e` |
-| Run all tests | `npx nx run-many -t test` |
-| Run all builds | `npx nx run-many -t build` |
-| Build affected only | `npx nx affected -t build` |
-| Test affected only | `npx nx affected -t test` |
+| What                | Command                             |
+| ------------------- | ----------------------------------- |
+| Storybook           | `npx nx run quartz-ui:storybook`    |
+| Build UI library    | `npx nx run quartz-ui:build`        |
+| Regenerate tokens   | `npx nx run design-tokens:generate` |
+| Build tokens        | `npx nx run design-tokens:build`    |
+| Unit tests          | `npx nx run <project>:test`         |
+| Lint                | `npx nx run <project>:lint`         |
+| Run all tests       | `npx nx run-many -t test`           |
+| Run all builds      | `npx nx run-many -t build`          |
+| Build affected only | `npx nx affected -t build`          |
+| Test affected only  | `npx nx affected -t test`           |
 
 > Never run `npm start`, `npm test`, or similar root-level scripts to run applications. Always use Nx.
 
@@ -50,9 +50,7 @@ All application commands go through Nx.
 
 ```
 nx-enterprise/
-├── apps/
-│   ├── docs/             # Next.js documentation site
-│   └── docs-e2e/         # Playwright E2E tests
+├── apps/                 # Reserved for future applications
 ├── libs/
 │   ├── tokens/
 │   │   └── design-tokens/ # Design tokens (@thatguycodes/design-tokens)
@@ -60,9 +58,107 @@ nx-enterprise/
 │       └── quartz-ui/     # React component library (@thatguycodes/quartz-ui)
 ├── docs/                 # All project documentation
 └── .github/
-
     └── workflows/        # CI/CD pipelines
 ```
+
+---
+
+## Design Token System
+
+### Overview
+
+Tokens are built using [Style Dictionary](https://styledictionary.com/) in [DTCG format](https://tr.designtokens.org/format/) and output to multiple platforms.
+
+### Token Structure
+
+```
+libs/tokens/design-tokens/src/tokens/
+├── base/          # Primitive/core values (color, spacing, typography, etc.)
+├── semantic/      # Theme-aware mappings (light.json, dark.json)
+└── brands/        # Brand overrides per theme
+    ├── default/   # Default brand (light.json, dark.json)
+    └── purple/    # Purple brand (light.json, dark.json)
+```
+
+**Never edit base or semantic JSON files manually** — they are auto-generated from Figma.
+
+### Themes
+
+The build produces 4 theme combinations, applied via a `data-theme` attribute:
+
+| Theme         | Selector                     |
+| ------------- | ---------------------------- |
+| Default Light | `data-theme="default-light"` |
+| Default Dark  | `data-theme="default-dark"`  |
+| Purple Light  | `data-theme="purple-light"`  |
+| Purple Dark   | `data-theme="purple-dark"`   |
+
+The default light theme variables are also output as `:root` in `variables.css` for backwards compatibility.
+
+### Build Outputs
+
+Running `npx nx run design-tokens:build` generates the following under `src/generated/`:
+
+| Format               | Path                                            | Use Case                    |
+| -------------------- | ----------------------------------------------- | --------------------------- |
+| CSS variables        | `generated/css/variables-<brand>-<theme>.css`   | Web (theme switching)       |
+| CSS (default)        | `generated/css/variables.css`                   | Web (`:root` fallback)      |
+| SCSS variables       | `generated/scss/variables-<brand>-<theme>.scss` | SCSS-based projects         |
+| TypeScript           | `generated/ts/tokens-<brand>-<theme>.ts`        | JS/TS consumers             |
+| TypeScript (default) | `generated/ts/tokens.ts`                        | Shorthand for default-light |
+| Android XML          | `generated/android/`                            | Android native              |
+| iOS Swift            | `generated/ios/`                                | iOS native                  |
+
+### Generate vs Build
+
+| Command                             | What it does                                                       |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| `npx nx run design-tokens:generate` | Clears and re-runs Style Dictionary only                           |
+| `npx nx run design-tokens:build`    | Runs `generate`, then compiles TypeScript and packages the library |
+
+Use `generate` when iterating on token files locally. Use `build` before publishing or when other packages depend on the compiled output.
+
+### Consuming Tokens
+
+**In CSS Modules (Web):**
+
+```css
+/* Always use semantic tokens, not core tokens */
+.button {
+  background-color: var(--color-background-primary);
+}
+```
+
+**In TypeScript:**
+
+```ts
+import { colorBackgroundPrimary } from '@thatguycodes/design-tokens';
+```
+
+**CSS import (default light theme only):**
+
+```ts
+import '@thatguycodes/design-tokens/css';
+```
+
+**Per-theme CSS imports:**
+
+```ts
+import '@thatguycodes/design-tokens/generated/css/variables-default-light.css';
+import '@thatguycodes/design-tokens/generated/css/variables-default-dark.css';
+import '@thatguycodes/design-tokens/generated/css/variables-purple-light.css';
+import '@thatguycodes/design-tokens/generated/css/variables-purple-dark.css';
+```
+
+### Token Workflow (Figma-first)
+
+```
+Figma → GitHub Actions (Figma Token Sync) → PR (tokens/figma-sync branch) → design review → merge → auto-build
+```
+
+To update tokens, trigger the **"Figma Token Sync"** workflow from the GitHub Actions tab. It will open a PR on the `tokens/figma-sync` branch for review.
+
+Token naming in Figma must follow **kebab-case with at least one group**: `color-primary`, `spacing-md`.
 
 ---
 
@@ -72,13 +168,13 @@ This project uses a **trunk-based** workflow with short-lived feature branches.
 
 ### Branches
 
-| Branch | Purpose |
-|---|---|
-| `main` | Production-ready code. Protected — no direct pushes. |
-| `feat/<description>` | New feature |
-| `fix/<description>` | Bug fix |
-| `chore/<description>` | Maintenance, dependency updates, config changes |
-| `tokens/figma-sync` | Reserved for automated Figma token sync PRs. Do not use manually. |
+| Branch                | Purpose                                                           |
+| --------------------- | ----------------------------------------------------------------- |
+| `main`                | Production-ready code. Protected — no direct pushes.              |
+| `feat/<description>`  | New feature                                                       |
+| `fix/<description>`   | Bug fix                                                           |
+| `chore/<description>` | Maintenance, dependency updates, config changes                   |
+| `tokens/figma-sync`   | Reserved for automated Figma token sync PRs. Do not use manually. |
 
 ### Flow
 
@@ -122,33 +218,32 @@ This project follows [Conventional Commits](https://www.conventionalcommits.org/
 
 ### Types
 
-| Type | When to use |
-|---|---|
-| `feat` | A new feature |
-| `fix` | A bug fix |
-| `chore` | Build process, tooling, dependencies |
-| `docs` | Documentation changes only |
+| Type       | When to use                                     |
+| ---------- | ----------------------------------------------- |
+| `feat`     | A new feature                                   |
+| `fix`      | A bug fix                                       |
+| `chore`    | Build process, tooling, dependencies            |
+| `docs`     | Documentation changes only                      |
 | `refactor` | Code change that is neither a fix nor a feature |
-| `test` | Adding or updating tests |
-| `style` | Formatting, whitespace (no logic change) |
-| `perf` | Performance improvement |
+| `test`     | Adding or updating tests                        |
+| `style`    | Formatting, whitespace (no logic change)        |
+| `perf`     | Performance improvement                         |
 
 ### Scopes
 
 Use the project name from `project.json` as the scope.
 
-| Scope | Project |
-|---|---|
+| Scope           | Project                     |
+| --------------- | --------------------------- |
 | `design-tokens` | `libs/tokens/design-tokens` |
-| `quartz-ui` | `libs/ui/quartz-ui` |
-| `docs` | `apps/docs` |
+| `quartz-ui`     | `libs/ui/quartz-ui`         |
 
 ### Examples
 
 ```
 feat(quartz-ui): add Button size variants
 fix(design-tokens): correct spacing-xl value
-chore(docs): upgrade Next.js to 16.1
+chore(quartz-ui): upgrade Storybook to 10.x
 test(quartz-ui): add Button accessibility tests
 docs: update developer guide
 refactor(design-tokens): simplify build script
@@ -164,7 +259,7 @@ refactor(design-tokens): simplify build script
 ```
 feat(tokens): rename brand tokens
 
-BREAKING CHANGE: --brand-primary renamed to --color-brand-primary.
+BREAKING CHANGE: --brand-primary renamed to --color-background-primary.
 Update all component stylesheets accordingly.
 ```
 
@@ -174,32 +269,32 @@ Update all component stylesheets accordingly.
 
 Releases are strictly managed via **Nx Release** and our CI/CD pipeline.
 
-### 🤖 Automated Release (Recommended)
+### Automated Release (Recommended)
 
 Releases are automatically triggered when merging to `main`. The CI pipeline will:
 
-1.  Calculate new versions based on [Conventional Commits](https://www.conventionalcommits.org/).
-2.  Generate CHANGELOGs.
-3.  Create git tags.
-4.  Publish packages to npm.
+1. Calculate new versions based on [Conventional Commits](https://www.conventionalcommits.org/).
+2. Generate CHANGELOGs.
+3. Create git tags.
+4. Publish packages to npm.
 
 **To trigger a release:**
 Simply merge a Pull Request to `main` with a meaningful conventional commit message (e.g., `feat:`, `fix:`).
 
-### 🛠️ Manual Release (Maintainers Only)
+### Manual Release (Maintainers Only)
 
 Local release commands should **only** be used by maintainers in emergency situations or for debugging.
 
-1.  **Ensure Clean State**: Pull latest `main` and ensure working tree is clean.
-2.  **Dry Run**: Always verify what will happen first.
-    ```bash
-    npx nx release --dry-run
-    ```
-3.  **Perform Release**:
-    ```bash
-    # This will prompt for version bumps and OTPs
-    npx nx release
-    ```
+1. **Ensure Clean State**: Pull latest `main` and ensure working tree is clean.
+2. **Dry Run**: Always verify what will happen first.
+   ```bash
+   npx nx release --dry-run
+   ```
+3. **Perform Release**:
+   ```bash
+   # This will prompt for version bumps and OTPs
+   npx nx release
+   ```
 
 > **Note**: You must have a valid `NPM_TOKEN` or be logged in to npm with access to the `@thatguycodes` organization.
 
@@ -215,17 +310,28 @@ npx nx reset
 
 ## Troubleshooting
 
-**Token changes not showing in the browser**
-1. Rebuild: `npx nx run design-tokens:build`
-2. Restart the dev server: `npx nx run docs:dev`
+**Token changes not showing in Storybook**
+
+1. Regenerate: `npx nx run design-tokens:generate`
+2. Restart Storybook: `npx nx run quartz-ui:storybook`
 3. Hard-refresh the browser
 
 **Storybook fails to start**
 Kill any process already on the Storybook port, then retry:
+
 ```bash
 pkill -f storybook
 npx nx run quartz-ui:storybook
 ```
 
-**CSS variables not defined**
-Confirm `variables.css` is imported in `apps/docs/src/app/layout.tsx` and in `.storybook/preview.ts`.
+**CSS variables not defined in Storybook**
+Confirm all four theme CSS files are imported in `libs/ui/quartz-ui/.storybook/preview.ts`:
+
+```ts
+import '../../../tokens/design-tokens/src/generated/css/variables-default-light.css';
+import '../../../tokens/design-tokens/src/generated/css/variables-default-dark.css';
+import '../../../tokens/design-tokens/src/generated/css/variables-purple-light.css';
+import '../../../tokens/design-tokens/src/generated/css/variables-purple-dark.css';
+```
+
+If the CSS files are missing, run `npx nx run design-tokens:generate` first.

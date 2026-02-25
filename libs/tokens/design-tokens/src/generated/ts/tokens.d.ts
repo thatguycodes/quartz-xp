@@ -1,0 +1,75 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+export const borderWidthSm: string;
+export const borderWidthMd: string;
+export const borderRadiusSm: string;
+export const borderRadiusMd: string;
+export const borderRadiusLg: string;
+export const borderRadiusFull: string;
+export const colorObsidian: string;
+export const colorDeepObsidian: string;
+export const colorMidnightGray: string;
+export const colorCharcoal: string;
+export const colorSteelGray: string;
+export const colorDarkGray: string;
+export const colorMutedSilver: string;
+export const colorGainsboro: string;
+export const colorWhite: string;
+export const colorElectricCyan: string;
+export const colorVividPurple: string;
+export const colorBackgroundPrimary: string;
+export const colorBackgroundSecondary: string;
+export const colorTextPrimary: string;
+export const colorTextSecondary: string;
+export const colorBorderPrimary: string;
+export const fontFamilySans: string[];
+export const fontFamilySerif: string[];
+export const fontFamilyMono: string[];
+export const fontSizeXs: string;
+export const fontSizeSm: string;
+export const fontSizeBase: string;
+export const fontSizeLg: string;
+export const fontSizeXl: string;
+export const fontSize2xl: string;
+export const fontSize3xl: string;
+export const fontSize4xl: string;
+export const fontWeightRegular: string;
+export const fontWeightMedium: string;
+export const fontWeightSemibold: string;
+export const fontWeightBold: string;
+export const lineHeightNone: string;
+export const lineHeightTight: string;
+export const lineHeightNormal: string;
+export const lineHeightLoose: string;
+export const shadowSm: {
+  color: string;
+  offsetX: string;
+  offsetY: string;
+  blur: string;
+  spread: string;
+};
+export const shadowMd: {
+  color: string;
+  offsetX: string;
+  offsetY: string;
+  blur: string;
+  spread: string;
+};
+export const shadowLg: {
+  color: string;
+  offsetX: string;
+  offsetY: string;
+  blur: string;
+  spread: string;
+};
+export const spacing0: string;
+export const spacing1: string;
+export const spacing2: string;
+export const spacing3: string;
+export const spacing4: string;
+export const spacing5: string;
+export const spacing6: string;
+export const spacing7: string;
+export const spacing8: string;

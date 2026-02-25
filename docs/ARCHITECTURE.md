@@ -1,4 +1,4 @@
- # 🏛️ Architecture Documentation
+# 🏛️ Architecture Documentation
 
 ## Table of Contents
 
@@ -11,7 +11,7 @@
 7. [Application Layer](#application-layer)
 8. [Build Pipeline](#build-pipeline)
 9. [Development Workflow](#development-workflow)
-10. [Figma-First Token Sync](#figma-first-token-sync) ⭐ **NEW**
+10. [Figma-First Token Sync](#figma-first-token-sync)
 11. [Architectural Decision Records](#architectural-decision-records)
 
 ---
@@ -24,8 +24,8 @@ This Nx Enterprise monorepo implements a **token-first design system** architect
 
 - **Design Tokens Layer** (`libs/tokens/design-tokens`): Source of truth for all design decisions
 - **UI Component Library** (`libs/ui/quartz-ui`): Reusable React components styled with CSS Modules
-- **Applications Layer** (`apps/docs`): Next.js documentation site consuming shared libraries
-- **Testing Infrastructure**: Unit tests (Jest) and E2E tests (Playwright)
+- **Applications Layer** (`apps/`): Reserved for future applications (not yet implemented)
+- **Testing Infrastructure**: Unit tests (Jest)
 
 ---
 
@@ -46,20 +46,24 @@ Traditional web development faces several challenges:
 Our architecture addresses these challenges through:
 
 #### 1. **Single Source of Truth (Tokens)**
+
 - All design decisions (colors, spacing, typography) defined once in JSON
 - Tokens generate both CSS variables and TypeScript constants
 - Changes cascade automatically to all consumers
 - Designers and developers reference the same token definitions
 
 #### 2. **Layered Abstraction**
+
 ```mermaid
 graph TD
-    A["Primitive Tokens<br/>(core.json)"] -->|defines values| B["Semantic Tokens<br/>(semantic.json)"]
-    B -->|used by| C["UI Components<br/>(Button, Card, etc.)"]
+    A["Base Tokens<br/>(base/*.json)"] -->|defines values| B["Semantic Tokens<br/>(semantic/light.json, dark.json)"]
+    B -->|composed into| E["Brand Tokens<br/>(brands/default/, brands/purple/)"]
+    E -->|used by| C["UI Components<br/>(Button, Card, etc.)"]
     C -->|consumed by| D["Applications<br/>(Web, Mobile, etc.)"]
 ```
 
 #### 3. **Monorepo Benefits**
+
 - **Code Sharing**: Libraries shared across multiple applications
 - **Atomic Changes**: Update component + all consumers in single PR
 - **Type Safety**: TypeScript ensures consistency across boundaries
@@ -67,6 +71,7 @@ graph TD
 - **Coordinated Releases**: All packages versioned together
 
 #### 4. **Separation of Concerns**
+
 - **Tokens**: What (design decisions)
 - **Components**: How (implementation)
 - **Applications**: Where (usage context)
@@ -82,6 +87,7 @@ graph TD
 **Why**: Enables consistent theming, easy design updates, and prevents design drift.
 
 **Example**:
+
 ```css
 /* ❌ Wrong - Hard-coded values */
 .button {
@@ -91,8 +97,8 @@ graph TD
 
 /* ✅ Correct - Token references */
 .button {
-  background-color: var(--brand-primary);
-  padding: var(--spacing-md);
+  background-color: var(--color-background-primary);
+  padding: var(--spacing-4);
 }
 ```
 
@@ -103,6 +109,7 @@ graph TD
 **Why**: Lower layers are stable and rarely change; higher layers adapt to specific needs.
 
 **Flow**:
+
 1. Define primitive values (hex colors, pixel values)
 2. Create semantic aliases (brand-primary, spacing-md)
 3. Build components using semantic tokens
@@ -115,10 +122,9 @@ graph TD
 **Why**: Prevents circular dependencies, enables independent development, improves build times.
 
 **Structure**:
+
 ```
-apps/           # Deployable applications
-  docs/         # Next.js documentation site
-  docs-e2e/     # E2E tests for docs
+apps/           # Reserved for future deployable applications
 libs/           # Shared libraries
   tokens/       # Design system tokens
     design-tokens/
@@ -133,10 +139,12 @@ libs/           # Shared libraries
 **Why**: Provides flexibility in output formats (CSS, TypeScript, JSON) and enables validation.
 
 **Process**:
-1. Define tokens in JSON (developer-friendly)
+
+1. Define tokens in JSON (developer-friendly, DTCG format)
 2. Style Dictionary processes tokens
-3. Generate CSS variables (browser-friendly)
+3. Generate CSS variables per theme and brand combination
 4. Generate TypeScript constants (type-safe)
+5. Generate SCSS variables, Android XML, and iOS Swift output
 
 ---
 
@@ -146,61 +154,62 @@ libs/           # Shared libraries
 
 ```mermaid
 graph TD
-    subgraph apps["Applications Layer"]
-        web["Next.js Web App"]
+    subgraph apps["Applications Layer (Future)"]
+        web["Web App"]
         mobile["Mobile App"]
-        future["Future Apps"]
+        future["Other Apps"]
     end
-    
+
     subgraph shared["Shared Libraries Layer"]
         subgraph ui["@thatguycodes/quartz-ui"]
             button["Button"]
             card["Card"]
-            input["Input"]
             more["..."]
         end
-        
+
         subgraph tokens["@thatguycodes/design-tokens"]
-            subgraph generated["Generated Assets<br/>(Build-time)"]
-                css["variables.css<br/>(CSS Custom Properties)"]
-                ts["tokens.ts<br/>(TypeScript constants)"]
+            subgraph generated["Generated Assets (Build-time)"]
+                css["variables-<brand>-<theme>.css"]
+                ts["tokens.ts (TypeScript constants)"]
+                other["scss/, android/, ios/"]
             end
-            
-            subgraph source["Source Tokens<br/>(JSON)"]
-                core["core.json<br/>(Primitives)"]
-                semantic["semantic.json<br/>(Semantic aliases)"]
+
+            subgraph source["Source Tokens (JSON — auto-generated from Figma)"]
+                base["base/*.json (Primitives)"]
+                semantic["semantic/light.json, dark.json"]
+                brands["brands/default/, brands/purple/"]
             end
-            
+
             source -->|processes| generated
         end
     end
-    
+
     web -->|imports| ui
     mobile -->|imports| ui
     future -->|imports| ui
-    
+
     ui -->|imports| tokens
 ```
 
 ### Data Flow
 
-1. **Token Definition** (Developer)
-   - Modify `core.json` or `semantic.json`
-   - Define primitive values or semantic aliases
+1. **Token Definition** (Design Team in Figma)
+   - Modify tokens in Figma following kebab-case naming conventions
+   - Trigger "Figma Token Sync" from GitHub Actions
 
 2. **Build Process** (Style Dictionary)
-   - Parse JSON token files
+   - Parse JSON token files (base, semantic, brand layers)
    - Apply transformations (kebab-case for CSS, camelCase for TS)
-   - Generate output files
+   - Generate output files for CSS, SCSS, TypeScript, Android, iOS
 
 3. **Component Development** (Developer)
    - Import CSS variables in component styles
    - Reference tokens via `var(--token-name)`
    - Build type-safe components
 
-4. **Application Integration** (Developer)
+4. **Application Integration** (Future)
    - Import components from `@thatguycodes/quartz-ui`
-   - Import `variables.css` in root layout
+   - Import per-theme CSS or `@thatguycodes/design-tokens/css` in root layout
    - Compose application pages
 
 ---
@@ -209,114 +218,179 @@ graph TD
 
 ### Architecture
 
-The token system is built on **Style Dictionary**, a build-time tool that transforms design tokens from JSON into multiple platform-specific formats.
+The token system is built on **Style Dictionary v5**, a build-time tool that transforms design tokens from JSON ([DTCG format](https://tr.designtokens.org/format/)) into multiple platform-specific formats.
 
 ### Token Layers
 
-#### Layer 1: Core Tokens (Primitives)
+```
+libs/tokens/design-tokens/src/tokens/
+├── base/               # Primitive values — auto-generated from Figma
+│   ├── border.json
+│   ├── color.json
+│   ├── font-family.json
+│   ├── font-size.json
+│   ├── font-weight.json
+│   ├── line-height.json
+│   ├── shadow.json
+│   └── spacing.json
+├── semantic/           # Theme-aware aliases — auto-generated from Figma
+│   ├── light.json
+│   └── dark.json
+└── brands/             # Brand overrides per theme
+    ├── default/
+    │   ├── light.json
+    │   └── dark.json
+    └── purple/
+        ├── light.json
+        └── dark.json
+```
 
-**File**: `libs/tokens/design-tokens/src/tokens/core.json`
+> **Never manually edit these JSON files.** They are auto-generated from Figma via the token sync workflow.
+
+#### Layer 1: Base Tokens (Primitives)
+
+**Files**: `libs/tokens/design-tokens/src/tokens/base/*.json`
 
 **Purpose**: Define raw, context-agnostic values.
 
-**Example**:
+**Example** (`base/color.json`):
+
 ```json
 {
   "color": {
-    "blue": {
-      "600": { "value": "#2563eb" }
-    }
-  },
-  "spacing": {
-    "md": { "value": "16px" }
+    "charcoal": { "$type": "color", "$value": "#1a1a1a" },
+    "gainsboro": { "$type": "color", "$value": "#f5f5f5" },
+    "vivid-purple": { "$type": "color", "$value": "#7000ff" }
   }
 }
 ```
 
 **Characteristics**:
+
 - Never reference other tokens
 - Rarely change
 - Platform-agnostic
 - Named by physical properties
 
-#### Layer 2: Semantic Tokens (Aliases)
+#### Layer 2: Semantic Tokens (Theme Aliases)
 
-**File**: `libs/tokens/design-tokens/src/tokens/semantic.json`
+**Files**: `libs/tokens/design-tokens/src/tokens/semantic/light.json`, `dark.json`
 
-**Purpose**: Create meaningful, context-aware aliases to core tokens.
+**Purpose**: Create meaningful, context-aware aliases to base tokens, split by light/dark theme.
 
-**Example**:
+**Example** (`semantic/light.json`):
+
 ```json
 {
-  "brand": {
-    "primary": { "value": "{color.blue.600}" }
-  },
-  "text": {
-    "base": { "value": "{color.gray.700}" }
+  "color": {
+    "background": {
+      "primary": { "$type": "color", "$value": "{color.white}" }
+    },
+    "text": {
+      "primary": { "$type": "color", "$value": "{color.charcoal}" }
+    }
   }
 }
 ```
 
 **Characteristics**:
-- Reference core tokens using `{token.path}`
+
+- Reference base tokens using `{token.path}` syntax
 - Named by purpose/intent
-- Changes affect specific contexts
+- Separate files per theme (light, dark)
 - Enable theming and customization
+
+#### Layer 3: Brand Tokens (Overrides)
+
+**Files**: `libs/tokens/design-tokens/src/tokens/brands/<brand>/<theme>.json`
+
+**Purpose**: Override semantic tokens for a specific brand identity.
+
+**Example** (`brands/purple/light.json`):
+
+```json
+{
+  "color": {
+    "background": {
+      "primary": { "$type": "color", "$value": "{color.vivid-purple}" }
+    }
+  }
+}
+```
 
 ### Build Pipeline
 
-**Command**: `npx nx run design-tokens:build`
+**Targets**:
+
+- `npx nx run design-tokens:generate` — runs Style Dictionary only
+- `npx nx run design-tokens:build` — runs generate + compiles TypeScript
 
 **Process**:
-1. Script `scripts/build-tokens.mjs` runs
-2. Style Dictionary loads source JSON files
-3. Tokens are processed through transforms:
-   - `name/kebab` for CSS (e.g., `brand-primary`)
-   - `name/camel` for TypeScript (e.g., `brandPrimary`)
-4. Output files generated:
-   - `generated/css/variables.css`: CSS custom properties
-   - `generated/ts/tokens.ts`: TypeScript constants
-   - `generated/ts/tokens.d.ts`: TypeScript type definitions
 
-**Output Example** (`variables.css`):
+1. Script `scripts/build-tokens.mjs` runs for each of 4 theme/brand combinations
+2. Style Dictionary loads base + semantic + brand JSON files
+3. Tokens processed through transforms (kebab-case → CSS, camelCase → TS)
+4. Output files generated per platform
+
+**Themes built**: `default-light`, `default-dark`, `purple-light`, `purple-dark`
+
+**Output** (`src/generated/`):
+
+| Platform               | Files                                          | Selector                         |
+| ---------------------- | ---------------------------------------------- | -------------------------------- |
+| CSS                    | `css/variables-<brand>-<theme>.css`            | `[data-theme="<brand>-<theme>"]` |
+| CSS (default fallback) | `css/variables.css`                            | `:root`                          |
+| SCSS                   | `scss/variables-<brand>-<theme>.scss`          | —                                |
+| TypeScript             | `ts/tokens-<brand>-<theme>.ts` + `.d.ts`       | —                                |
+| TypeScript (default)   | `ts/tokens.ts` + `.d.ts`                       | —                                |
+| Android                | `android/colors-*.xml`, `android/dimens-*.xml` | —                                |
+| iOS                    | `ios/Tokens-*.swift`                           | —                                |
+
+**CSS output example** (`variables-default-light.css`):
+
 ```css
-:root {
-  --color-blue-600: #2563eb;
-  --spacing-md: 16px;
-  --brand-primary: #2563eb;
-  --text-base: #374151;
+[data-theme='default-light'] {
+  --color-charcoal: #1a1a1a;
+  --color-background-primary: #ffffff;
+  --color-text-primary: #1a1a1a;
+  --spacing-1: 0.25rem;
+  --spacing-4: 1rem;
+  --border-radius-md: 0.5rem;
 }
 ```
 
 ### Token Consumption
 
 #### In CSS Modules
+
 ```css
 .button {
-  background-color: var(--brand-primary);
-  padding: var(--spacing-md);
-  color: var(--text-on-brand);
+  background-color: var(--color-background-primary);
+  padding: var(--spacing-2) var(--spacing-4);
+  color: var(--color-text-primary);
+  border-radius: var(--border-radius-md);
 }
 ```
 
 #### In TypeScript
+
 ```typescript
-import { brandPrimary, spacingMd } from '@thatguycodes/design-tokens';
+import { colorBackgroundPrimary, spacing4 } from '@thatguycodes/design-tokens';
 
 const inlineStyles = {
-  backgroundColor: brandPrimary,
-  padding: spacingMd,
+  backgroundColor: colorBackgroundPrimary,
+  padding: spacing4,
 };
 ```
 
 ### Why This Implementation?
 
-1. **Single Source of Truth**: JSON files are the authority
-2. **Multi-Platform**: Same tokens generate CSS, TS, iOS, Android formats
+1. **Single Source of Truth**: Figma → JSON → all platforms
+2. **Multi-Platform**: Same tokens generate CSS, TS, SCSS, iOS, Android
 3. **Build-Time Safety**: Errors caught during build, not runtime
 4. **Type Safety**: TypeScript constants provide autocomplete and validation
-5. **Version Control**: Token changes are trackable in Git
-6. **Scalability**: Adding new tokens or platforms is straightforward
+5. **Version Control**: Token changes are trackable in Git via sync PRs
+6. **Multi-Theme**: 4 theme combinations supported via `data-theme` attribute
 
 ---
 
@@ -343,6 +417,7 @@ libs/ui/quartz-ui/src/lib/button/
 **Why**: Prevents style collisions, enables tree-shaking, co-locates styles with components.
 
 **Example**:
+
 ```typescript
 // Button.tsx
 import styles from './Button.module.css';
@@ -359,12 +434,13 @@ export function Button({ variant = 'primary', children }) {
 ```css
 /* Button.module.css */
 .button {
-  background-color: var(--brand-primary);
-  padding: var(--spacing-md);
+  background-color: var(--color-background-primary);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: var(--border-radius-md);
 }
 
 .button.secondary {
-  background-color: var(--surface-muted);
+  background-color: var(--color-background-secondary);
 }
 ```
 
@@ -373,6 +449,7 @@ export function Button({ variant = 'primary', children }) {
 **Why**: Provides flexibility while maintaining consistency with design system.
 
 **Pattern**:
+
 ```typescript
 export interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
@@ -385,6 +462,7 @@ export interface ButtonProps {
 **Why**: Enables complex UIs without bloated component APIs.
 
 **Example**:
+
 ```typescript
 // Instead of <Button leftIcon={<Icon />} rightIcon={<Icon />} />
 // Use composition:
@@ -407,29 +485,35 @@ export interface ButtonProps {
 ### Storybook Integration
 
 **Why Storybook?**
+
 - Visual testing and documentation
 - Interactive component playground
 - Isolated development environment
 - Design system catalog
 
 **Configuration**: `.storybook/main.ts` and `.storybook/preview.ts` set up Storybook with:
+
 - CSS Modules support
-- Token CSS imported globally
+- All 4 theme CSS files imported globally
+- Theme switching via `data-theme` attribute (using `@storybook/addon-themes`)
 - Vite-based build for fast HMR
 
 ---
 
 ## Application Layer
 
+> The `apps/` directory is currently empty — reserved for future applications. This section describes the intended architecture when applications are added.
+
 ### Next.js Architecture
 
-The docs application (`apps/docs`) uses **Next.js App Router** architecture.
+Future applications will use **Next.js App Router** architecture, consuming `@thatguycodes/quartz-ui` and `@thatguycodes/design-tokens`.
 
 ### Key Decisions
 
 #### 1. App Router (vs Pages Router)
 
 **Why**:
+
 - React Server Components for better performance
 - Native layouts and nested routing
 - Streaming and Suspense support
@@ -438,6 +522,7 @@ The docs application (`apps/docs`) uses **Next.js App Router** architecture.
 #### 2. CSS Modules for Page Styles
 
 **Why**:
+
 - Consistent with component library
 - No additional dependencies (Tailwind, styled-components)
 - Full CSS features and browser compatibility
@@ -445,23 +530,25 @@ The docs application (`apps/docs`) uses **Next.js App Router** architecture.
 
 #### 3. Token Integration
 
-**How**: Import `variables.css` in root layout:
+**How**: Import per-theme CSS in root layout:
+
 ```typescript
-// apps/docs/src/app/layout.tsx
-import '@thatguycodes/design-tokens/css';
+// apps/<name>/src/app/layout.tsx
+import '@thatguycodes/design-tokens/generated/css/variables-default-light.css';
+import '@thatguycodes/design-tokens/generated/css/variables-default-dark.css';
+// ... etc for all themes
 ```
 
-**Result**: All CSS custom properties available globally in app.
+**Result**: All CSS custom properties available globally, theme switched via `data-theme` on `<html>`.
 
-### Application Structure
+### Application Structure (Planned)
 
 ```
-apps/docs/src/app/
-  ├── layout.tsx        # Root layout (imports tokens)
+apps/<name>/src/app/
+  ├── layout.tsx        # Root layout (imports tokens, sets data-theme)
   ├── page.tsx          # Home page
   ├── global.css        # Global styles
-  ├── page.module.css   # Page-specific styles
-  └── api/              # API routes
+  └── page.module.css   # Page-specific styles
 ```
 
 ### Component Consumption
@@ -499,7 +586,7 @@ graph TD
     tokens["tokens:build"]
     ui["ui:build<br/>(depends on tokens)"]
     web["web:build<br/>(depends on ui, tokens)"]
-    
+
     tokens --> ui
     tokens --> web
     ui --> web
@@ -507,14 +594,13 @@ graph TD
 
 ### Key Commands
 
-| Task | Command | Purpose |
-|------|---------|---------|
-| Build tokens | `npx nx run design-tokens:build` | Generate CSS/TS from JSON |
-| Build UI | `npx nx run quartz-ui:build` | Compile component library |
-| Build docs | `npx nx run docs:build` | Build Next.js production bundle |
-| Test all | `npx nx run <project>:test` | Run Jest unit tests |
-| E2E tests | `npx nx run docs-e2e:e2e` | Run Playwright E2E tests |
-| Storybook | `npx nx run quartz-ui:storybook` | Launch component gallery |
+| Task            | Command                             | Purpose                       |
+| --------------- | ----------------------------------- | ----------------------------- |
+| Generate tokens | `npx nx run design-tokens:generate` | Re-run Style Dictionary       |
+| Build tokens    | `npx nx run design-tokens:build`    | Generate + compile TypeScript |
+| Build UI        | `npx nx run quartz-ui:build`        | Compile component library     |
+| Test all        | `npx nx run-many -t test`           | Run all Jest unit tests       |
+| Storybook       | `npx nx run quartz-ui:storybook`    | Launch component gallery      |
 
 ### CI/CD Integration
 
@@ -533,6 +619,7 @@ The architecture supports automated workflows:
 ### Build Optimization
 
 Nx optimizes builds through:
+
 - **Computation Caching**: Cache task results locally and remotely
 - **Affected Analysis**: `nx affected:build` only builds changed projects
 - **Distributed Task Execution**: Parallelize across machines (Nx Cloud)
@@ -545,40 +632,37 @@ Nx optimizes builds through:
 
 **When**: Need a new color, spacing, or design value.
 
+> Tokens are managed Figma-first. **Do not edit JSON files manually.**
+
 **Steps**:
-1. Edit `libs/tokens/design-tokens/src/tokens/core.json` (primitive) or `semantic.json` (alias)
-2. Add new token:
-   ```json
-   {
-     "color": {
-       "purple": {
-         "500": { "value": "#8b5cf6" }
-       }
-     }
-   }
-   ```
-3. Run `npx nx run design-tokens:build`
-4. Verify in `generated/css/variables.css`
-5. Use in components: `var(--color-purple-500)`
+
+1. Add the token in Figma following kebab-case naming conventions
+2. Trigger the "Figma Token Sync" workflow from GitHub Actions
+3. Review and merge the generated PR on `tokens/figma-sync`
+4. After merge, `design-tokens:build` runs in CI automatically
+5. Use the new token in components: `var(--your-new-token)`
 
 ### Adding a New Component
 
 **When**: Need a reusable UI element.
 
 **Steps**:
+
 1. Generate component:
+
    ```bash
    npx nx g @nx/react:component Card --project=quartz-ui
    ```
 
 2. Implement with tokens:
+
    ```css
    /* Card.module.css */
    .card {
-     background: var(--surface-base);
-     border: 1px solid var(--border-default);
+     background: var(--color-background-secondary);
+     border: var(--border-width-sm) solid var(--color-border-primary);
      border-radius: var(--border-radius-md);
-     padding: var(--spacing-lg);
+     padding: var(--spacing-5);
    }
    ```
 
@@ -589,31 +673,31 @@ Nx optimizes builds through:
 
 ### Adding a New Page
 
-**When**: Creating new functionality in the docs app.
+> **No applications currently exist.** This workflow applies once an app is added under `apps/`.
+
+**When**: Creating new functionality in an application.
 
 **Steps**:
-1. Create route in `apps/docs/src/app/`
-   - File: `about/page.tsx`
-   
+
+1. Create route in `apps/<name>/src/app/`
 2. Import components:
    ```typescript
    import { Button, Card } from '@thatguycodes/quartz-ui';
    ```
-
 3. Add page styles (`page.module.css`)
 4. Reference tokens as needed
-5. Test locally: `npx nx run docs:dev`
+5. Test locally: `npx nx run <app-name>:dev`
 
 ### Updating an Existing Token
 
 **Impact**: Affects all components and apps using the token.
 
 **Steps**:
-1. Modify token value in source JSON
-2. Rebuild tokens: `npx nx run design-tokens:build`
-3. Test affected components in Storybook
-4. Test affected pages in docs app
-5. Commit as atomic change
+
+1. Update the token value in Figma
+2. Trigger the "Figma Token Sync" workflow
+3. Review and merge the sync PR
+4. Test affected components in Storybook after CI rebuilds tokens
 
 ---
 
@@ -636,7 +720,7 @@ graph LR
     merge["✔️ Merge to main"]
     build["🔨 Auto-Build<br/>(Style Dictionary)"]
     deploy["🚀 Deploy"]
-    
+
     figma --> trigger
     trigger --> fetch
     fetch --> validate
@@ -654,6 +738,7 @@ All tokens in Figma **must follow kebab-case naming with at least one group**:
 **Approved Format**: `group-subgroup-name`
 
 **Examples**:
+
 - ✅ `color-primary`
 - ✅ `color-brand-blue-600`
 - ✅ `spacing-md`
@@ -663,6 +748,7 @@ All tokens in Figma **must follow kebab-case naming with at least one group**:
 - ❌ `color_primary` (using underscores)
 
 **Naming Violation Handling**:
+
 - Violations are logged as **non-blocking warnings** in the PR
 - Design team reviews warnings and decides to:
   - Fix tokens in Figma and re-trigger sync, or
@@ -704,6 +790,7 @@ Each Figma sync PR includes:
 **Title**: `🎨 Figma Token Sync - 2026-02-20 15:30`
 
 **Body** contains:
+
 - Source: Figma
 - Timestamp of sync
 - **Audit Trail**: Git commit hash of when sync was triggered
@@ -712,11 +799,12 @@ Each Figma sync PR includes:
 - Merge deadline reminder
 
 **Example PR Body**:
-```
+
+````
 # 🎨 Figma Token Sync
 
-**Source**: Figma  
-**Triggered**: On-demand sync  
+**Source**: Figma
+**Triggered**: On-demand sync
 **Timestamp**: 2026-02-20T15:30:00Z
 
 ## Audit Trail
@@ -746,11 +834,13 @@ The following tokens don't follow the naming convention (kebab-case with groups)
   { "token": "primary", "issue": "Missing token group. Expected: group-name, got: primary" },
   { "token": "ButtonSize", "issue": "Not in kebab-case format. Expected: lowercase-with-dashes, got: ButtonSize" }
 ]
-```
+````
 
 💡 **Next steps**:
+
 - Fix these tokens in Figma, or
 - Approve this PR to accept as-is
+
 ```
 
 ### Auto-Close Policy (Stale PRs)
@@ -769,6 +859,7 @@ To prevent conflicts, token sync PRs are **automatically closed if unmerged for 
 
 **Example Auto-Close Comment**:
 ```
+
 🧹 **Auto-closed stale PR**
 
 This PR was open for more than 7 days without being merged. To maintain a clean workflow and prevent conflicts, stale token sync PRs are automatically closed.
@@ -776,17 +867,20 @@ This PR was open for more than 7 days without being merged. To maintain a clean 
 ## What does this mean?
 
 Per the token sync policy:
+
 - ✅ **Merge before next sync**: Token changes must be merged before the next Figma sync is triggered
 - 🔄 **Auto-close policy**: PRs older than 7 days are closed to prevent conflicts
 
 ## Next steps
 
 If you still need these token changes:
+
 1. Trigger a new Figma sync from the Actions tab
 2. A fresh PR will be created with the latest Figma tokens
 
 **Created**: 2026-02-13 14:22  
 **Closed by**: Automated stale PR cleanup
+
 ```
 
 ### Audit Trail & Rollback
@@ -795,15 +889,19 @@ Each sync PR includes a **git commit hash** for complete audit trail:
 
 **In PR Body**:
 ```
+
 **Git Commit Hash**: `a3f8b92c1d4e5f6g7h8i9j0k1l2m3n4o`
+
 ```
 
 **In Commit Message**:
 ```
+
 chore(tokens): sync from Figma
 
 Synced at: 2026-02-20T15:30:00Z
 Git commit hash: a3f8b92c1d4e5f6g7h8i9j0k1l2m3n4o
+
 ```
 
 **To Rollback**:
@@ -814,12 +912,16 @@ Git commit hash: a3f8b92c1d4e5f6g7h8i9j0k1l2m3n4o
 
 Previous workflow (manual):
 ```
+
 Edit core.json → Run npx nx run design-tokens:build → Commit → Create PR
+
 ```
 
 **New workflow (Figma-first)**:
 ```
+
 Edit in Figma → Trigger sync from GitHub UI → Design team reviews PR → Merge → Auto-build & deploy
+
 ```
 
 **Key differences**:
@@ -1006,13 +1108,13 @@ This architecture provides a **scalable, maintainable, and consistent** foundati
 ### Next Steps
 
 - Expand component library with common patterns
-- Add theme variants (dark mode, brand themes)
-- Integrate with design tools (Figma tokens)
+- Add first application under `apps/`
 - Set up Nx Cloud for distributed caching
 - Add visual regression testing
 - Create migration guides for new developers
 
 ---
 
-**Last Updated**: 2026-02-13  
+**Last Updated**: 2026-02-13
 **Maintained By**: Enterprise Team
+```

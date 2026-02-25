@@ -49,20 +49,23 @@ npm view @thatguycodes/design-tokens
 npx nx run design-tokens:build
 ```
 
-Verify the following files were generated:
-- `libs/tokens/design-tokens/src/generated/css/variables.css`
-- `libs/tokens/design-tokens/src/generated/ts/tokens.ts`
-- `libs/tokens/design-tokens/src/generated/ts/tokens.d.ts`
+Verify key files were generated under `libs/tokens/design-tokens/src/generated/`:
+
+- `css/variables.css` (`:root` fallback)
+- `css/variables-default-light.css`, `css/variables-default-dark.css`, `css/variables-purple-light.css`, `css/variables-purple-dark.css`
+- `ts/tokens.ts` and `ts/tokens.d.ts` (default-light shorthand)
+- `ts/tokens-default-light.ts`, `ts/tokens-default-dark.ts`, etc.
+- `scss/`, `android/`, `ios/` — additional platform outputs
 
 #### 2. Bump the version
 
 Edit `libs/tokens/design-tokens/package.json` and increment the version following semver:
 
-| Change type | Example |
-|---|---|
-| Bug fix / patch | `0.0.1` → `0.0.2` |
+| Change type       | Example           |
+| ----------------- | ----------------- |
+| Bug fix / patch   | `0.0.1` → `0.0.2` |
 | New token / minor | `0.0.2` → `0.1.0` |
-| Breaking rename | `0.1.0` → `1.0.0` |
+| Breaking rename   | `0.1.0` → `1.0.0` |
 
 Or use npm from the tokens directory:
 
@@ -83,11 +86,19 @@ npm publish --access public --dry-run
 ```
 
 Expected files in the tarball:
+
 ```
 README.md
 generated/css/variables.css
+generated/css/variables-default-light.css
+generated/css/variables-default-dark.css
+generated/css/variables-purple-light.css
+generated/css/variables-purple-dark.css
 generated/ts/tokens.ts
 generated/ts/tokens.d.ts
+generated/ts/tokens-default-light.ts
+generated/ts/tokens-default-light.d.ts
+... (+ scss, android, ios files)
 package.json
 ```
 
@@ -116,11 +127,10 @@ After the emergency is resolved, open a PR to restore the pipeline so future rel
 
 ## Troubleshooting
 
-| Error | Fix |
-|---|---|
-| `You cannot publish over the previously published versions` | Bump the version in `libs/tokens/design-tokens/package.json` |
-| `EOTP` / OTP invalid or expired | Get a fresh OTP and re-run immediately |
-| `403 Forbidden` | Ensure you are logged in (`npm login`) and own `@thatguycodes` |
-| Wrong files published | Check the `files` field in `libs/tokens/design-tokens/package.json` |
-| Pipeline not publishing | Check `NPM_TOKEN` secret is set in repository **Settings → Secrets → Actions** |
-
+| Error                                                       | Fix                                                                            |
+| ----------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `You cannot publish over the previously published versions` | Bump the version in `libs/tokens/design-tokens/package.json`                   |
+| `EOTP` / OTP invalid or expired                             | Get a fresh OTP and re-run immediately                                         |
+| `403 Forbidden`                                             | Ensure you are logged in (`npm login`) and own `@thatguycodes`                 |
+| Wrong files published                                       | Check the `files` field in `libs/tokens/design-tokens/package.json`            |
+| Pipeline not publishing                                     | Check `NPM_TOKEN` secret is set in repository **Settings → Secrets → Actions** |
