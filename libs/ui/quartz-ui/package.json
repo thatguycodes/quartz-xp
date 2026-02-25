@@ -1,6 +1,6 @@
 {
   "name": "@thatguycodes/quartz-ui",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
@@ -22,7 +22,7 @@
   ],
   "sideEffects": false,
   "dependencies": {
-    "@thatguycodes/design-tokens": "^0.2.2"
+    "@thatguycodes/design-tokens": "^0.3.0"
   },
   "peerDependencies": {
     "react": ">=18",
