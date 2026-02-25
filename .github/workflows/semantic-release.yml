@@ -1,55 +1,55 @@
-name: Semantic Release
-
-on:
-  workflow_call:
-    inputs:
-      dry_run:
-        description: 'Run in dry-run mode (no publish)'
-        required: false
-        type: boolean
-        default: false
-    secrets:
-      NPM_TOKEN:
-        required: false
-
-jobs:
-  semantic-release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: 'npm'
-
-      - run: npm ci --legacy-peer-deps
-      - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - run: git config --global user.name "github-actions[bot]"
-
-      - name: Configure npm auth
-        if: ${{ !inputs.dry_run }}
-        run: npm config set //registry.npmjs.org/:_authToken "${NODE_AUTH_TOKEN}"
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-
-      - name: Release Design Tokens (dry-run)
-        if: inputs.dry_run
-        run: npx nx release --dry-run --projects=design-tokens
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Release Design Tokens
-        if: ${{ !inputs.dry_run }}
-        run: npx nx release --yes --first-release --projects=design-tokens
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_CONFIG_PROVENANCE: true
+# name: Semantic Release
+#
+# on:
+#   workflow_call:
+#     inputs:
+#       dry_run:
+#         description: 'Run in dry-run mode (no publish)'
+#         required: false
+#         type: boolean
+#         default: false
+#     secrets:
+#       NPM_TOKEN:
+#         required: false
+#
+# jobs:
+#   semantic-release:
+#     runs-on: ubuntu-latest
+#     permissions:
+#       contents: write
+#       issues: write
+#       pull-requests: write
+#       id-token: write
+#     steps:
+#       - uses: actions/checkout@v4
+#         with:
+#           fetch-depth: 0
+#
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 22
+#           cache: 'npm'
+#
+#       - run: npm ci --legacy-peer-deps
+#       - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
+#       - run: git config --global user.name "github-actions[bot]"
+#
+#       - name: Configure npm auth
+#         if: ${{ !inputs.dry_run }}
+#         run: npm config set //registry.npmjs.org/:_authToken "${NODE_AUTH_TOKEN}"
+#         env:
+#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#
+#       - name: Release Design Tokens (dry-run)
+#         if: inputs.dry_run
+#         run: npx nx release --dry-run --projects=design-tokens
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#
+#       - name: Release Design Tokens
+#         if: ${{ !inputs.dry_run }}
+#         run: npx nx release --yes --first-release --projects=design-tokens
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+#           NPM_CONFIG_PROVENANCE: true

@@ -26,48 +26,49 @@ jobs:
     needs: build
     uses: ./.github/workflows/test-semantics.yml
 
-  ui-release:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [test-ui, test-semantics, semantic-release]
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    uses: ./.github/workflows/ui-release.yml
-    secrets: inherit
+  # Release workflows are intentionally disabled until npm release flow is finalized.
+  # ui-release:
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  #   needs: [test-ui, test-semantics, semantic-release]
+  #   permissions:
+  #     contents: write
+  #     issues: write
+  #     pull-requests: write
+  #     id-token: write
+  #   uses: ./.github/workflows/ui-release.yml
+  #   secrets: inherit
 
-  semantic-release:
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-    needs: [test-ui, test-semantics]
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    uses: ./.github/workflows/semantic-release.yml
-    secrets: inherit
+  # semantic-release:
+  #   if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+  #   needs: [test-ui, test-semantics]
+  #   permissions:
+  #     contents: write
+  #     issues: write
+  #     pull-requests: write
+  #     id-token: write
+  #   uses: ./.github/workflows/semantic-release.yml
+  #   secrets: inherit
 
-  ui-release-dry-run:
-    if: github.event_name == 'pull_request'
-    needs: [test-ui, test-semantics]
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    uses: ./.github/workflows/ui-release.yml
-    with:
-      dry_run: true
+  # ui-release-dry-run:
+  #   if: github.event_name == 'pull_request'
+  #   needs: [test-ui, test-semantics]
+  #   permissions:
+  #     contents: write
+  #     issues: write
+  #     pull-requests: write
+  #     id-token: write
+  #   uses: ./.github/workflows/ui-release.yml
+  #   with:
+  #     dry_run: true
 
-  semantic-release-dry-run:
-    if: github.event_name == 'pull_request'
-    needs: [test-ui, test-semantics]
-    permissions:
-      contents: write
-      issues: write
-      pull-requests: write
-      id-token: write
-    uses: ./.github/workflows/semantic-release.yml
-    with:
-      dry_run: true
+  # semantic-release-dry-run:
+  #   if: github.event_name == 'pull_request'
+  #   needs: [test-ui, test-semantics]
+  #   permissions:
+  #     contents: write
+  #     issues: write
+  #     pull-requests: write
+  #     id-token: write
+  #   uses: ./.github/workflows/semantic-release.yml
+  #   with:
+  #     dry_run: true
