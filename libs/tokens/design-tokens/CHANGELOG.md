@@ -1,3 +1,13 @@
+## 0.2.2 (2026-02-25)
+
+### 🩹 Fixes
+
+- **token:** switch default to blue palette and darken purple theme ([680222c](https://github.com/thatguycodes/nx-enterprise/commit/680222c))
+
+### ❤️ Thank You
+
+- obonye_t
+
 ## 0.2.1 (2026-02-25)
 
 ### 🩹 Fixes
