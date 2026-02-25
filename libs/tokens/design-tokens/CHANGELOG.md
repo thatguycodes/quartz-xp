@@ -1,3 +1,13 @@
+## 0.2.1 (2026-02-25)
+
+### 🩹 Fixes
+
+- update tokens ([e10bf7e](https://github.com/thatguycodes/nx-enterprise/commit/e10bf7e))
+
+### ❤️ Thank You
+
+- obonye_t
+
 ## 0.2.0 (2026-02-25)
 
 ### 🚀 Features
