@@ -1,0 +1,95 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --pill-generic-none: var(--mode-color-none); /** transparent override used for hiding colors when needed. */
+  --pill-blue-bg-default: var(--mode-color-status-info-default);
+  --pill-blue-bg-alt-default: var(--mode-color-status-info-default-alt); /** outline pill bg */
+  --pill-blue-bg-alt-hover: var(--mode-color-status-info-hover-alt);
+  --pill-blue-bg-hover: var(--mode-color-status-info-hover);
+  --pill-blue-border-default: var(--mode-color-status-info-default);
+  --pill-blue-inverse-bg-default: var(--mode-color-status-info-inverse-default);
+  --pill-blue-inverse-bg-alt-default: var(--mode-color-status-info-inverse-default-alt); /** outline pill bg */
+  --pill-blue-inverse-bg-alt-hover: var(--mode-color-status-info-inverse-hover-alt);
+  --pill-blue-inverse-bg-hover: var(--mode-color-status-info-inverse-hover);
+  --pill-blue-inverse-border-default: var(--mode-color-status-info-inverse-default);
+  --pill-green-bg-default: var(--mode-color-status-positive-default);
+  --pill-green-bg-alt-default: var(--mode-color-status-positive-default-alt); /** outline pill bg */
+  --pill-green-bg-alt-hover: var(--mode-color-status-positive-hover-alt);
+  --pill-green-bg-hover: var(--mode-color-status-positive-hover);
+  --pill-green-border-default: var(--mode-color-status-positive-default);
+  --pill-green-inverse-bg-default: var(--mode-color-status-positive-inverse-default);
+  --pill-green-inverse-bg-alt-default: var(--mode-color-status-positive-inverse-default-alt); /** outline pill bg */
+  --pill-green-inverse-bg-alt-hover: var(--mode-color-status-positive-inverse-hover-alt);
+  --pill-green-inverse-bg-hover: var(--mode-color-status-positive-inverse-hover);
+  --pill-green-inverse-border-default: var(--mode-color-status-positive-inverse-default);
+  --pill-gray-bg-default: var(--mode-color-status-neutral-default);
+  --pill-gray-bg-alt-default: var(--mode-color-status-neutral-default-alt); /** outline pill bg */
+  --pill-gray-bg-alt-hover: var(--mode-color-status-neutral-hover-alt);
+  --pill-gray-bg-hover: var(--mode-color-status-neutral-hover);
+  --pill-gray-border-default: var(--mode-color-status-neutral-default);
+  --pill-gray-inverse-bg-default: var(--mode-color-status-neutral-inverse-default);
+  --pill-gray-inverse-bg-alt-default: var(--mode-color-status-neutral-inverse-default-alt); /** outline pill bg */
+  --pill-gray-inverse-bg-alt-hover: var(--mode-color-status-neutral-inverse-hover-alt);
+  --pill-gray-inverse-bg-hover: var(--mode-color-status-neutral-inverse-hover);
+  --pill-gray-inverse-border-default: var(--mode-color-status-neutral-inverse-default);
+  --pill-lime-bg-default: var(--mode-color-status-custom-lime-default);
+  --pill-lime-bg-alt-default: var(--mode-color-status-custom-lime-default-alt); /** outline pill bg */
+  --pill-lime-bg-alt-hover: var(--mode-color-status-custom-lime-hover-alt);
+  --pill-lime-bg-hover: var(--mode-color-status-custom-lime-hover);
+  --pill-lime-border-default: var(--mode-color-status-custom-lime-default);
+  --pill-orange-bg-default: var(--mode-color-status-warning-default);
+  --pill-orange-bg-alt-default: var(--mode-color-status-warning-default-alt); /** Global message bg */
+  --pill-orange-bg-alt-hover: var(--mode-color-status-warning-hover-alt);
+  --pill-orange-bg-hover: var(--mode-color-status-warning-hover);
+  --pill-orange-border-default: var(--mode-color-status-warning-default);
+  --pill-orange-inverse-bg-default: var(--mode-color-status-warning-inverse-default);
+  --pill-orange-inverse-bg-alt-default: var(--mode-color-status-warning-inverse-default-alt); /** Global message bg */
+  --pill-orange-inverse-bg-alt-hover: var(--mode-color-status-warning-inverse-hover-alt);
+  --pill-orange-inverse-bg-hover: var(--mode-color-status-warning-inverse-hover);
+  --pill-orange-inverse-border-default: var(--mode-color-status-warning-inverse-default);
+  --pill-pink-bg-default: var(--mode-color-status-custom-pink-default);
+  --pill-pink-bg-alt-default: var(--mode-color-status-custom-pink-default-alt); /** outline pill bg */
+  --pill-pink-bg-alt-hover: var(--mode-color-status-custom-pink-hover-alt);
+  --pill-pink-bg-hover: var(--mode-color-status-custom-pink-hover);
+  --pill-pink-border-default: var(--mode-color-status-custom-pink-default);
+  --pill-purple-bg-default: var(--mode-color-status-priority-default);
+  --pill-purple-bg-alt-default: var(--mode-color-status-priority-default-alt); /** outline pill bg */
+  --pill-purple-bg-alt-hover: var(--mode-color-status-priority-hover-alt);
+  --pill-purple-bg-hover: var(--mode-color-status-priority-hover);
+  --pill-purple-border-default: var(--mode-color-status-priority-default);
+  --pill-purple-inverse-bg-default: var(--mode-color-status-priority-default);
+  --pill-purple-inverse-bg-alt-default: var(--mode-color-status-priority-inverse-default-alt); /** outline pill bg */
+  --pill-purple-inverse-bg-alt-hover: var(--mode-color-status-priority-inverse-hover-alt);
+  --pill-purple-inverse-bg-hover: var(--mode-color-status-priority-hover);
+  --pill-purple-inverse-border-default: var(--mode-color-status-priority-default);
+  --pill-red-bg-default: var(--mode-color-status-negative-default);
+  --pill-red-bg-alt-default: var(--mode-color-status-negative-default-alt); /** outline pill bg */
+  --pill-red-bg-alt-hover: var(--mode-color-status-negative-hover-alt);
+  --pill-red-bg-hover: var(--mode-color-status-negative-hover);
+  --pill-red-border-default: var(--mode-color-status-negative-default);
+  --pill-red-inverse-bg-default: var(--mode-color-status-negative-inverse-default);
+  --pill-red-inverse-bg-alt-default: var(--mode-color-status-negative-inverse-default-alt); /** outline pill bg */
+  --pill-red-inverse-bg-alt-hover: var(--mode-color-status-negative-inverse-hover-alt);
+  --pill-red-inverse-bg-hover: var(--mode-color-status-negative-inverse-hover);
+  --pill-red-inverse-border-default: var(--mode-color-status-negative-inverse-default);
+  --pill-slate-bg-default: var(--mode-color-status-custom-slate-default);
+  --pill-slate-bg-alt-default: var(--mode-color-status-custom-slate-default-alt); /** outline pill bg */
+  --pill-slate-bg-alt-hover: var(--mode-color-status-custom-slate-hover-alt);
+  --pill-slate-bg-hover: var(--mode-color-status-custom-slate-hover);
+  --pill-slate-border-default: var(--mode-color-status-custom-slate-default);
+  --pill-teal-bg-default: var(--mode-color-status-custom-teal-default);
+  --pill-teal-bg-alt-default: var(--mode-color-status-custom-teal-default-alt); /** outline pill bg */
+  --pill-teal-bg-alt-hover: var(--mode-color-status-custom-teal-hover-alt);
+  --pill-teal-bg-hover: var(--mode-color-status-custom-teal-hover);
+  --pill-teal-border-default: var(--mode-color-status-custom-teal-default);
+  --pill-generic-label-default: var(--mode-color-status-txt-with-default);
+  --pill-generic-label-hover: var(--mode-color-status-txt-with-hover);
+  --pill-generic-inverse-label-default: var(--mode-color-status-txt-inverse-with-default);
+  --pill-generic-inverse-label-hover: var(--mode-color-status-txt-inverse-with-hover);
+  --pill-generic-inverse-label-alt-default: var(--mode-color-status-txt-inverse-with-default-alt);
+  --pill-generic-inverse-label-alt-hover: var(--mode-color-status-txt-inverse-with-default-alt);
+  --pill-generic-label-alt-default: var(--mode-color-status-txt-with-default-alt);
+  --pill-generic-label-alt-hover: var(--mode-color-status-txt-with-default-alt);
+}

@@ -1,0 +1,11 @@
+export const badgeNone = undefined;
+export const badgeBgDefault = undefined;
+export const badgeBorderDefault = undefined;
+export const badgeBgAlt = undefined;
+export const badgeLabelDefault = undefined;
+export const badgeLabelAlt = undefined;
+export const badgeInverseBgDefault = undefined;
+export const badgeInverseBorderDefault = undefined;
+export const badgeInverseBgAlt = undefined;
+export const badgeInverseLabelDefault = undefined;
+export const badgeInverseLabelAlt = undefined;

@@ -1,0 +1,24 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --table-header-subtle-bg-alt: var(--mode-color-generic-bg-faint); /** header alt */
+  --table-header-subtle-bg-default: var(--mode-color-none);
+  --table-header-subtle-border-default: var(--mode-color-generic-fg-soft); /** Header borders */
+  --table-header-harsh-bg-alt: var(--mode-color-generic-surface-severe); /** header alt */
+  --table-header-harsh-bg-default: var(--mode-color-generic-surface-harsh);
+  --table-header-harsh-border-default: var(--mode-color-generic-fg-soft);
+  --table-row-bg-default: var(--mode-color-generic-bg-nought);
+  --table-row-bg-alt: var(--mode-color-generic-bg-delicate); /** Zebra stripes */
+  --table-row-bg-alt2: var(--mode-color-generic-bg-faint); /** Child rows */
+  --table-row-bg-selected: var(--mode-color-generic-bg-soft);
+  --table-row-border-default: var(--mode-color-generic-fg-soft);
+  --table-row-label-selected: var(--mode-color-generic-txt-extreme);
+  --table-footer-bg-default: var(--mode-color-generic-bg-soft);
+  --table-footer-border-default: var(--mode-color-generic-fg-soft); /** Header borders */
+  --table-header-subtle-label-default: var(--mode-color-generic-txt-severe);
+  --table-header-harsh-label-default: var(--mode-color-generic-txt-inverse-severe);
+  --table-row-label-default: var(--mode-color-generic-txt-severe);
+  --table-footer-label-default: var(--mode-color-generic-txt-severe);
+}

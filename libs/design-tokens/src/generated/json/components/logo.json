@@ -1,0 +1,295 @@
+{
+  "logo": {
+    "sage": {
+      "bg-default": {
+        "key": "{logo.sage.bg-default}",
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "sage logo",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.brand.default}",
+          "$description": "sage logo",
+          "key": "{logo.sage.bg-default}"
+        },
+        "name": "logo-sage-bg-default",
+        "attributes": {
+          "category": "logo",
+          "type": "sage",
+          "item": "bg-default"
+        },
+        "path": [
+          "logo",
+          "sage",
+          "bg-default"
+        ]
+      },
+      "bg-alt": {
+        "key": "{logo.sage.bg-alt}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.brand.defaultAlt}",
+          "key": "{logo.sage.bg-alt}"
+        },
+        "name": "logo-sage-bg-alt",
+        "attributes": {
+          "category": "logo",
+          "type": "sage",
+          "item": "bg-alt"
+        },
+        "path": [
+          "logo",
+          "sage",
+          "bg-alt"
+        ]
+      },
+      "inverse": {
+        "bg-default": {
+          "key": "{logo.sage.inverse.bg-default}",
+          "$type": "color",
+          "$value": "#8b5cf6",
+          "$description": "sage logo",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.brand.inverse.default}",
+            "$description": "sage logo",
+            "key": "{logo.sage.inverse.bg-default}"
+          },
+          "name": "logo-sage-inverse-bg-default",
+          "attributes": {
+            "category": "logo",
+            "type": "sage",
+            "item": "inverse",
+            "subitem": "bg-default"
+          },
+          "path": [
+            "logo",
+            "sage",
+            "inverse",
+            "bg-default"
+          ]
+        },
+        "bg-alt": {
+          "key": "{logo.sage.inverse.bg-alt}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.brand.inverse.defaultAlt}",
+            "key": "{logo.sage.inverse.bg-alt}"
+          },
+          "name": "logo-sage-inverse-bg-alt",
+          "attributes": {
+            "category": "logo",
+            "type": "sage",
+            "item": "inverse",
+            "subitem": "bg-alt"
+          },
+          "path": [
+            "logo",
+            "sage",
+            "inverse",
+            "bg-alt"
+          ]
+        }
+      }
+    },
+    "copilot": {
+      "noBg": {
+        "fg-default": {
+          "key": "{logo.copilot.noBg.fg-default}",
+          "$type": "color",
+          "$value": "#000000",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.brand.copilot.monochrome}",
+            "key": "{logo.copilot.noBg.fg-default}"
+          },
+          "name": "logo-copilot-no-bg-fg-default",
+          "attributes": {
+            "category": "logo",
+            "type": "copilot",
+            "item": "noBg",
+            "subitem": "fg-default"
+          },
+          "path": [
+            "logo",
+            "copilot",
+            "noBg",
+            "fg-default"
+          ]
+        }
+      }
+    },
+    "AiSparkle": {
+      "bg-dot": {
+        "key": "{logo.AiSparkle.bg-dot}",
+        "$type": "color",
+        "$value": "#8b5cf6",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.brand.copilot.withDefault}",
+          "key": "{logo.AiSparkle.bg-dot}"
+        },
+        "name": "logo-ai-sparkle-bg-dot",
+        "attributes": {
+          "category": "logo",
+          "type": "AiSparkle",
+          "item": "bg-dot"
+        },
+        "path": [
+          "logo",
+          "AiSparkle",
+          "bg-dot"
+        ]
+      },
+      "bg-star": {
+        "key": "{logo.AiSparkle.bg-star}",
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "star bg color",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.brand.copilot.default}",
+          "$description": "star bg color",
+          "key": "{logo.AiSparkle.bg-star}"
+        },
+        "name": "logo-ai-sparkle-bg-star",
+        "attributes": {
+          "category": "logo",
+          "type": "AiSparkle",
+          "item": "bg-star"
+        },
+        "path": [
+          "logo",
+          "AiSparkle",
+          "bg-star"
+        ]
+      },
+      "outline": {
+        "key": "{logo.AiSparkle.outline}",
+        "$type": "color",
+        "$value": "#000000",
+        "$description": "star outline variant",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.brand.copilot.default}",
+          "$description": "star outline variant",
+          "key": "{logo.AiSparkle.outline}"
+        },
+        "name": "logo-ai-sparkle-outline",
+        "attributes": {
+          "category": "logo",
+          "type": "AiSparkle",
+          "item": "outline"
+        },
+        "path": [
+          "logo",
+          "AiSparkle",
+          "outline"
+        ]
+      },
+      "inverse": {
+        "bg-dot": {
+          "key": "{logo.AiSparkle.inverse.bg-dot}",
+          "$type": "color",
+          "$value": "#8b5cf6",
+          "$description": "star outline variant",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.brand.copilot.inverse.withDefault}",
+            "$description": "star outline variant",
+            "key": "{logo.AiSparkle.inverse.bg-dot}"
+          },
+          "name": "logo-ai-sparkle-inverse-bg-dot",
+          "attributes": {
+            "category": "logo",
+            "type": "AiSparkle",
+            "item": "inverse",
+            "subitem": "bg-dot"
+          },
+          "path": [
+            "logo",
+            "AiSparkle",
+            "inverse",
+            "bg-dot"
+          ]
+        },
+        "bg-star": {
+          "key": "{logo.AiSparkle.inverse.bg-star}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "$description": "star outline variant",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.brand.copilot.inverse.default}",
+            "$description": "star outline variant",
+            "key": "{logo.AiSparkle.inverse.bg-star}"
+          },
+          "name": "logo-ai-sparkle-inverse-bg-star",
+          "attributes": {
+            "category": "logo",
+            "type": "AiSparkle",
+            "item": "inverse",
+            "subitem": "bg-star"
+          },
+          "path": [
+            "logo",
+            "AiSparkle",
+            "inverse",
+            "bg-star"
+          ]
+        },
+        "outline": {
+          "key": "{logo.AiSparkle.inverse.outline}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "$description": "star outline variant",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/logo.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.brand.copilot.inverse.default}",
+            "$description": "star outline variant",
+            "key": "{logo.AiSparkle.inverse.outline}"
+          },
+          "name": "logo-ai-sparkle-inverse-outline",
+          "attributes": {
+            "category": "logo",
+            "type": "AiSparkle",
+            "item": "inverse",
+            "subitem": "outline"
+          },
+          "path": [
+            "logo",
+            "AiSparkle",
+            "inverse",
+            "outline"
+          ]
+        }
+      }
+    }
+  }
+}

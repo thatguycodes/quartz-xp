@@ -1,0 +1,38 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --nav-primary-bg-active: var(--mode-color-action-nav-active);
+  --nav-primary-bg-default: var(--mode-color-generic-bg-inverse-nought);
+  --nav-primary-bg-hover: var(--mode-color-action-nav-hover);
+  --nav-primary-bg-child: var(--mode-color-action-nav-inverse-child);
+  --nav-primary-bg-child-alt: var(--mode-color-action-nav-inverse-child-alt);
+  --nav-primary-bg-selected: var(--mode-color-generic-fg-soft); /** selected keyline under item */
+  --nav-primary-border-default: var(--mode-color-generic-fg-inverse-soft); /** parent container border  */
+  --nav-primary-divider: var(--mode-color-generic-fg-inverse-firm); /** divider within child menus */
+  --nav-primary-label-active: var(--mode-color-action-nav-with-active);
+  --nav-primary-label-hover: var(--mode-color-action-nav-with-hover);
+  --nav-secondary-bg-active: var(--mode-color-action-nav-active);
+  --nav-secondary-bg-default: var(--mode-color-action-nav-inverse-default-alt);
+  --nav-secondary-bg-hover: var(--mode-color-action-nav-hover);
+  --nav-secondary-bg-selected: var(--mode-color-generic-fg-soft); /** selected keyline under item */
+  --nav-secondary-label-active: var(--mode-color-action-nav-with-active);
+  --nav-secondary-label-hover: var(--mode-color-action-nav-with-hover);
+  --nav-tertiary-bg-active: var(--mode-color-action-nav-active);
+  --nav-tertiary-bg-default: var(--mode-color-generic-bg-nought);
+  --nav-tertiary-bg-hover: var(--mode-color-action-nav-hover);
+  --nav-tertiary-bg-child: var(--mode-color-action-nav-child);
+  --nav-tertiary-bg-child-alt: var(--mode-color-action-nav-child-alt);
+  --nav-tertiary-bg-selected: var(--mode-color-generic-fg-firm); /** selected keyline under item */
+  --nav-tertiary-border-default: var(--mode-color-generic-fg-soft); /** parent container border  */
+  --nav-tertiary-divider: var(--mode-color-generic-bg-soft); /** divider within child menus */
+  --nav-tertiary-label-active: var(--mode-color-action-nav-with-active);
+  --nav-tertiary-label-hover: var(--mode-color-action-nav-with-hover);
+  --nav-primary-label-default-alt: var(--mode-color-generic-txt-inverse-moderate);
+  --nav-secondary-label-default-alt: var(--mode-color-generic-txt-inverse-moderate); /** subheader text within a menu */
+  --nav-tertiary-label-default-alt: var(--mode-color-generic-txt-moderate); /** subheader text within a menu */
+  --nav-primary-label-default: var(--mode-color-action-nav-inverse-with-default);
+  --nav-secondary-label-default: var(--mode-color-action-nav-inverse-with-default);
+  --nav-tertiary-label-default: var(--mode-color-action-nav-with-default);
+}

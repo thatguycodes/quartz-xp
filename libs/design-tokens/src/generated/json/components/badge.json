@@ -1,0 +1,253 @@
+{
+  "badge": {
+    "none": {
+      "key": "{badge.none}",
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "$description": "transparent override used for hiding colors when needed.",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.none}",
+        "$description": "transparent override used for hiding colors when needed.",
+        "key": "{badge.none}"
+      },
+      "name": "badge-none",
+      "attributes": {
+        "category": "badge",
+        "type": "none"
+      },
+      "path": [
+        "badge",
+        "none"
+      ]
+    },
+    "bg-default": {
+      "key": "{badge.bg-default}",
+      "$type": "color",
+      "$value": "#e11d48",
+      "$description": "Used in global nav notification badges",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.status.negative.default}",
+        "$description": "Used in global nav notification badges",
+        "key": "{badge.bg-default}"
+      },
+      "name": "badge-bg-default",
+      "attributes": {
+        "category": "badge",
+        "type": "bg-default"
+      },
+      "path": [
+        "badge",
+        "bg-default"
+      ]
+    },
+    "border-default": {
+      "key": "{badge.border-default}",
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.generic.bg.nought}",
+        "key": "{badge.border-default}"
+      },
+      "name": "badge-border-default",
+      "attributes": {
+        "category": "badge",
+        "type": "border-default"
+      },
+      "path": [
+        "badge",
+        "border-default"
+      ]
+    },
+    "bg-alt": {
+      "key": "{badge.bg-alt}",
+      "$type": "color",
+      "$value": "#2563eb",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.status.info.default}",
+        "key": "{badge.bg-alt}"
+      },
+      "name": "badge-bg-alt",
+      "attributes": {
+        "category": "badge",
+        "type": "bg-alt"
+      },
+      "path": [
+        "badge",
+        "bg-alt"
+      ]
+    },
+    "label-default": {
+      "key": "{badge.label-default}",
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.generic.txt.inverse.extreme}",
+        "key": "{badge.label-default}"
+      },
+      "name": "badge-label-default",
+      "attributes": {
+        "category": "badge",
+        "type": "label-default"
+      },
+      "path": [
+        "badge",
+        "label-default"
+      ]
+    },
+    "label-alt": {
+      "key": "{badge.label-alt}",
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.generic.txt.inverse.extreme}",
+        "key": "{badge.label-alt}"
+      },
+      "name": "badge-label-alt",
+      "attributes": {
+        "category": "badge",
+        "type": "label-alt"
+      },
+      "path": [
+        "badge",
+        "label-alt"
+      ]
+    },
+    "inverse": {
+      "bg-default": {
+        "key": "{badge.inverse.bg-default}",
+        "$type": "color",
+        "$value": "#fb7185",
+        "$description": "Used in global nav notification badges",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.negative.inverse.default}",
+          "$description": "Used in global nav notification badges",
+          "key": "{badge.inverse.bg-default}"
+        },
+        "name": "badge-inverse-bg-default",
+        "attributes": {
+          "category": "badge",
+          "type": "inverse",
+          "item": "bg-default"
+        },
+        "path": [
+          "badge",
+          "inverse",
+          "bg-default"
+        ]
+      },
+      "border-default": {
+        "key": "{badge.inverse.border-default}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.inverse.nought}",
+          "key": "{badge.inverse.border-default}"
+        },
+        "name": "badge-inverse-border-default",
+        "attributes": {
+          "category": "badge",
+          "type": "inverse",
+          "item": "border-default"
+        },
+        "path": [
+          "badge",
+          "inverse",
+          "border-default"
+        ]
+      },
+      "bg-alt": {
+        "key": "{badge.inverse.bg-alt}",
+        "$type": "color",
+        "$value": "#60a5fa",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.info.inverse.default}",
+          "key": "{badge.inverse.bg-alt}"
+        },
+        "name": "badge-inverse-bg-alt",
+        "attributes": {
+          "category": "badge",
+          "type": "inverse",
+          "item": "bg-alt"
+        },
+        "path": [
+          "badge",
+          "inverse",
+          "bg-alt"
+        ]
+      },
+      "label-default": {
+        "key": "{badge.inverse.label-default}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.txt.extreme}",
+          "key": "{badge.inverse.label-default}"
+        },
+        "name": "badge-inverse-label-default",
+        "attributes": {
+          "category": "badge",
+          "type": "inverse",
+          "item": "label-default"
+        },
+        "path": [
+          "badge",
+          "inverse",
+          "label-default"
+        ]
+      },
+      "label-alt": {
+        "key": "{badge.inverse.label-alt}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/badge.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.txt.extreme}",
+          "key": "{badge.inverse.label-alt}"
+        },
+        "name": "badge-inverse-label-alt",
+        "attributes": {
+          "category": "badge",
+          "type": "inverse",
+          "item": "label-alt"
+        },
+        "path": [
+          "badge",
+          "inverse",
+          "label-alt"
+        ]
+      }
+    }
+  }
+}

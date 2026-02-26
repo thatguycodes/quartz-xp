@@ -1,0 +1,158 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --global-borderwidth-none: 0;
+  --global-borderwidth-xs: 1px; /** Buttons, Inputs. Dividing lines and container borders. */
+  --global-borderwidth-s: 2px; /** Buttons. Step flow, Validation bars */
+  --global-borderwidth-m: 3px; /** Focus  */
+  --global-borderwidth-l: 4px; /** Focus underline. Dividing lines.  */
+  --global-borderwidth-xl: 6px; /** Double Focus Border */
+  --global-borderwidth-xxl: 8px;
+  --global-breakpoint-xs: 320px;
+  --global-breakpoint-s: 600px;
+  --global-breakpoint-m: 960px;
+  --global-breakpoint-l: 1260px;
+  --global-breakpoint-xl: 1600px;
+  --global-breakpoint-xxl: 1920px;
+  --global-font-fluid-heading-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-heading-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-heading-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-subheading-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-subheading-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-section-heading-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-section-heading-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-body-regular-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-body-regular-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-body-regular-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-body-medium-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-body-medium-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-body-medium-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-medium-xs: undefined undefined undefined undefined undefined; /** Small Viewports: 13.72, Large Viewports: 11.89 */
+  --global-font-fluid-comp-medium-s: undefined undefined undefined undefined undefined; /** Small Viewports: 14.81, Large Viewports: 13.79. Match token size to component size. */
+  --global-font-fluid-comp-medium-m: undefined undefined undefined undefined undefined; /** Small Viewports: 16, Large Viewports: 16. Match token size to component size. */
+  --global-font-fluid-comp-medium-l: undefined undefined undefined undefined undefined; /** Small Viewports: 17.28, Large Viewports: 18.56. Match token size to component size. */
+  --global-font-fluid-comp-regular-xs: undefined undefined undefined undefined undefined; /** Small Viewports: 13.72, Large Viewports: 11.89 */
+  --global-font-fluid-comp-regular-s: undefined undefined undefined undefined undefined; /** Small Viewports: 14.81, Large Viewports: 13.79. Match token size to component size. */
+  --global-font-fluid-comp-regular-m: undefined undefined undefined undefined undefined; /** Small Viewports: 16, Large Viewports: 16. Match token size to component size. */
+  --global-font-fluid-comp-regular-l: undefined undefined undefined undefined undefined; /** Small Viewports: 17.28, Large Viewports: 18.56. Match token size to component size. */
+  --global-font-fluid-comp-icon-s: undefined undefined undefined undefined undefined; /** Small Viewports: 20, Large Viewports: 20.  */
+  --global-font-fluid-comp-icon-m: undefined undefined undefined undefined undefined; /** Small Viewports: 20, Large Viewports: 20.  */
+  --global-font-fluid-comp-icon-l: undefined undefined undefined undefined undefined; /** Small Viewports: 20, Large Viewports: 20.  */
+  --global-font-fluid-comp-lined-regular-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-lined-regular-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-lined-regular-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-lined-medium-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-lined-medium-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-lined-medium-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-xs: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-s: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-m: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-ml: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-l: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-xl: undefined undefined undefined undefined undefined;
+  --global-font-fluid-comp-placeholder-xxl: undefined undefined undefined undefined undefined;
+  --global-font-static-heading-s: undefined undefined undefined undefined undefined;
+  --global-font-static-heading-m: undefined undefined undefined undefined undefined;
+  --global-font-static-heading-l: undefined undefined undefined undefined undefined;
+  --global-font-static-subheading-m: undefined undefined undefined undefined undefined;
+  --global-font-static-subheading-l: undefined undefined undefined undefined undefined;
+  --global-font-static-section-heading-s: undefined undefined undefined undefined undefined;
+  --global-font-static-section-heading-m: undefined undefined undefined undefined undefined;
+  --global-font-static-body-regular-s: undefined undefined undefined undefined undefined;
+  --global-font-static-body-regular-m: undefined undefined undefined undefined undefined;
+  --global-font-static-body-regular-l: undefined undefined undefined undefined undefined;
+  --global-font-static-body-medium-s: undefined undefined undefined undefined undefined;
+  --global-font-static-body-medium-m: undefined undefined undefined undefined undefined;
+  --global-font-static-body-medium-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-medium-xs: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-medium-s: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-medium-m: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-medium-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-regular-xs: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-regular-s: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-regular-m: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-regular-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-icon-s: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-icon-m: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-icon-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-lined-regular-s: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-lined-regular-m: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-lined-regular-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-lined-medium-s: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-lined-medium-m: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-lined-medium-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-xs: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-s: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-m: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-ml: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-l: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-xl: undefined undefined undefined undefined undefined;
+  --global-font-static-comp-placeholder-xxl: undefined undefined undefined undefined undefined;
+  --global-modifier-button-active: 0.3; /** Actve modifier used when 15% hover is used */
+  --global-modifier-button-active-alt: 0.15; /** Actve modifier used when 15% hover is used */
+  --global-modifier-button-hover: 0.15; /** Hover used on primary buttons */
+  --global-modifier-button-hover-alt: 0.1; /** Hover used on primary buttons */
+  --global-modifier-input-disabled-fg: 0.3; /** Disabled alpha for buttons */
+  --global-modifier-input-disabled-bg: 0.05; /** less contrast */
+  --global-radius-none: 0; /** Button groups (internal/adjacent corners), Card select group (internal/adjacent corners), File input (integrated base bar top corners). */
+  --global-radius-container-3-xs: 1px; /** Validation bar on input components */
+  --global-radius-container-2-xs: 2px; /** Pill */
+  --global-radius-container-xs: 4px;
+  --global-radius-container-s: 6px; /** L size loader and tracker corners */
+  --global-radius-container-m: 8px; /** Card select group (outer corners), Card select (single), Color picker advanced (inner swatch container), File input (file uploads & integrated progress bar (bottom corners),  File preview (File selector assets on left), Link preview, Message, Note, Popover (menu container in Action popover, Button-split, Button-multi-action, Calendar, Dropdown), Subscription tile (currently a pattern), Table (parent container), Tile & Tile flexbox (less rounded), Toast, Tooltip */
+  --global-radius-container-l: 16px; /** Card (less rounded), Carousel (slides), Color picker advanced (parent container), File preview (parent container), Medium Tile & Tile flexbox, Medium Card. */
+  --global-radius-container-xl: 24px; /** Card (more  rounded), Copilot Container, Carousel (parent container), Dialog (not full screen), Large Tile & Tile flexbox, Large cards */
+  --global-radius-container-2-xl: 32px;
+  --global-radius-container-3-xl: 40px; /** marketing cards and tiles */
+  --global-radius-container-4-xl: 80px; /** marketing images  */
+  --global-radius-container-circle: 999px; /** CIRCLE. Badge, Calendar date (today indicator and selected), Carousel selector dots, Loader bar, Portrait, Progress tracker, Radio button, Step flow (step indicators), Switch,  */
+  --global-radius-action-2-xs: 1px; /** Tab baseline. */
+  --global-radius-action-xs: 2px; /** Link (focus background and underline) */
+  --global-radius-action-s: 4px; /** S & M Checkboxes */
+  --global-radius-action-m: 8px; /** Button subtle, L Checkboxes, Date picker input, Date range input, Dropdown select (trigger), Search, File input (draggable area),  Menu (bottom corners), Navigation: left (state bg shape), Skip focus, Tab, Text area, Text input, */
+  --global-radius-action-l: 16px; /** Buttons S (typical and destructive, and inc bar, split and multi), Navigation left (collapsible Assets/Menu select top-right and bottom-right corners),  */
+  --global-radius-action-xl: 20px; /** Buttons M (typical and destructive and inc bar split and multi), Button toggle M (parent container) */
+  --global-radius-action-2-xl: 24px; /** Buttons L (typical and destructive and inc bar split and multi), Button toggle L (parent container) */
+  --global-radius-action-circle: 999px; /** Icon only buttons */
+  --global-depth-none: 0px 0px 0px 0px rgba(0,0,0,0);
+  --global-depth-lvl1: 0px 1px 2px 0px #0000001A, 2px 2px 10px 0px #00000033; /** Card default state and popover menus used on split, multiaction, dropdown and action popovers */
+  --global-depth-lvl2: 0px 2px 3px 0px #0000001A, 6px 6px 30px 0px #00000026; /** Card hover state */
+  --global-depth-lvl3: 0px 3px 4px 0px #0000001A, 10px 10px 60px 0px #0000001A; /** Dialog, Menu, Sidebar, Card drag state */
+  --global-depth-sticky-b: 0px -1px 2px 0px #0000001A, 2px -2px 10px 0px #00000033; /** Sticky footer on dialogs, drawer and sidebar */
+  --global-depth-sticky-l: -2px 0px 2px 0px #0000001A, -5px 0px 5px 0px #0000001A; /** Right sticky column in Table. */
+  --global-depth-sticky-r: 2px 0px 2px 0px #0000001A, 5px 0px 5px 0px #0000001A; /** Left sticky column in Table. */
+  --global-size-none: 0;
+  --global-size-6-xs: 2px;
+  --global-size-5-xs: 4px;
+  --global-size-4-xs: 8px;
+  --global-size-3-xs: 16px;
+  --global-size-2-xs: 20px;
+  --global-size-xs: 24px;
+  --global-size-s: 32px;
+  --global-size-m: 40px;
+  --global-size-l: 48px;
+  --global-size-xl: 56px;
+  --global-size-2-xl: 64px;
+  --global-size-3-xl: 72px;
+  --global-size-4-xl: 80px;
+  --global-space-none: 0;
+  --global-space-layout-3-xs: 8px;
+  --global-space-layout-2-xs: 16px;
+  --global-space-layout-xs: 24px;
+  --global-space-layout-s: 32px;
+  --global-space-layout-m: 40px;
+  --global-space-layout-l: 48px;
+  --global-space-layout-xl: 56px;
+  --global-space-layout-2-xl: 64px;
+  --global-space-layout-3-xl: 72px;
+  --global-space-layout-4-xl: 80px;
+  --global-space-comp-2-xs: 2px;
+  --global-space-comp-xs: 4px;
+  --global-space-comp-s: 8px;
+  --global-space-comp-m: 12px; /** Padding inside Medium Inputs */
+  --global-space-comp-l: 16px;
+  --global-space-comp-xl: 24px;
+  --global-space-comp-2-xl: 32px;
+}

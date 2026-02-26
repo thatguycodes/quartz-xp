@@ -1,0 +1,331 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+[data-theme="dark"] {
+  --mode-color-none: #ffffff;
+  --mode-color-ai-stop-1: #00d639;
+  --mode-color-ai-stop-2: #00d6de;
+  --mode-color-ai-stop-3: #9d60ff;
+  --mode-color-ai-alt-stop-1: #00d639;
+  --mode-color-ai-alt-stop-2: #00d6de;
+  --mode-color-ai-alt-stop-3: #9d60ff;
+  --mode-color-brand-default: #8b5cf6;
+  --mode-color-brand-default-alt: #ffffff;
+  --mode-color-brand-with-default-alt: #000000;
+  --mode-color-brand-inverse-default: #000000;
+  --mode-color-brand-inverse-default-alt: #000000;
+  --mode-color-brand-inverse-with-default-alt: #ffffff;
+  --mode-color-brand-copilot-default: #ffffff;
+  --mode-color-brand-copilot-with-default: #8b5cf6;
+  --mode-color-brand-copilot-monochrome: #ffffff;
+  --mode-color-brand-copilot-inverse-default: #000000;
+  --mode-color-brand-copilot-inverse-monochrome: #000000;
+  --mode-color-brand-copilot-inverse-with-default: #8b5cf6; /** not accessible on white if it is intended to provide meaning */
+  --mode-color-colorcode-blue-intense: #bfdbfe;
+  --mode-color-colorcode-blue-harsh: #60a5fa;
+  --mode-color-colorcode-blue-soft: #1d4ed8;
+  --mode-color-colorcode-blue-faint: #1e3a8a;
+  --mode-color-colorcode-teal-intense: #25b2b0;
+  --mode-color-colorcode-teal-harsh: #008b8a;
+  --mode-color-colorcode-teal-soft: #006d6c;
+  --mode-color-colorcode-teal-faint: #001c1c;
+  --mode-color-colorcode-green-intense: #a7f3d0;
+  --mode-color-colorcode-green-harsh: #34d399;
+  --mode-color-colorcode-green-soft: #047857;
+  --mode-color-colorcode-green-faint: #064e3b;
+  --mode-color-colorcode-lime-intense: #92aa3c;
+  --mode-color-colorcode-lime-harsh: #718524;
+  --mode-color-colorcode-lime-soft: #576900;
+  --mode-color-colorcode-lime-faint: #141a00;
+  --mode-color-colorcode-orange-intense: #fed7aa;
+  --mode-color-colorcode-orange-harsh: #fb923c;
+  --mode-color-colorcode-orange-soft: #c2410c;
+  --mode-color-colorcode-orange-faint: #7c2d12;
+  --mode-color-colorcode-red-intense: #fecdd3;
+  --mode-color-colorcode-red-harsh: #fb7185;
+  --mode-color-colorcode-red-soft: #be123c;
+  --mode-color-colorcode-red-faint: #881337;
+  --mode-color-colorcode-pink-intense: #f571c7;
+  --mode-color-colorcode-pink-harsh: #d046a4;
+  --mode-color-colorcode-pink-soft: #b02086;
+  --mode-color-colorcode-pink-faint: #350426;
+  --mode-color-colorcode-purple-intense: #ddd6fe;
+  --mode-color-colorcode-purple-harsh: #a78bfa;
+  --mode-color-colorcode-purple-soft: #6d28d9;
+  --mode-color-colorcode-purple-faint: #4c1d95;
+  --mode-color-colorcode-slate-intense: #f1f5f9;
+  --mode-color-colorcode-slate-harsh: #cbd5e1;
+  --mode-color-colorcode-slate-soft: #1e293b;
+  --mode-color-colorcode-slate-faint: #020617;
+  --mode-color-colorcode-gray-intense: #eeeeee;
+  --mode-color-colorcode-gray-harsh: #8b8b8b;
+  --mode-color-colorcode-gray-soft: #616161;
+  --mode-color-colorcode-gray-faint: #181818;
+  --mode-color-colorcode-yellow-intense: #ffd274;
+  --mode-color-colorcode-yellow-harsh: #ffbf22;
+  --mode-color-colorcode-yellow-soft: #926709;
+  --mode-color-colorcode-yellow-faint: #231500;
+  --mode-color-generic-bg-nought: #000000;
+  --mode-color-generic-bg-faint: #ffffff;
+  --mode-color-generic-bg-delicate: #ffffff;
+  --mode-color-generic-bg-soft: #ffffff;
+  --mode-color-generic-bg-inverse-nought: #ffffff;
+  --mode-color-generic-bg-inverse-faint: #f8fafc;
+  --mode-color-generic-bg-inverse-delicate: #f1f5f9;
+  --mode-color-generic-bg-inverse-soft: #eef2f6;
+  --mode-color-generic-txt-extreme: #ffffff;
+  --mode-color-generic-txt-severe: #ffffff;
+  --mode-color-generic-txt-moderate: #ffffff;
+  --mode-color-generic-txt-soft: #ffffff; /** was 0.5. Increased to 0.55 so that we can use this for hint txt etc too, and still be accessible. */
+  --mode-color-generic-txt-delicate: #ffffff; /** accessible OBJECT against white. */
+  --mode-color-generic-txt-inverse-extreme: #000000;
+  --mode-color-generic-txt-inverse-severe: #000000;
+  --mode-color-generic-txt-inverse-moderate: #000000;
+  --mode-color-generic-txt-inverse-soft: #000000; /** was 0.5. Increased to 0.55 so that we can use this for hint txt etc too, and still be accessible. */
+  --mode-color-generic-txt-inverse-delicate: #000000; /** accessible OBJECT against white. */
+  --mode-color-generic-fg-nought: #000000;
+  --mode-color-generic-fg-soft: #505050; /** table dividers and borders */
+  --mode-color-generic-fg-moderate: #616161;
+  --mode-color-generic-fg-firm: #6f6f6f;
+  --mode-color-generic-fg-inverse-nought: #ffffff;
+  --mode-color-generic-fg-inverse-soft: #94a3b8; /** table dividers and borders */
+  --mode-color-generic-fg-inverse-moderate: #64748b;
+  --mode-color-generic-fg-inverse-firm: #475569;
+  --mode-color-generic-surface-nought: #000000; /** used on full page backgrounds */
+  --mode-color-generic-surface-faint: #020617; /** used on full page backgrounds as an alternative option */
+  --mode-color-generic-surface-harsh: #e2e8f0;
+  --mode-color-generic-surface-severe: #f1f5f9;
+  --mode-color-action-ai-grad-active: linear-gradient(90deg, #00d639 0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-action-ai-grad-hover: linear-gradient(90deg, #00d639 0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-action-ai-grad-default: linear-gradient(90deg, #00d639  0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-action-ai-active-stop-1: #00d639;
+  --mode-color-action-ai-active-stop-2: #00d6de;
+  --mode-color-action-ai-active-stop-3: #9d60ff;
+  --mode-color-action-ai-hover-stop-1: #00d639;
+  --mode-color-action-ai-hover-stop-2: #00d6de;
+  --mode-color-action-ai-hover-stop-3: #9d60ff;
+  --mode-color-action-danger-active: #fecdd3; /** active button on dark */
+  --mode-color-action-danger-default: #fb7185;
+  --mode-color-action-danger-default-alt: #fda4af; /** for links in datatables  */
+  --mode-color-action-danger-hover: #fda4af;
+  --mode-color-action-danger-hover-alt: #fb7185; /** used on secondary-button hover states */
+  --mode-color-action-danger-hover-alt2: #fecdd3; /** for links in datatables */
+  --mode-color-action-danger-with-active: #000000;
+  --mode-color-action-danger-with-default: #000000;
+  --mode-color-action-danger-inverse-active: #9f1239; /** used on pill hover states */
+  --mode-color-action-danger-inverse-default: #e11d48;
+  --mode-color-action-danger-inverse-default-alt: #be123c; /** For links in datatables */
+  --mode-color-action-danger-inverse-hover: #be123c; /** used on solid-pill and primary-button hover states */
+  --mode-color-action-danger-inverse-hover-alt: #e11d48; /** used on secondary-button hover states */
+  --mode-color-action-danger-inverse-hover-alt2: #9f1239; /** used on link hover state */
+  --mode-color-action-danger-inverse-with-active: #ffffff;
+  --mode-color-action-danger-inverse-with-default: #ffffff;
+  --mode-color-action-data-entry-default: #000000; /** Input backgrounds. */
+  --mode-color-action-data-entry-with-active: #ffffff; /** checkbox tick icon or radio handle */
+  --mode-color-action-data-entry-with-active-alt: #000000;
+  --mode-color-action-data-entry-with-hover: #ffffff; /** txt for draggable area on file input */
+  --mode-color-action-data-entry-hover-alt: #020617; /** bg hover for draggable area on file input */
+  --mode-color-action-data-entry-with-default: #94a3b8; /** Input borders. */
+  --mode-color-action-data-entry-default-alt: #0f172a; /** Input footer bgs (e.g txt editor) */
+  --mode-color-action-data-entry-txt: #ffffff; /** Input txt */
+  --mode-color-action-data-entry-txt-alt: #ffffff; /** Hint txt, placeholder txt, character count etc */
+  --mode-color-action-data-entry-inverse-default: #ffffff; /** Input backgrounds. */
+  --mode-color-action-data-entry-inverse-with-default: #475569; /** Input borders. */
+  --mode-color-action-data-entry-inverse-txt: #000000; /** Input txt */
+  --mode-color-action-data-entry-inverse-txt-alt: #000000; /** Hint txt, placeholder txt, character count etc */
+  --mode-color-action-focus-default: #ffb500;
+  --mode-color-action-focus-txt: #ffffff;
+  --mode-color-action-focus-with-default: #000000;
+  --mode-color-action-focus-with-default-alt: #885e00;
+  --mode-color-action-focus-inverse-default: #000000;
+  --mode-color-action-focus-inverse-txt: #000000;
+  --mode-color-action-focus-inverse-with-default: #ffb500;
+  --mode-color-action-focus-inverse-with-default-alt: #ffd274;
+  --mode-color-action-inactive-default: #ffffff; /** Disabled form secondary, tertiary and input borders borders. */
+  --mode-color-action-inactive-mask: #ffffff; /** full screen takeover token for modal dimmer */
+  --mode-color-action-inactive-default-alt: #181818; /** Disabled input and switch backgrounds. Deliberately a solid color value as opposed to alpha based so it works within switch. */
+  --mode-color-action-inactive-txt: #ffffff; /** Disabled txt inside buttons */
+  --mode-color-action-inactive-txt-alt: #000000;
+  --mode-color-action-inactive-icon: #ffffff; /** Disabled icon inside buttons and form inputs. */
+  --mode-color-action-inactive-icon-alt: #ffffff; /** Readonly icon inside form inputs.  */
+  --mode-color-action-inactive-inverse-default: #000000; /** Disabled form secondary, tertiary and input borders borders. */
+  --mode-color-action-inactive-inverse-txt: #000000; /** inversed disabled txt inside buttons and form inputs. */
+  --mode-color-action-inactive-inverse-txt-alt: #ffffff; /**  Disabled labels inside buttons and Switch. */
+  --mode-color-action-grayscale-active: #ffffff;
+  --mode-color-action-grayscale-active-alt: #ffffff;
+  --mode-color-action-grayscale-default: #ffffff;
+  --mode-color-action-grayscale-default-alt: #ffffff; /** subtle and toggle button txt */
+  --mode-color-action-grayscale-hover-alt: #ffffff; /** Accordion, secondary, tertiary, menu bg on hover */
+  --mode-color-action-grayscale-hover: #ffffff; /** subtle table header hover */
+  --mode-color-action-grayscale-with-active: #000000;
+  --mode-color-action-grayscale-with-active-alt: #ffffff;
+  --mode-color-action-grayscale-with-default: #000000;
+  --mode-color-action-grayscale-with-hover: #ffffff;
+  --mode-color-action-grayscale-inverse-active: #000000;
+  --mode-color-action-grayscale-inverse-active-alt: #000000;
+  --mode-color-action-grayscale-inverse-default: #181818;
+  --mode-color-action-grayscale-inverse-default-alt: #000000; /** subtle and toggle button txt */
+  --mode-color-action-grayscale-inverse-hover-alt: #000000; /** Accordion, secondary, tertiary, menu bg on hover */
+  --mode-color-action-grayscale-inverse-hover: #000000; /** subtle table header hover */
+  --mode-color-action-grayscale-inverse-with-active: #ffffff;
+  --mode-color-action-grayscale-inverse-with-active-alt: #000000;
+  --mode-color-action-grayscale-inverse-with-default: #ffffff;
+  --mode-color-action-grayscale-inverse-with-hover: #000000;
+  --mode-color-action-nav-active: #5b21b6; /** active bg for nav items */
+  --mode-color-action-nav-default: #000000; /** default bg for global nav */
+  --mode-color-action-nav-default-alt: #181818; /** default bg for left nav container */
+  --mode-color-action-nav-child: #505050;
+  --mode-color-action-nav-child-alt: #616161;
+  --mode-color-action-nav-hover: #6d28d9; /** hover bg for nav items */
+  --mode-color-action-nav-with-active: #ffffff; /** txt and icons on top of active bgs in nav contxts */
+  --mode-color-action-nav-with-default: #000000; /** hover bg for nav items */
+  --mode-color-action-nav-with-hover: #ffffff; /** hov bg for nav items */
+  --mode-color-action-nav-inverse-active: #5b21b6; /** active bg for nav items */
+  --mode-color-action-nav-inverse-default: #ffffff;
+  --mode-color-action-nav-inverse-default-alt: #f8fafc;
+  --mode-color-action-nav-inverse-child: #ffffff;
+  --mode-color-action-nav-inverse-child-alt: #f1f5f9;
+  --mode-color-action-nav-inverse-hover: #6d28d9; /** hover bg for nav items */
+  --mode-color-action-nav-inverse-with-active: #ffffff; /** txt and icons on top of active bgs in nav contxts */
+  --mode-color-action-nav-inverse-with-default: #ffffff; /** hover bg for nav items */
+  --mode-color-action-nav-inverse-with-hover: #ffffff; /** hover bg for nav items */
+  --mode-color-action-main-active: #ddd6fe;
+  --mode-color-action-main-active-alt: #a78bfa; /** Active color for inverse secondary and tertiary buttons */
+  --mode-color-action-main-default: #a78bfa;
+  --mode-color-action-main-default-alt: #a78bfa; /** border color for secondary and tertiary inverse buttons */
+  --mode-color-action-main-default-alt2: #c4b5fd; /** default color for links */
+  --mode-color-action-main-default-alt3: #a78bfa; /** default background color of inverse secondary buttons */
+  --mode-color-action-main-hover: #c4b5fd;
+  --mode-color-action-main-hover-alt: #a78bfa; /** hover for inverse secondary and tertiary buttons */
+  --mode-color-action-main-hover-alt2: #ddd6fe; /** hover for links */
+  --mode-color-action-main-with-active: #000000;
+  --mode-color-action-main-with-default: #000000;
+  --mode-color-action-main-with-hover: #000000;
+  --mode-color-action-main-inverse-active: #5b21b6;
+  --mode-color-action-main-inverse-active-alt: #7c3aed; /** Active color for secondary and tertiary buttons */
+  --mode-color-action-main-inverse-default: #7c3aed;
+  --mode-color-action-main-inverse-default-alt: #7c3aed; /** border color for secondary and tertiary buttons */
+  --mode-color-action-main-inverse-default-alt2: #6d28d9; /** default value for links */
+  --mode-color-action-main-inverse-default-alt3: #7c3aed; /** default background color of secondary button */
+  --mode-color-action-main-inverse-hover: #6d28d9;
+  --mode-color-action-main-inverse-hover-alt: #7c3aed; /** hover for secondary and tertiary buttons */
+  --mode-color-action-main-inverse-hover-alt2: #5b21b6; /** hover for links */
+  --mode-color-action-main-inverse-with-active: #ffffff;
+  --mode-color-action-main-inverse-with-default: #ffffff;
+  --mode-color-action-main-inverse-with-hover: #ffffff;
+  --mode-color-status-ai-default: #000000;
+  --mode-color-status-ai-default-alt: #ffffff; /** bg for contxtual message comp */
+  --mode-color-status-ai-default-horizontal: linear-gradient(90deg, #00d639  0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-status-ai-default-vertical: linear-gradient(180deg, #00d639  0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-status-ai-inverse-default-horizontal: linear-gradient(90deg, #00d639  0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-status-ai-inverse-default-vertical: linear-gradient(180deg, #00d639  0%, #00d6de 40%, #9d60ff 90%);
+  --mode-color-status-callout-default-alt: #2e1065; /** used for marketing banners */
+  --mode-color-status-callout-hover-alt: #4c1d95; /** marketing banner hover */
+  --mode-color-status-skeleton-stop-1: #94a3b8;
+  --mode-color-status-skeleton-stop-2: #1e293b;
+  --mode-color-status-warning-default: #fb923c;
+  --mode-color-status-warning-default-alt: #431407; /** Subtle message bg */
+  --mode-color-status-warning-hover: #fdba74; /** used on pill hover states */
+  --mode-color-status-warning-hover-alt: #7c2d12; /** used on pill hover states and message bg */
+  --mode-color-status-warning-txt: #fdba74;
+  --mode-color-status-warning-inverse-default: #ea580c;
+  --mode-color-status-warning-inverse-default-alt: #fff7ed; /** Subtle message bg */
+  --mode-color-status-warning-inverse-hover: #c2410c; /** used on pill hover states */
+  --mode-color-status-warning-inverse-hover-alt: #ffedd5; /** used on pill hover states and message bg */
+  --mode-color-status-warning-inverse-txt: #c2410c;
+  --mode-color-status-txt-with-default: #000000;
+  --mode-color-status-txt-with-default-alt: #ffffff;
+  --mode-color-status-txt-with-hover: #000000;
+  --mode-color-status-txt-with-hover-alt: #ffffff;
+  --mode-color-status-txt-loading: #747474; /** used on skeleton txt */
+  --mode-color-status-txt-inverse-with-default: #ffffff;
+  --mode-color-status-txt-inverse-with-default-alt: #000000;
+  --mode-color-status-txt-inverse-with-hover: #ffffff;
+  --mode-color-status-txt-inverse-with-hover-alt: #000000;
+  --mode-color-status-custom-blue-default: #60a5fa; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-blue-default-alt: #172554; /** Pill bg */
+  --mode-color-status-custom-blue-hover: #93c5fd; /** used on pill hover states */
+  --mode-color-status-custom-blue-hover-alt: #1e3a8a; /** used on pill hover states */
+  --mode-color-status-custom-teal-default: #008b8a; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-teal-default-alt: #000e0e; /** Pill bg */
+  --mode-color-status-custom-teal-hover: #009b99; /** used on pill hover states */
+  --mode-color-status-custom-teal-hover-alt: #001c1c; /** used on pill hover states */
+  --mode-color-status-custom-green-default: #34d399; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-green-default-alt: #022c22; /** Pill bg */
+  --mode-color-status-custom-green-hover: #6ee7b7; /** used on pill hover states */
+  --mode-color-status-custom-green-hover-alt: #064e3b; /** used on pill hover states */
+  --mode-color-status-custom-lime-default: #718524; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-lime-default-alt: #0a0e00; /** Pill bg */
+  --mode-color-status-custom-lime-hover: #7d9428; /** used on pill hover states */
+  --mode-color-status-custom-lime-hover-alt: #141a00; /** used on pill hover states */
+  --mode-color-status-custom-orange-default: #fb923c; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-orange-default-alt: #431407; /** Pill bg */
+  --mode-color-status-custom-orange-hover: #fdba74; /** used on pill hover states */
+  --mode-color-status-custom-orange-hover-alt: #7c2d12; /** used on pill hover states */
+  --mode-color-status-custom-orange-txt: #fb923c; /** used in portrait */
+  --mode-color-status-custom-red-default: #fb7185; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-red-default-alt: #4c0519; /** Pill bg */
+  --mode-color-status-custom-red-hover: #fda4af; /** used on pill hover states */
+  --mode-color-status-custom-red-hover-alt: #881337; /** used on pill hover states */
+  --mode-color-status-custom-pink-default: #d046a4; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-pink-default-alt: #1e0115; /** Pill bg */
+  --mode-color-status-custom-pink-hover: #e84db5; /** used on pill hover states */
+  --mode-color-status-custom-pink-hover-alt: #350426; /** used on pill hover states */
+  --mode-color-status-custom-purple-default: #a78bfa; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-purple-default-alt: #2e1065; /** Pill bg */
+  --mode-color-status-custom-purple-hover: #c4b5fd; /** used on pill hover states */
+  --mode-color-status-custom-purple-hover-alt: #4c1d95; /** used on pill hover states */
+  --mode-color-status-custom-gray-default: #7c7c7c; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-gray-default-alt: #0b0b0b; /** Pill bg */
+  --mode-color-status-custom-gray-hover: #8b8b8b; /** used on pill hover states */
+  --mode-color-status-custom-gray-hover-alt: #181818; /** used on pill hover states */
+  --mode-color-status-custom-slate-default: #3d4a5e; /** For pills. Not accessible with white txt. */
+  --mode-color-status-custom-slate-default-alt: #020617; /** Pill bg */
+  --mode-color-status-custom-slate-hover: #475569; /** used on pill hover states */
+  --mode-color-status-custom-slate-hover-alt: #0f172a; /** used on pill hover states */
+  --mode-color-status-priority-default: #a78bfa;
+  --mode-color-status-priority-default-alt: #2e1065; /** Subtle message bg */
+  --mode-color-status-priority-hover: #c4b5fd; /** used on pill hover states */
+  --mode-color-status-priority-hover-alt: #4c1d95; /** used on pill hover states and message bg */
+  --mode-color-status-priority-inverse-default: #7c3aed; /** For tile status keylines to show if something is of high importance. */
+  --mode-color-status-priority-inverse-default-alt: #f5f3ff; /** Subtle message bg */
+  --mode-color-status-priority-inverse-hover: #6d28d9; /** used on pill hover states */
+  --mode-color-status-priority-inverse-hover-alt: #ede9fe; /** used on pill hover states and message bg */
+  --mode-color-status-inactive-default: #6f6f6f; /** For readonly pill bg and border */
+  --mode-color-status-inactive-with-default: #ffffff; /** For readonly filled pill txt */
+  --mode-color-status-inactive-inverse-default: #475569; /** For readonly pill bg and border */
+  --mode-color-status-inactive-inverse-with-default: #000000; /** For readonly filled pill txt */
+  --mode-color-status-info-default: #60a5fa;
+  --mode-color-status-info-default-alt: #172554; /** Subtle message bg */
+  --mode-color-status-info-hover: #93c5fd; /** used on pill hover states */
+  --mode-color-status-info-hover-alt: #1e3a8a; /** used on pill hover states and message bg */
+  --mode-color-status-info-inverse-default: #2563eb;
+  --mode-color-status-info-inverse-default-alt: #eff6ff; /** Subtle message bg */
+  --mode-color-status-info-inverse-hover: #1d4ed8; /** used on pill hover states */
+  --mode-color-status-info-inverse-hover-alt: #dbeafe; /** used on pill hover states and message bg */
+  --mode-color-status-negative-default: #fb7185;
+  --mode-color-status-negative-default-alt: #4c0519; /** Subtle message bg */
+  --mode-color-status-negative-hover: #fda4af; /** used on pill hover states */
+  --mode-color-status-negative-hover-alt: #881337; /** used on pill hover states and message bg */
+  --mode-color-status-negative-inverse-default: #e11d48;
+  --mode-color-status-negative-inverse-default-alt: #fff1f2; /** Subtle message bg */
+  --mode-color-status-negative-inverse-hover: #be123c; /** used on pill hover states */
+  --mode-color-status-negative-inverse-hover-alt: #ffe4e6; /** used on pill hover states and message bg */
+  --mode-color-status-neutral-default: #7c7c7c;
+  --mode-color-status-neutral-default-alt: #0b0b0b; /** Subtle message bg */
+  --mode-color-status-neutral-hover: #8b8b8b; /** used on pill hover states */
+  --mode-color-status-neutral-hover-alt: #181818; /** used on pill hover states and message bg */
+  --mode-color-status-neutral-inverse-default: #6f6f6f;
+  --mode-color-status-neutral-inverse-default-alt: #f8f8f8; /** Subtle message bg */
+  --mode-color-status-neutral-inverse-hover: #616161; /** used on pill hover states */
+  --mode-color-status-neutral-inverse-hover-alt: #eeeeee; /** used on pill hover states and message bg */
+  --mode-color-status-positive-default: #34d399;
+  --mode-color-status-positive-default-alt: #022c22; /** Subtle message bg */
+  --mode-color-status-positive-hover: #6ee7b7; /** used on pill hover states */
+  --mode-color-status-positive-hover-alt: #064e3b; /** used on pill hover states and message bg */
+  --mode-color-status-positive-inverse-default: #059669;
+  --mode-color-status-positive-inverse-default-alt: #ecfdf5; /** Subtle message bg */
+  --mode-color-status-positive-inverse-hover: #047857; /** used on pill hover states  */
+  --mode-color-status-positive-inverse-hover-alt: #d1fae5; /** used on pill hover states and message bg */
+}

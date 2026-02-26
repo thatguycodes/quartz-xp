@@ -1,0 +1,446 @@
+module.exports = {
+  "tab": {
+    "bg-active": {
+      "key": "{tab.bg-active}",
+      "$type": "color",
+      "$value": "#ffffff",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.withActive}",
+        "key": "{tab.bg-active}"
+      },
+      "name": "tabBgActive",
+      "attributes": {
+        "category": "tab",
+        "type": "bg-active"
+      },
+      "path": [
+        "tab",
+        "bg-active"
+      ]
+    },
+    "bg-default": {
+      "key": "{tab.bg-default}",
+      "$type": "color",
+      "$value": "#ffffff",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.none}",
+        "key": "{tab.bg-default}"
+      },
+      "name": "tabBgDefault",
+      "attributes": {
+        "category": "tab",
+        "type": "bg-default"
+      },
+      "path": [
+        "tab",
+        "bg-default"
+      ]
+    },
+    "bg-hover": {
+      "key": "{tab.bg-hover}",
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "For anchor nav, not tab.",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.hoverAlt}",
+        "$description": "For anchor nav, not tab.",
+        "key": "{tab.bg-hover}"
+      },
+      "name": "tabBgHover",
+      "attributes": {
+        "category": "tab",
+        "type": "bg-hover"
+      },
+      "path": [
+        "tab",
+        "bg-hover"
+      ]
+    },
+    "border-activeAlt": {
+      "key": "{tab.border-activeAlt}",
+      "$type": "color",
+      "$value": "#64748b",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.generic.fg.moderate}",
+        "key": "{tab.border-activeAlt}"
+      },
+      "name": "tabBorderActiveAlt",
+      "attributes": {
+        "category": "tab",
+        "type": "border-activeAlt"
+      },
+      "path": [
+        "tab",
+        "border-activeAlt"
+      ]
+    },
+    "border-active": {
+      "key": "{tab.border-active}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.active}",
+        "key": "{tab.border-active}"
+      },
+      "name": "tabBorderActive",
+      "attributes": {
+        "category": "tab",
+        "type": "border-active"
+      },
+      "path": [
+        "tab",
+        "border-active"
+      ]
+    },
+    "border-default": {
+      "key": "{tab.border-default}",
+      "$type": "color",
+      "$value": "#64748b",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.generic.fg.moderate}",
+        "key": "{tab.border-default}"
+      },
+      "name": "tabBorderDefault",
+      "attributes": {
+        "category": "tab",
+        "type": "border-default"
+      },
+      "path": [
+        "tab",
+        "border-default"
+      ]
+    },
+    "border-hover": {
+      "key": "{tab.border-hover}",
+      "$type": "color",
+      "$value": "#475569",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.generic.fg.firm}",
+        "key": "{tab.border-hover}"
+      },
+      "name": "tabBorderHover",
+      "attributes": {
+        "category": "tab",
+        "type": "border-hover"
+      },
+      "path": [
+        "tab",
+        "border-hover"
+      ]
+    },
+    "icon-default": {
+      "key": "{tab.icon-default}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.defaultAlt}",
+        "key": "{tab.icon-default}"
+      },
+      "name": "tabIconDefault",
+      "attributes": {
+        "category": "tab",
+        "type": "icon-default"
+      },
+      "path": [
+        "tab",
+        "icon-default"
+      ]
+    },
+    "icon-hover": {
+      "key": "{tab.icon-hover}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.withHover}",
+        "key": "{tab.icon-hover}"
+      },
+      "name": "tabIconHover",
+      "attributes": {
+        "category": "tab",
+        "type": "icon-hover"
+      },
+      "path": [
+        "tab",
+        "icon-hover"
+      ]
+    },
+    "label-active": {
+      "key": "{tab.label-active}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.active}",
+        "key": "{tab.label-active}"
+      },
+      "name": "tabLabelActive",
+      "attributes": {
+        "category": "tab",
+        "type": "label-active"
+      },
+      "path": [
+        "tab",
+        "label-active"
+      ]
+    },
+    "icon-active": {
+      "key": "{tab.icon-active}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.active}",
+        "key": "{tab.icon-active}"
+      },
+      "name": "tabIconActive",
+      "attributes": {
+        "category": "tab",
+        "type": "icon-active"
+      },
+      "path": [
+        "tab",
+        "icon-active"
+      ]
+    },
+    "label-default": {
+      "key": "{tab.label-default}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.default}",
+        "key": "{tab.label-default}"
+      },
+      "name": "tabLabelDefault",
+      "attributes": {
+        "category": "tab",
+        "type": "label-default"
+      },
+      "path": [
+        "tab",
+        "label-default"
+      ]
+    },
+    "label-hover": {
+      "key": "{tab.label-hover}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.grayscale.withHover}",
+        "key": "{tab.label-hover}"
+      },
+      "name": "tabLabelHover",
+      "attributes": {
+        "category": "tab",
+        "type": "label-hover"
+      },
+      "path": [
+        "tab",
+        "label-hover"
+      ]
+    },
+    "nav": {
+      "bg-default": {
+        "key": "{tab.nav.bg-default}",
+        "$type": "color",
+        "$value": "#ffffff",
+        "$description": "For previous/next buttons on responsive tabs",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.nought}",
+          "$description": "For previous/next buttons on responsive tabs",
+          "key": "{tab.nav.bg-default}"
+        },
+        "name": "tabNavBgDefault",
+        "attributes": {
+          "category": "tab",
+          "type": "nav",
+          "item": "bg-default"
+        },
+        "path": [
+          "tab",
+          "nav",
+          "bg-default"
+        ]
+      }
+    },
+    "validation": {
+      "border-warning": {
+        "key": "{tab.validation.border-warning}",
+        "$type": "color",
+        "$value": "#ea580c",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.warning.default}",
+          "key": "{tab.validation.border-warning}"
+        },
+        "name": "tabValidationBorderWarning",
+        "attributes": {
+          "category": "tab",
+          "type": "validation",
+          "item": "border-warning"
+        },
+        "path": [
+          "tab",
+          "validation",
+          "border-warning"
+        ]
+      },
+      "border-error": {
+        "key": "{tab.validation.border-error}",
+        "$type": "color",
+        "$value": "#e11d48",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.negative.default}",
+          "key": "{tab.validation.border-error}"
+        },
+        "name": "tabValidationBorderError",
+        "attributes": {
+          "category": "tab",
+          "type": "validation",
+          "item": "border-error"
+        },
+        "path": [
+          "tab",
+          "validation",
+          "border-error"
+        ]
+      },
+      "icon-error": {
+        "key": "{tab.validation.icon-error}",
+        "$type": "color",
+        "$value": "#e11d48",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.negative.default}",
+          "key": "{tab.validation.icon-error}"
+        },
+        "name": "tabValidationIconError",
+        "attributes": {
+          "category": "tab",
+          "type": "validation",
+          "item": "icon-error"
+        },
+        "path": [
+          "tab",
+          "validation",
+          "icon-error"
+        ]
+      },
+      "icon-warning": {
+        "key": "{tab.validation.icon-warning}",
+        "$type": "color",
+        "$value": "#ea580c",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.warning.default}",
+          "key": "{tab.validation.icon-warning}"
+        },
+        "name": "tabValidationIconWarning",
+        "attributes": {
+          "category": "tab",
+          "type": "validation",
+          "item": "icon-warning"
+        },
+        "path": [
+          "tab",
+          "validation",
+          "icon-warning"
+        ]
+      },
+      "label-error": {
+        "key": "{tab.validation.label-error}",
+        "$type": "color",
+        "$value": "#e11d48",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.negative.default}",
+          "key": "{tab.validation.label-error}"
+        },
+        "name": "tabValidationLabelError",
+        "attributes": {
+          "category": "tab",
+          "type": "validation",
+          "item": "label-error"
+        },
+        "path": [
+          "tab",
+          "validation",
+          "label-error"
+        ]
+      },
+      "label-warning": {
+        "key": "{tab.validation.label-warning}",
+        "$type": "color",
+        "$value": "#c2410c",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/tab.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.status.warning.txt}",
+          "key": "{tab.validation.label-warning}"
+        },
+        "name": "tabValidationLabelWarning",
+        "attributes": {
+          "category": "tab",
+          "type": "validation",
+          "item": "label-warning"
+        },
+        "path": [
+          "tab",
+          "validation",
+          "label-warning"
+        ]
+      }
+    }
+  }
+};

@@ -1,0 +1,308 @@
+{
+  "link": {
+    "destructive": {
+      "label-default": {
+        "key": "{link.destructive.label-default}",
+        "$type": "color",
+        "$value": "#be123c",
+        "$description": ".",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.danger.defaultAlt}",
+          "$description": ".",
+          "key": "{link.destructive.label-default}"
+        },
+        "name": "link-destructive-label-default",
+        "attributes": {
+          "category": "link",
+          "type": "destructive",
+          "item": "label-default"
+        },
+        "path": [
+          "link",
+          "destructive",
+          "label-default"
+        ]
+      },
+      "label-hover": {
+        "key": "{link.destructive.label-hover}",
+        "$type": "color",
+        "$value": "#9f1239",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.danger.hoverAlt2}",
+          "key": "{link.destructive.label-hover}"
+        },
+        "name": "link-destructive-label-hover",
+        "attributes": {
+          "category": "link",
+          "type": "destructive",
+          "item": "label-hover"
+        },
+        "path": [
+          "link",
+          "destructive",
+          "label-hover"
+        ]
+      },
+      "inverse": {
+        "label-default": {
+          "key": "{link.destructive.inverse.label-default}",
+          "$type": "color",
+          "$value": "#fda4af",
+          "$description": ".",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.action.danger.inverse.defaultAlt}",
+            "$description": ".",
+            "key": "{link.destructive.inverse.label-default}"
+          },
+          "name": "link-destructive-inverse-label-default",
+          "attributes": {
+            "category": "link",
+            "type": "destructive",
+            "item": "inverse",
+            "subitem": "label-default"
+          },
+          "path": [
+            "link",
+            "destructive",
+            "inverse",
+            "label-default"
+          ]
+        },
+        "label-hover": {
+          "key": "{link.destructive.inverse.label-hover}",
+          "$type": "color",
+          "$value": "#fecdd3",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.action.danger.inverse.hoverAlt2}",
+            "key": "{link.destructive.inverse.label-hover}"
+          },
+          "name": "link-destructive-inverse-label-hover",
+          "attributes": {
+            "category": "link",
+            "type": "destructive",
+            "item": "inverse",
+            "subitem": "label-hover"
+          },
+          "path": [
+            "link",
+            "destructive",
+            "inverse",
+            "label-hover"
+          ]
+        }
+      }
+    },
+    "typical": {
+      "label-default": {
+        "key": "{link.typical.label-default}",
+        "$type": "color",
+        "$value": "#6d28d9",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.main.defaultAlt2}",
+          "key": "{link.typical.label-default}"
+        },
+        "name": "link-typical-label-default",
+        "attributes": {
+          "category": "link",
+          "type": "typical",
+          "item": "label-default"
+        },
+        "path": [
+          "link",
+          "typical",
+          "label-default"
+        ]
+      },
+      "label-hover": {
+        "key": "{link.typical.label-hover}",
+        "$type": "color",
+        "$value": "#5b21b6",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.main.hoverAlt2}",
+          "key": "{link.typical.label-hover}"
+        },
+        "name": "link-typical-label-hover",
+        "attributes": {
+          "category": "link",
+          "type": "typical",
+          "item": "label-hover"
+        },
+        "path": [
+          "link",
+          "typical",
+          "label-hover"
+        ]
+      },
+      "inverse": {
+        "label-default": {
+          "key": "{link.typical.inverse.label-default}",
+          "$type": "color",
+          "$value": "#ede9fe",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.action.main.inverse.defaultAlt2}",
+            "key": "{link.typical.inverse.label-default}"
+          },
+          "name": "link-typical-inverse-label-default",
+          "attributes": {
+            "category": "link",
+            "type": "typical",
+            "item": "inverse",
+            "subitem": "label-default"
+          },
+          "path": [
+            "link",
+            "typical",
+            "inverse",
+            "label-default"
+          ]
+        },
+        "label-hover": {
+          "key": "{link.typical.inverse.label-hover}",
+          "$type": "color",
+          "$value": "#ddd6fe",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.action.main.inverse.hoverAlt2}",
+            "key": "{link.typical.inverse.label-hover}"
+          },
+          "name": "link-typical-inverse-label-hover",
+          "attributes": {
+            "category": "link",
+            "type": "typical",
+            "item": "inverse",
+            "subitem": "label-hover"
+          },
+          "path": [
+            "link",
+            "typical",
+            "inverse",
+            "label-hover"
+          ]
+        }
+      }
+    },
+    "subtle": {
+      "label-default": {
+        "key": "{link.subtle.label-default}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.grayscale.default}",
+          "key": "{link.subtle.label-default}"
+        },
+        "name": "link-subtle-label-default",
+        "attributes": {
+          "category": "link",
+          "type": "subtle",
+          "item": "label-default"
+        },
+        "path": [
+          "link",
+          "subtle",
+          "label-default"
+        ]
+      },
+      "label-hover": {
+        "key": "{link.subtle.label-hover}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.grayscale.active}",
+          "key": "{link.subtle.label-hover}"
+        },
+        "name": "link-subtle-label-hover",
+        "attributes": {
+          "category": "link",
+          "type": "subtle",
+          "item": "label-hover"
+        },
+        "path": [
+          "link",
+          "subtle",
+          "label-hover"
+        ]
+      },
+      "inverse": {
+        "label-default": {
+          "key": "{link.subtle.inverse.label-default}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.action.grayscale.inverse.default}",
+            "key": "{link.subtle.inverse.label-default}"
+          },
+          "name": "link-subtle-inverse-label-default",
+          "attributes": {
+            "category": "link",
+            "type": "subtle",
+            "item": "inverse",
+            "subitem": "label-default"
+          },
+          "path": [
+            "link",
+            "subtle",
+            "inverse",
+            "label-default"
+          ]
+        },
+        "label-hover": {
+          "key": "{link.subtle.inverse.label-hover}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/link.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.action.grayscale.inverse.active}",
+            "key": "{link.subtle.inverse.label-hover}"
+          },
+          "name": "link-subtle-inverse-label-hover",
+          "attributes": {
+            "category": "link",
+            "type": "subtle",
+            "item": "inverse",
+            "subitem": "label-hover"
+          },
+          "path": [
+            "link",
+            "subtle",
+            "inverse",
+            "label-hover"
+          ]
+        }
+      }
+    }
+  }
+}

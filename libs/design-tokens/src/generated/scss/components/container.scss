@@ -1,0 +1,74 @@
+
+// Do not edit directly, this file was auto-generated.
+
+$container-size-fluid-items-2-xs: 80px; // min and max widths for responsive tile items
+$container-size-fluid-items-xs: 128px; // min and max widths for responsive tile items
+$container-size-fluid-items-s: 160px; // min and max widths for responsive tile items. Min width for Tile select txt wrapper.
+$container-size-fluid-items-m: 200px; // min and max widths for responsive tile items
+$container-size-fluid-items-l: 240px; // min and max widths for responsive tile items
+$container-size-fluid-items-xl: 288px; // Small screen mid width inside page margins.
+$container-size-fluid-items-2-xl: 320px; // Small screen full page width.
+$container-size-fluid-items-3-xl: 560px; // min and max widths for responsive tile items
+$container-size-fluid-items-4-xl: 760px; // Max width for single line of txt.
+$container-action-bg-footer-activated: $mode-color-status-positive-default; //  
+$container-action-bg-footer-active: $mode-color-action-grayscale-active;
+$container-action-border-activated: $mode-color-status-positive-default;
+$container-action-bg-footer-default: $mode-color-generic-bg-nought; // tile footer bg color 
+$container-action-bg-default: $mode-color-generic-bg-nought;
+$container-action-bg-disabled: $mode-color-action-inactive-default-alt;
+$container-action-border-active: $mode-color-action-grayscale-active;
+$container-action-border-alt: $mode-color-generic-fg-moderate; // Link preview. 
+$container-action-border-inactive: $mode-color-generic-fg-firm;
+$container-action-border-default: $mode-color-generic-fg-firm;
+$container-action-icon-active: $mode-color-action-grayscale-active; // Active chevron for any accordion.
+$container-action-label-footer-active: $mode-color-action-grayscale-with-active;
+$container-action-label-footer-activated: $mode-color-action-grayscale-with-active;
+$container-action-txt-active: $mode-color-action-grayscale-active; // Active label for any accordion.
+$container-action-detailedicon-bg: $mode-color-status-custom-green-default; //  
+$container-action-target-bg-default: $mode-color-status-info-default; // draggable drop target background color
+$container-scrollbar-bg-default: $mode-color-generic-bg-faint;
+$container-scrollbar-fg-default: $mode-color-generic-fg-firm;
+$container-scrollbar-inverse-bg-default: $mode-color-generic-bg-inverse-soft;
+$container-scrollbar-inverse-fg-default: $mode-color-generic-fg-inverse-firm;
+$container-standard-bg-alt: $mode-color-generic-bg-faint;
+$container-standard-bg-default: $mode-color-generic-bg-nought;
+$container-standard-bg-footer-default: $mode-color-generic-bg-faint; // tile footer bg color 
+$container-standard-border-active: $mode-color-action-grayscale-active;
+$container-standard-border-alt: $mode-color-generic-fg-firm;
+$container-standard-border-default: $mode-color-generic-fg-soft;
+$container-standard-dimmer: $mode-color-action-inactive-mask; // dimmed mask for dialogs
+$container-standard-icon: $mode-color-generic-fg-firm; // Link preview image thumbnail
+$container-standard-inverse-bg-alt: $mode-color-generic-bg-inverse-delicate;
+$container-standard-inverse-border-alt: $mode-color-generic-fg-inverse-firm;
+$container-standard-inverse-bg-default: $mode-color-generic-bg-inverse-nought;
+$container-standard-inverse-border-default: $mode-color-generic-fg-inverse-soft;
+$container-standard-priority-bg-caution: $mode-color-status-warning-default;
+$container-standard-priority-bg-negative: $mode-color-status-negative-default;
+$container-standard-priority-bg-prio: $mode-color-status-priority-default;
+$container-standard-priority-bg-info: $mode-color-status-info-default;
+$container-standard-priority-bg-neutral: $mode-color-status-neutral-default;
+$container-standard-priority-bg-positive: $mode-color-status-positive-default;
+$container-standard-priority-inverse-bg-caution: $mode-color-status-warning-inverse-default;
+$container-standard-priority-inverse-bg-negative: $mode-color-status-negative-inverse-default;
+$container-standard-priority-inverse-bg-prio: $mode-color-status-priority-inverse-default;
+$container-standard-priority-inverse-bg-info: $mode-color-status-info-inverse-default;
+$container-standard-priority-inverse-bg-neutral: $mode-color-status-neutral-inverse-default;
+$container-standard-priority-inverse-bg-positive: $mode-color-status-positive-inverse-default;
+$container-action-bg-hover: $mode-color-action-grayscale-hover-alt; // Used for accordion hov backgrounds 
+$container-action-borderalt-hover: $mode-color-action-grayscale-default; // For hov border on Link preview.
+$container-action-icon-default: $mode-color-action-grayscale-default; // Enabled chevron for any accordion.
+$container-action-icon-alt-default: $mode-color-action-grayscale-default-alt; // Enabled label for subtle accordion.
+$container-action-icon-hover: $mode-color-action-grayscale-default; // hov chevron for any accordion.
+$container-action-txt-default: $mode-color-generic-txt-severe; // Enabled label for standard accordion.
+$container-action-txt-alt-default: $mode-color-generic-txt-moderate; // Enabled label for subtle accordion.
+$container-action-txt-hover: $mode-color-action-grayscale-default; // hov label for any accordion.
+$container-standard-border-ai-h: $mode-color-status-ai-inverse-default-horizontal; // top border for AI dialog component
+$container-standard-border-ai-v: $mode-color-status-ai-inverse-default-vertical; // left and right border for AI nudge message component
+$container-standard-txt-alt: $mode-color-generic-txt-moderate; // for subheadings etc
+$container-standard-txt-default: $mode-color-generic-txt-severe; // for headings, paragraph txt etc 
+$container-standard-inverse-txt-alt: $mode-color-generic-txt-inverse-moderate; // for subheadings etc
+$container-standard-inverse-txt-default: $mode-color-generic-txt-inverse-severe; // for headings, paragraph txt etc 
+$container-standard-priority-bg-ai: $mode-color-status-ai-inverse-default-vertical;
+$container-standard-priority-inverse-bg-ai: $mode-color-status-ai-inverse-default-vertical;
+$container-quote-border: $mode-color-action-main-default;
+$container-action-txt-disabled: $mode-color-action-inactive-txt;

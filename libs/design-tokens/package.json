@@ -13,18 +13,13 @@
   ],
   "exports": {
     ".": {
-      "types": "./src/generated/ts/tokens.d.ts",
-      "default": "./src/generated/ts/tokens.ts"
+      "types": "./src/generated/js/es6/tokens.d.ts",
+      "default": "./src/generated/js/es6/tokens.js"
     },
-    "./generated/css/variables-light.css": {
-      "default": "./src/generated/css/variables-light.css"
-    },
-    "./generated/css/variables-dark.css": {
-      "default": "./src/generated/css/variables-dark.css"
-    },
-    "./css": {
-      "default": "./src/generated/css/variables.css"
-    }
+    "./css/*": "./src/generated/css/*.css",
+    "./scss/*": "./src/generated/scss/*.scss",
+    "./json/*": "./src/generated/json/*.json",
+    "./js/*": "./src/generated/js/*.js"
   },
   "types": "./src/generated/ts/tokens.d.ts",
   "main": "./src/generated/ts/tokens.ts"

@@ -1,0 +1,17 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --logo-sage-bg-default: var(--mode-color-brand-default); /** sage logo */
+  --logo-sage-bg-alt: var(--mode-color-brand-default-alt);
+  --logo-sage-inverse-bg-default: var(--mode-color-brand-inverse-default); /** sage logo */
+  --logo-sage-inverse-bg-alt: var(--mode-color-brand-inverse-default-alt);
+  --logo-copilot-no-bg-fg-default: var(--mode-color-brand-copilot-monochrome);
+  --logo-ai-sparkle-bg-dot: var(--mode-color-brand-copilot-with-default);
+  --logo-ai-sparkle-bg-star: var(--mode-color-brand-copilot-default); /** star bg color */
+  --logo-ai-sparkle-outline: var(--mode-color-brand-copilot-default); /** star outline variant */
+  --logo-ai-sparkle-inverse-bg-dot: var(--mode-color-brand-copilot-inverse-with-default); /** star outline variant */
+  --logo-ai-sparkle-inverse-bg-star: var(--mode-color-brand-copilot-inverse-default); /** star outline variant */
+  --logo-ai-sparkle-inverse-outline: var(--mode-color-brand-copilot-inverse-default); /** star outline variant */
+}

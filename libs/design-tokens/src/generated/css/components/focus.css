@@ -1,0 +1,14 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --focus-bg: var(--mode-color-action-focus-with-default-alt);
+  --focus-borderalt: var(--mode-color-action-focus-default);
+  --focus-border: var(--mode-color-action-focus-with-default);
+  --focus-label: var(--mode-color-action-focus-txt);
+  --focus-inverse-bg: var(--mode-color-action-focus-inverse-with-default-alt);
+  --focus-inverse-borderalt: var(--mode-color-action-focus-inverse-default);
+  --focus-inverse-border: var(--mode-color-action-focus-inverse-with-default);
+  --focus-inverse-label: var(--mode-color-action-focus-inverse-txt);
+}

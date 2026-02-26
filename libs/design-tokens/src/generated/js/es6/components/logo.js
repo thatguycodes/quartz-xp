@@ -1,0 +1,11 @@
+export const logoSageBgDefault = undefined;
+export const logoSageBgAlt = undefined;
+export const logoSageInverseBgDefault = undefined;
+export const logoSageInverseBgAlt = undefined;
+export const logoCopilotNoBgFgDefault = undefined;
+export const logoAiSparkleBgDot = undefined;
+export const logoAiSparkleBgStar = undefined;
+export const logoAiSparkleOutline = undefined;
+export const logoAiSparkleInverseBgDot = undefined;
+export const logoAiSparkleInverseBgStar = undefined;
+export const logoAiSparkleInverseOutline = undefined;

@@ -1,0 +1,83 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --input-switch-border-active: rgba(0, 0, 0, 0); /** border of switch in active state */
+  --input-switch-border-active-disabled: rgba(0, 0, 0, 0); /** border of switch inactive and disabled state */
+  --input-calendar-bg-active: var(--mode-color-action-grayscale-active);
+  --input-calendar-bg-disabled: var(--mode-color-action-inactive-default-alt);
+  --input-calendar-bg-duration: var(--mode-color-action-data-entry-hover-alt);
+  --input-calendar-bg-hover: var(--mode-color-action-data-entry-hover-alt);
+  --input-calendar-border-duration: var(--mode-color-action-grayscale-active);
+  --input-calendar-txt-active: var(--mode-color-action-grayscale-with-active);
+  --input-calendar-txt-hover: var(--mode-color-action-grayscale-with-hover);
+  --input-dropdown-bg-hover: var(--mode-color-action-data-entry-hover-alt); /** REF POPOVER  */
+  --input-dropdown-label-active: var(--mode-color-action-grayscale-with-active);
+  --input-dropdown-label-hover: var(--mode-color-action-grayscale-with-hover);
+  --input-labelset-label-required: var(--mode-color-action-danger-default);
+  --input-labelset-inverse-label-required: var(--mode-color-action-danger-inverse-default);
+  --input-typical-bg-alt: var(--mode-color-action-data-entry-default-alt); /** progress bar bg, txt editor preview and txt editor footer */
+  --input-typical-bg-disabled: var(--mode-color-action-inactive-default-alt);
+  --input-typical-bg-default: var(--mode-color-action-data-entry-default);
+  --input-typical-bg-hover: var(--mode-color-action-data-entry-hover-alt);
+  --input-typical-bg-read-only: var(--mode-color-action-inactive-default-alt);
+  --input-typical-border-alt: var(--mode-color-action-inactive-default);
+  --input-typical-border-default: var(--mode-color-action-data-entry-with-default);
+  --input-typical-border-disabled: var(--mode-color-action-inactive-default);
+  --input-typical-border-hover: var(--mode-color-action-data-entry-with-hover); /** File input draggable border state */
+  --input-typical-border-read-only: var(--mode-color-action-inactive-default);
+  --input-typical-icon-active: var(--mode-color-action-data-entry-with-active); /** used on tick in color picker and selected tick on dropdowns */
+  --input-typical-icon-hover: var(--mode-color-action-data-entry-with-hover);
+  --input-typical-icon-alt-active: var(--mode-color-action-data-entry-with-active-alt); /** used on tick in color picker */
+  --input-typical-txt-hover: var(--mode-color-action-data-entry-with-hover); /** txt hover state when dragging a file over file input */
+  --input-typical-inverse-bg-default: var(--mode-color-action-data-entry-inverse-default);
+  --input-typical-inverse-border-default: var(--mode-color-action-data-entry-inverse-with-default);
+  --input-switch-bg-active: var(--mode-color-action-grayscale-active); /** background of switch in active state */
+  --input-switch-bg-activate-disabled: var(--mode-color-action-inactive-default); /** background of switch in active when disabled */
+  --input-switch-bg-disabled: var(--mode-color-action-inactive-default-alt); /** background of switch when disabled in off state */
+  --input-switch-bg-default: var(--mode-color-action-data-entry-default); /** background of switch in off state */
+  --input-switch-border-disabled: var(--mode-color-action-inactive-default); /** border of disabled switch in off state */
+  --input-switch-border-default: var(--mode-color-action-data-entry-with-default); /** border of switch in off state */
+  --input-switch-fg-active: var(--mode-color-action-grayscale-with-active); /** switch knob in active state */
+  --input-switch-fg-disabled: var(--mode-color-action-inactive-default); /** switch knob in off disabled state */
+  --input-switch-fg-default: var(--mode-color-action-data-entry-with-default); /** switch knob in off state */
+  --input-switch-label-activate-disabled: var(--mode-color-action-inactive-default); /** label to right of switch when switch is active but disabled */
+  --input-switch-label-disabled: var(--mode-color-action-inactive-default); /** label to right of switch when switch is off but disabled */
+  --input-validation-border-error: var(--mode-color-status-negative-default);
+  --input-validation-bar-error: var(--mode-color-status-negative-default); /** error bar to left of inputs */
+  --input-validation-bar-warn: var(--mode-color-status-warning-default); /** warning bar to left of inputs */
+  --input-validation-label-error: var(--mode-color-status-negative-default);
+  --input-validation-label-success: var(--mode-color-status-positive-default);
+  --input-validation-label-warn: var(--mode-color-status-warning-txt);
+  --input-validation-inverse-border-error: var(--mode-color-status-negative-inverse-default);
+  --input-validation-inverse-bar-error: var(--mode-color-status-negative-inverse-default); /** error bar to left of inputs */
+  --input-validation-inverse-label-error: var(--mode-color-status-negative-inverse-default);
+  --input-typical-txt-read-only: var(--mode-color-generic-txt-severe);
+  --input-switch-fg-activate-disabled: var(--mode-color-action-inactive-txt-alt); /** switch knob in active but disabled state. */
+  --input-calendar-txt-alt: var(--mode-color-action-data-entry-txt-alt); /** Days of the week subheaders */
+  --input-calendar-txt-disabled: var(--mode-color-action-inactive-txt);
+  --input-calendar-txt-duration: var(--mode-color-action-data-entry-txt);
+  --input-calendar-txt-default: var(--mode-color-action-data-entry-txt);
+  --input-calendar-txt-alt-default: var(--mode-color-action-data-entry-txt-alt);
+  --input-dropdown-label-alt: var(--mode-color-action-data-entry-txt);
+  --input-dropdown-label-disabled: var(--mode-color-action-inactive-txt);
+  --input-dropdown-label-default: var(--mode-color-action-data-entry-txt-alt);
+  --input-dropdown-label-subtxt: var(--mode-color-action-data-entry-txt-alt); /** Option subtxt. */
+  --input-labelset-label-default: var(--mode-color-action-data-entry-txt);
+  --input-labelset-label-alt: var(--mode-color-action-data-entry-txt-alt); /** used for '(optional)' txt and hint txt. */
+  --input-labelset-label-disabled: var(--mode-color-action-inactive-txt);
+  --input-labelset-label-read-only: var(--mode-color-action-data-entry-txt);
+  --input-labelset-inverse-label-default: var(--mode-color-action-data-entry-inverse-txt);
+  --input-labelset-inverse-label-alt: var(--mode-color-action-data-entry-inverse-txt-alt); /** used for '(optional)' txt and hint txt. */
+  --input-typical-icon-default: var(--mode-color-action-data-entry-txt);
+  --input-typical-icon-disabled: var(--mode-color-action-inactive-icon);
+  --input-typical-icon-read-only: var(--mode-color-action-inactive-icon-alt);
+  --input-typical-txt-active: var(--mode-color-action-data-entry-txt);
+  --input-typical-txt-alt: var(--mode-color-action-data-entry-txt-alt);
+  --input-typical-txt-default: var(--mode-color-action-data-entry-txt);
+  --input-typical-txt-disabled: var(--mode-color-action-inactive-txt);
+  --input-typical-inverse-txt-default: var(--mode-color-action-data-entry-inverse-txt);
+  --input-switch-label-active: var(--mode-color-action-data-entry-txt); /** label to right of switch when switch is active */
+  --input-switch-label-default: var(--mode-color-action-data-entry-txt-alt); /** label to right of switch when switch is off  */
+}

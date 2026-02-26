@@ -1,0 +1,18 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --link-destructive-label-default: var(--mode-color-action-danger-default-alt); /** . */
+  --link-destructive-label-hover: var(--mode-color-action-danger-hover-alt2);
+  --link-destructive-inverse-label-default: var(--mode-color-action-danger-inverse-default-alt); /** . */
+  --link-destructive-inverse-label-hover: var(--mode-color-action-danger-inverse-hover-alt2);
+  --link-typical-label-default: var(--mode-color-action-main-default-alt2);
+  --link-typical-label-hover: var(--mode-color-action-main-hover-alt2);
+  --link-typical-inverse-label-hover: var(--mode-color-action-main-inverse-hover-alt2);
+  --link-subtle-label-hover: var(--mode-color-action-grayscale-active);
+  --link-subtle-inverse-label-hover: var(--mode-color-action-grayscale-inverse-active);
+  --link-typical-inverse-label-default: var(--mode-color-action-main-inverse-default-alt2);
+  --link-subtle-label-default: var(--mode-color-action-grayscale-default);
+  --link-subtle-inverse-label-default: var(--mode-color-action-grayscale-inverse-default);
+}

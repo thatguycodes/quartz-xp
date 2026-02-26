@@ -1,0 +1,10 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --page-bg-default: var(--mode-color-generic-surface-nought);
+  --page-bg-alt: var(--mode-color-generic-surface-faint);
+  --page-txt-alt: var(--mode-color-generic-txt-moderate); /** for subheadings etc */
+  --page-txt-default: var(--mode-color-generic-txt-severe); /** for headings, paragraph txt etc  */
+}

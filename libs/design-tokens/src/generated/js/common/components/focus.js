@@ -1,0 +1,182 @@
+module.exports = {
+  "focus": {
+    "bg": {
+      "key": "{focus.bg}",
+      "$type": "color",
+      "$value": "#ffd274",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.focus.withDefaultAlt}",
+        "key": "{focus.bg}"
+      },
+      "name": "focusBg",
+      "attributes": {
+        "category": "focus",
+        "type": "bg"
+      },
+      "path": [
+        "focus",
+        "bg"
+      ]
+    },
+    "borderalt": {
+      "key": "{focus.borderalt}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.focus.default}",
+        "key": "{focus.borderalt}"
+      },
+      "name": "focusBorderalt",
+      "attributes": {
+        "category": "focus",
+        "type": "borderalt"
+      },
+      "path": [
+        "focus",
+        "borderalt"
+      ]
+    },
+    "border": {
+      "key": "{focus.border}",
+      "$type": "color",
+      "$value": "#ffb500",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.focus.withDefault}",
+        "key": "{focus.border}"
+      },
+      "name": "focusBorder",
+      "attributes": {
+        "category": "focus",
+        "type": "border"
+      },
+      "path": [
+        "focus",
+        "border"
+      ]
+    },
+    "label": {
+      "key": "{focus.label}",
+      "$type": "color",
+      "$value": "#000000",
+      "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+      "isSource": true,
+      "original": {
+        "$type": "color",
+        "$value": "{mode.color.action.focus.txt}",
+        "key": "{focus.label}"
+      },
+      "name": "focusLabel",
+      "attributes": {
+        "category": "focus",
+        "type": "label"
+      },
+      "path": [
+        "focus",
+        "label"
+      ]
+    },
+    "inverse": {
+      "bg": {
+        "key": "{focus.inverse.bg}",
+        "$type": "color",
+        "$value": "#885e00",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.focus.inverse.withDefaultAlt}",
+          "key": "{focus.inverse.bg}"
+        },
+        "name": "focusInverseBg",
+        "attributes": {
+          "category": "focus",
+          "type": "inverse",
+          "item": "bg"
+        },
+        "path": [
+          "focus",
+          "inverse",
+          "bg"
+        ]
+      },
+      "borderalt": {
+        "key": "{focus.inverse.borderalt}",
+        "$type": "color",
+        "$value": "#ffb500",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.focus.inverse.default}",
+          "key": "{focus.inverse.borderalt}"
+        },
+        "name": "focusInverseBorderalt",
+        "attributes": {
+          "category": "focus",
+          "type": "inverse",
+          "item": "borderalt"
+        },
+        "path": [
+          "focus",
+          "inverse",
+          "borderalt"
+        ]
+      },
+      "border": {
+        "key": "{focus.inverse.border}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.focus.inverse.withDefault}",
+          "key": "{focus.inverse.border}"
+        },
+        "name": "focusInverseBorder",
+        "attributes": {
+          "category": "focus",
+          "type": "inverse",
+          "item": "border"
+        },
+        "path": [
+          "focus",
+          "inverse",
+          "border"
+        ]
+      },
+      "label": {
+        "key": "{focus.inverse.label}",
+        "$type": "color",
+        "$value": "#ffffff",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/focus.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.action.focus.inverse.txt}",
+          "key": "{focus.inverse.label}"
+        },
+        "name": "focusInverseLabel",
+        "attributes": {
+          "category": "focus",
+          "type": "inverse",
+          "item": "label"
+        },
+        "path": [
+          "focus",
+          "inverse",
+          "label"
+        ]
+      }
+    }
+  }
+};

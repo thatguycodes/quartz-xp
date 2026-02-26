@@ -1,0 +1,16 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --popover-bg-active: var(--mode-color-action-grayscale-active); /** previously action minor 850 */
+  --popover-bg-default: var(--mode-color-generic-bg-nought); /** REF'D IN FORM. Popover container bg */
+  --popover-label-active: var(--mode-color-action-grayscale-with-active);
+  --popover-label-active-alt: var(--mode-color-action-grayscale-with-hover);
+  --popover-label-hover: var(--mode-color-action-grayscale-with-hover);
+  --popover-submenu-bg-default: var(--mode-color-generic-bg-faint); /** popover small screen submenu container bg */
+  --popover-bg-active-alt: var(--mode-color-action-grayscale-hover-alt); /** REF'D IN FORM.  */
+  --popover-bg-hover: var(--mode-color-action-grayscale-hover-alt); /** REF'D IN FORM.  */
+  --popover-label-default: var(--mode-color-action-grayscale-default-alt);
+  --popover-label-disabled: var(--mode-color-action-inactive-txt);
+}

@@ -1,399 +1,331 @@
-import StyleDictionary from 'style-dictionary';
-import { transforms } from 'style-dictionary/enums';
-import { copyFile } from 'fs/promises';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
-import { existsSync } from 'fs';
+/*
+Copyright © 2025 The Sage Group plc or its licensors. All Rights reserved
+ */
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+import * as fs from "fs"
+import { dirname, join } from "path"
+import { fileURLToPath } from "url"
+import { StyleDictionary, groups } from "./style-dictionary.js"
+import { FilterComponent } from "./utils/filter-component.js"
 
-const {
-  attributeCti,
-  timeSeconds,
-  htmlIcon,
-  sizeRem,
-  sizeRemToSp,
-  sizeRemToDp,
-  sizeSwiftRemToCGFloat,
-  colorCss,
-  colorHex8android,
-  colorUIColorSwift,
-  assetUrl,
-  assetSwiftLiteral,
-  contentSwiftLiteral,
-  fontFamilyCss,
-  cubicBezierCss,
-  strokeStyleCssShorthand,
-  borderCssShorthand,
-  typographyCssShorthand,
-  transitionCssShorthand,
-  shadowCssShorthand,
-} = transforms;
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
-const projectRoot = join(__dirname, '..');
-const outputPath = join(projectRoot, 'src');
-const tokensRoot = join(projectRoot, 'src/tokens');
-const useNewTokens = existsSync(join(tokensRoot, '$metadata.json'));
+const projectRoot = join(__dirname, "..")
+const tokensRoot = join(projectRoot, "src/tokens")
+const outputPath = join(projectRoot, "src/generated")
 
-function getSources(theme, brand) {
-  if (useNewTokens) {
-    return [
-      join(tokensRoot, 'core.json'),
-      join(tokensRoot, 'global/**/*.json'),
-      join(tokensRoot, 'components/**/*.json'),
-      join(tokensRoot, `mode/${theme}.json`),
-    ];
-  }
+const components = fs.readdirSync(join(tokensRoot, "components"))
+const modes = fs.readdirSync(join(tokensRoot, "mode"))
+
+const getMode = ({ modeName = "", format, suffix, subPath }) => {
+  const mode = format.includes("variables") ? "" : modeName
+
+  const componentArray = []
+
+  components.forEach((component) => {
+    const componentName = component.split(".json")[0]
+
+    if (!componentName) {
+      throw new Error(`Component name not found for ${component}`)
+    }
+
+    componentArray.push(
+      ...getFiles({
+        componentName,
+        modeName: mode,
+        format,
+        suffix,
+        outputRefs: true,
+        subPath,
+      })
+    )
+  })
 
   return [
-    join(tokensRoot, 'base/*.json'),
-    join(tokensRoot, `semantic/${theme}.json`),
-    join(tokensRoot, `brands/${brand}/${theme}.json`),
-  ];
+    ...getFiles({ componentName: "mode", modeName, format, suffix, subPath }),
+    ...componentArray,
+  ]
 }
 
-function toCamelFromPath(path = []) {
-  const name = path
-    .map((part, index) => {
-      const cleaned = part
-        .toString()
-        .replace(/[^a-zA-Z0-9]+/g, ' ')
-        .trim()
-        .replace(/\s+([a-zA-Z0-9])/g, (_, c) => c.toUpperCase())
-        .replace(/\s+/g, '');
-      if (index === 0) return cleaned.charAt(0).toLowerCase() + cleaned.slice(1);
-      return cleaned.charAt(0).toUpperCase() + cleaned.slice(1);
-    })
-    .join('');
-  return /^\d/.test(name) ? `token${name}` : name;
-}
-
-function toKebabFromPath(path = []) {
-  return path
-    .map((part) =>
-      part
-        .toString()
-        .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-        .replace(/[^a-zA-Z0-9]+/g, '-')
-        .replace(/-+/g, '-')
-        .toLowerCase()
-    )
-    .join('-');
-}
-
-function evaluateMathValue(value) {
-  if (typeof value !== 'string') return value;
-  const trimmed = value.trim();
-  if (!/[0-9]/.test(trimmed) || !/[+\-*/]/.test(trimmed)) return value;
-  if (/[^0-9+\-*/().\s]/.test(trimmed)) return value;
-  try {
-    // eslint-disable-next-line no-new-func
-    const result = Function(`"use strict"; return (${trimmed});`)();
-    if (Number.isFinite(result)) return String(result);
-  } catch {
-    return value;
-  }
-  return value;
-}
-
-function applyUnitIfNeeded(token, value) {
-  if (typeof value !== 'string') return value;
-  const numeric = /^-?\d+(\.\d+)?$/.test(value.trim());
-  if (!numeric) return value;
-
-  const type = token.$type || token.type;
-  const unitTypes = new Set([
-    'dimension',
-    'spacing',
-    'borderWidth',
-    'borderRadius',
-    'sizing',
-    'fontSizes',
-  ]);
-
-  if (unitTypes.has(type)) {
-    return `${value}px`;
+const getFormat = (format, outputRefs, componentName) => {
+  // outputRefs is true for mode and component files, false for global
+  if (format === "json/flat" && outputRefs) {
+    return "custom/json-with-refs"
+  } else if (
+    format === "javascript/es6" &&
+    !["mode", "global", "dark", "light"].includes(componentName)
+  ) {
+    // For component files, use custom ES6 format instead of standard
+    return "custom/es6-with-refs"
+  } else if (format === "javascript/module") {
+    if (["mode", "global", "dark", "light"].includes(componentName)) {
+      // For mode/global files we want to have similar export format to ES6 rather nested objects
+      return "custom/commonjs-exports"
+    } else {
+      // For component files, use custom CommonJS format instead of standard
+      return "custom/commonjs-with-refs"
+    }
   }
 
-  return value;
+  return format
 }
 
-function getThemeKey(theme, brand = 'default') {
-  return brand === 'default' ? theme : `${brand}-${theme}`;
-}
+const getFiles = ({
+  componentName,
+  modeName = "",
+  format,
+  suffix,
+  outputRefs = false,
+  subPath,
+}) => {
+  const getPath = (componentName) => {
+    let path = ""
 
-async function buildTheme(theme, brand = 'default') {
-  const themeKey = getThemeKey(theme, brand);
-  const cssFiles = [
+    switch (componentName) {
+      case "mode":
+        path = modeName
+        break
+      case "global":
+        path = "global"
+        break
+      default:
+        path = `components/${componentName}`
+    }
+
+    if (subPath) {
+      path = join(subPath, path ? path : "")
+    }
+
+    return path
+  }
+
+  const path = getPath(componentName).trim()
+  const actualFormat = getFormat(format, outputRefs, componentName)
+
+  return [
     {
-      destination: `variables-${themeKey}.css`,
-      format: 'css/variables-path',
+      destination: `${path}.${suffix}`,
+      filter: (token) =>
+        FilterComponent(token, componentName, format.includes("json")),
+      format: actualFormat,
       options: {
-        selector: `[data-theme="${themeKey}"]`,
+        outputReferences: outputRefs,
+        selector: componentName === "mode" ? `[data-theme="${modeName}"]` : ":root"
       },
     },
-  ];
+  ]
+}
 
-  if (brand === 'default' && theme === 'light') {
-    cssFiles.push({
-      destination: 'variables.css',
-      format: 'css/variables-path',
-      options: {
-        selector: ':root',
-      },
-    });
-  }
-
-  const sd = new StyleDictionary({
-    usesDtcg: true,
-    log: {
-      verbosity: process.argv.includes('--verbose') ? 'verbose' : 'default'
-    },
-    source: getSources(theme, brand),
-    hooks: {
-      formats: {
-        'css/variables-path': async ({ dictionary, options }) => {
-          const selector = options?.selector ?? ':root';
-          const lines = dictionary.allTokens.map((token) => {
-            const name = toKebabFromPath(token.path ?? [token.name ?? 'token']);
-            const rawValue = options?.usesDtcg ? token.$value : token.value;
-            const evaluated = evaluateMathValue(rawValue);
-            const withUnit = applyUnitIfNeeded(token, evaluated);
-            const value = typeof withUnit === 'string' ? withUnit : JSON.stringify(withUnit);
-            const comment = token.$description || token.comment;
-            return comment ? `  --${name}: ${value}; /** ${comment} */` : `  --${name}: ${value};`;
-          });
-          return [
-            '/**',
-            ' * Do not edit directly, this file was auto-generated.',
-            ' */',
-            '',
-            `${selector} {`,
-            ...lines,
-            '}',
-            '',
-          ].join('\n');
-        },
-        'scss/variables-path': async ({ dictionary }) => {
-          const lines = dictionary.allTokens.map((token) => {
-            const name = toKebabFromPath(token.path ?? [token.name ?? 'token']);
-            const evaluated = evaluateMathValue(token.$value ?? token.value);
-            const withUnit = applyUnitIfNeeded(token, evaluated);
-            const value = typeof withUnit === 'string' ? withUnit : JSON.stringify(withUnit);
-            const comment = token.$description || token.comment;
-            return comment ? `$${name}: ${value}; /** ${comment} */` : `$${name}: ${value};`;
-          });
-          return [
-            '/**',
-            ' * Do not edit directly, this file was auto-generated.',
-            ' */',
-            '',
-            ...lines,
-            '',
-          ].join('\n');
-        },
-        'ts/es6-safe': async ({ dictionary, options }) => {
-          const lines = dictionary.allTokens.map((token) => {
-            const name = toCamelFromPath(token.path ?? [token.name ?? 'token']);
-            const rawValue = options.usesDtcg ? token.$value : token.value;
-            const evaluated = evaluateMathValue(rawValue);
-            const value = JSON.stringify(evaluated);
-            return `export const ${name} = ${value};`;
-          });
-          return lines.join('\n');
-        },
-        'ts/es6-declarations-safe': async ({ dictionary }) => {
-          const lines = dictionary.allTokens.map((token) => {
-            const name = toCamelFromPath(token.path ?? [token.name ?? 'token']);
-            return `export const ${name}: string;`;
-          });
-          return lines.join('\n');
-        },
-      },
-      transforms: {
-        'name/path/camel': {
-          type: 'name',
-          transform: (token) => {
-            return toCamelFromPath(token.path);
-          },
-        },
-        'name/path/kebab': {
-          type: 'name',
-          transform: (token) => {
-            return token.path
-              .map((part) =>
-                part
-                  .toString()
-                  .replace(/([a-z0-9])([A-Z])/g, '$1-$2')
-                  .replace(/[^a-zA-Z0-9]+/g, '-')
-                  .replace(/-+/g, '-')
-                  .toLowerCase()
-              )
-              .join('-');
-          },
-        },
-        'name/path/snake': {
-          type: 'name',
-          transform: (token) => {
-            return token.path
-              .map((part) =>
-                part
-                  .toString()
-                  .replace(/([a-z0-9])([A-Z])/g, '$1_$2')
-                  .replace(/[^a-zA-Z0-9]+/g, '_')
-                  .replace(/_+/g, '_')
-                  .toLowerCase()
-              )
-              .join('_');
-          },
-        },
-        'value/math': {
-          type: 'value',
-          transform: (token) => {
-            return evaluateMathValue(token.value);
-          },
-        },
-      },
-    },
+const getGlobalConfig = () => {
+  return {
+    source: [join(tokensRoot, "core.json"), join(tokensRoot, "global/*.json")],
+    // preprocessors: ["tokens-studio"], // Uncomment if tokens-studio is installed
     platforms: {
       css: {
-        transforms: [
-          attributeCti,
-          'name/path/kebab',
-          timeSeconds,
-          htmlIcon,
-          sizeRem,
-          colorCss,
-          assetUrl,
-          fontFamilyCss,
-          cubicBezierCss,
-          strokeStyleCssShorthand,
-          borderCssShorthand,
-          typographyCssShorthand,
-          transitionCssShorthand,
-          shadowCssShorthand,
-          'value/math',
+        buildPath: join(outputPath, "css/"),
+        transforms: groups.css,
+        files: [
+          ...getFiles({
+            componentName: "global",
+            format: "css/variables",
+            suffix: "css",
+          }),
         ],
-        buildPath: join(outputPath, 'generated/css/'),
-        files: cssFiles,
       },
       scss: {
-        transforms: [
-          attributeCti,
-          'name/path/kebab',
-          timeSeconds,
-          htmlIcon,
-          sizeRem,
-          colorCss,
-          assetUrl,
-          fontFamilyCss,
-          cubicBezierCss,
-          strokeStyleCssShorthand,
-          borderCssShorthand,
-          typographyCssShorthand,
-          transitionCssShorthand,
-          shadowCssShorthand,
-          'value/math',
-        ],
-        buildPath: join(outputPath, 'generated/scss/'),
+        buildPath: join(outputPath, "scss/"),
+        transforms: groups.scss,
         files: [
-          {
-            destination: `variables-${themeKey}.scss`,
-            format: 'scss/variables-path',
-          },
+          ...getFiles({
+            componentName: "global",
+            format: "scss/variables",
+            suffix: "scss",
+          }),
         ],
       },
-      ts: {
-        transforms: ['attribute/cti', 'name/path/camel', 'value/math', 'size/rem', 'color/hex'],
-        buildPath: join(outputPath, 'generated/ts/'),
+      js: {
+        buildPath: join(outputPath, "js/"),
+        transforms: groups.js,
         files: [
-          {
-            destination: `tokens-${themeKey}.ts`,
-            format: 'ts/es6-safe',
-          },
-          {
-            destination: `tokens-${themeKey}.d.ts`,
-            format: 'ts/es6-declarations-safe',
-          },
+          ...getFiles({
+            componentName: "global",
+            format: "javascript/module",
+            subPath: "common",
+            suffix: "js",
+          }),
+          ...getFiles({
+            componentName: "global",
+            format: "typescript/module-declarations",
+            subPath: "common",
+            suffix: "d.ts",
+          }),
+          ...getFiles({
+            componentName: "global",
+            format: "javascript/es6",
+            subPath: "es6",
+            suffix: "js",
+          }),
+          ...getFiles({
+            componentName: "global",
+            format: "typescript/es6-declarations",
+            subPath: "es6",
+            suffix: "d.ts",
+          }),
         ],
       },
-      android: {
-        transforms: [
-          attributeCti,
-          'name/path/snake',
-          colorHex8android,
-          sizeRemToSp,
-          sizeRemToDp,
-          'value/math',
-        ],
-        buildPath: join(outputPath, 'generated/android/'),
+      json: {
+        buildPath: join(outputPath, "json/"),
+        transforms: groups.json,
         files: [
-          {
-            destination: `colors-${themeKey}.xml`,
-            format: 'android/colors',
-            filter: (token) => token.$type === 'color',
-          },
-          {
-            destination: `dimens-${themeKey}.xml`,
-            format: 'android/dimens',
-            filter: (token) => token.$type === 'dimension',
-          }
-        ],
-      },
-      'ios-swift': {
-        transforms: [
-          attributeCti,
-          'name/path/camel',
-          colorUIColorSwift,
-          contentSwiftLiteral,
-          assetSwiftLiteral,
-          sizeSwiftRemToCGFloat,
-          'value/math',
-        ],
-        buildPath: join(outputPath, 'generated/ios/'),
-        files: [
-          {
-            destination: `Tokens-${themeKey
-              .split('-')
-              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-              .join('')}.swift`,
-            format: 'ios-swift/class.swift',
-            className: `Tokens${themeKey
-              .split('-')
-              .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-              .join('')}`,
-          },
+          ...getFiles({
+            componentName: "global",
+            format: "json/flat",
+            suffix: "json",
+          }),
         ],
       },
     },
-  });
-
-  console.log(`Building ${brand}/${theme}...`);
-  await sd.buildAllPlatforms();
+    log: {
+      warnings: "warn",
+      verbosity: "verbose",
+      errors: {
+        brokenReferences: "throw",
+      },
+    },
+  }
 }
 
-(async () => {
-  try {
-    console.log('Build started...');
-    await buildTheme('light', 'default');
-    await buildTheme('dark', 'default');
-    await buildTheme('light', 'quartz');
-    await buildTheme('dark', 'quartz');
-    await buildTheme('light', 'ruby');
-    await buildTheme('dark', 'ruby');
-
-    // Expose the default light tokens at the package root for consumers.
-    const sourceTs = join(outputPath, 'generated/ts/tokens-light.ts');
-    const sourceDts = join(outputPath, 'generated/ts/tokens-light.d.ts');
-    const targetTs = join(outputPath, 'generated/ts/tokens.ts');
-    const targetDts = join(outputPath, 'generated/ts/tokens.d.ts');
-    await copyFile(sourceTs, targetTs);
-    await copyFile(sourceDts, targetDts);
-
-    console.log('\nBuild completed!');
-  } catch (e) {
-    console.error('Build failed:', e);
-    process.exit(1);
+const getModeConfig = (modeName) => {
+  return {
+    source: [
+      join(tokensRoot, "core.json"),
+      join(tokensRoot, "global/*.json"),
+      join(tokensRoot, `mode/${modeName}.json`),
+      join(tokensRoot, "components/*.json"),
+    ],
+    // preprocessors: ["tokens-studio"],
+    platforms: {
+      css: {
+        buildPath: join(outputPath, "css/"),
+        transforms: groups.css,
+        files: [
+          ...getMode({ modeName, format: "css/variables", suffix: "css" }),
+        ],
+      },
+      scss: {
+        buildPath: join(outputPath, "scss/"),
+        transforms: groups.scss,
+        files: [
+          ...getMode({ modeName, format: "scss/variables", suffix: "scss" }),
+        ],
+      },
+      js: {
+        buildPath: join(outputPath, "js/"),
+        transforms: groups.js,
+        files: [
+          ...getMode({
+            modeName,
+            format: "javascript/module",
+            subPath: "common",
+            suffix: "js",
+          }),
+          ...getMode({
+            modeName,
+            format: "typescript/module-declarations",
+            subPath: "common",
+            suffix: "d.ts",
+          }),
+          ...getMode({
+            modeName,
+            format: "javascript/es6",
+            subPath: "es6",
+            suffix: "js",
+          }),
+          ...getMode({
+            modeName,
+            format: "typescript/es6-declarations",
+            subPath: "es6",
+            suffix: "d.ts",
+          }),
+        ],
+      },
+      json: {
+        buildPath: join(outputPath, "json/"),
+        transforms: groups.json,
+        files: [
+          ...getMode({ modeName, format: "json/flat", suffix: "json" }),
+        ],
+      },
+    },
+    log: {
+      warnings: "warn",
+      verbosity: "verbose",
+      errors: {
+        brokenReferences: "throw",
+      },
+    },
   }
-})();
+}
+
+// Build global tokens
+const globalStyleDictionary = new StyleDictionary(getGlobalConfig())
+
+await globalStyleDictionary.buildPlatform("css")
+await globalStyleDictionary.buildPlatform("scss")
+await globalStyleDictionary.buildPlatform("js")
+await globalStyleDictionary.buildPlatform("json")
+
+// Build mode-specific tokens
+for (const mode of modes) {
+  const modeName = mode.split(".json")[0]
+
+  if (!modeName) {
+    throw new Error(`Mode name not found for ${mode}`)
+  }
+
+  const modeStyleDictionary = new StyleDictionary(getModeConfig(modeName))
+
+  await modeStyleDictionary.buildPlatform("css")
+  await modeStyleDictionary.buildPlatform("scss")
+  await modeStyleDictionary.buildPlatform("js")
+  await modeStyleDictionary.buildPlatform("json")
+}
+
+// Generate a CSS bundle that imports all generated tokens
+try {
+  const cssPath = join(outputPath, "css")
+  const bundlePath = join(cssPath, "bundle.css")
+  const componentCssFiles = fs.readdirSync(join(cssPath, "components"))
+    .filter(file => file.endsWith(".css"))
+    .map(file => `@import "./components/${file}";`)
+
+  const bundleContent = [
+    "/** Auto-generated CSS bundle */",
+    '@import "./global.css";',
+    '@import "./light.css";',
+    '@import "./dark.css";',
+    ...componentCssFiles
+  ].join("\n")
+
+  fs.writeFileSync(bundlePath, bundleContent)
+  console.log("Generated CSS bundle at generated/css/bundle.css")
+} catch (e) {
+  console.warn("Failed to generate CSS bundle:", e.message)
+}
+
+// Expose the default light tokens at the package root for consumers (ES6)
+try {
+  const sourceTs = join(outputPath, "js/es6/light.js")
+  const sourceDts = join(outputPath, "js/es6/light.d.ts")
+  const targetTs = join(outputPath, "js/es6/tokens.js")
+  const targetDts = join(outputPath, "js/es6/tokens.d.ts")
+
+  if (fs.existsSync(sourceTs)) {
+    fs.copyFileSync(sourceTs, targetTs)
+    fs.copyFileSync(sourceDts, targetDts)
+    console.log("Exposed light tokens at generated/js/es6/tokens.js")
+  }
+} catch (e) {
+  console.warn("Failed to expose light tokens:", e.message)
+}

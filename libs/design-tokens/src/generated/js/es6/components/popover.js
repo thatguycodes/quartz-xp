@@ -1,0 +1,10 @@
+export const popoverBgActive = undefined;
+export const popoverBgActiveAlt = undefined;
+export const popoverBgDefault = undefined;
+export const popoverBgHover = undefined;
+export const popoverLabelActive = undefined;
+export const popoverLabelActiveAlt = undefined;
+export const popoverLabelDisabled = undefined;
+export const popoverLabelHover = undefined;
+export const popoverLabelDefault = undefined;
+export const popoverSubmenuBgDefault = undefined;

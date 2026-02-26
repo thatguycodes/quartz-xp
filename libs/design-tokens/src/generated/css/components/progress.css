@@ -1,0 +1,42 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --progress-none: var(--mode-color-none); /** transparent override used for hiding colors when needed. */
+  --progress-bg-default: var(--mode-color-generic-bg-delicate);
+  --progress-border-default: var(--mode-color-generic-fg-firm);
+  --progress-fg-alt: var(--mode-color-status-positive-default);
+  --progress-fg-caution: var(--mode-color-status-warning-default);
+  --progress-fg-default: var(--mode-color-action-grayscale-active);
+  --progress-fg-error: var(--mode-color-status-negative-default);
+  --progress-fg-info: var(--mode-color-status-info-default);
+  --progress-dataviz-fg-default: var(--mode-color-status-custom-teal-default);
+  --progress-loader-bg-default: var(--mode-color-generic-bg-delicate);
+  --progress-loader-bg-skeleton: linear-gradient(135deg, var(--mode-color-status-skeleton-stop-1) 15%, var(--mode-color-status-skeleton-stop-2) 85%);
+  --progress-loader-fg-default: var(--mode-color-generic-fg-inverse-nought); /** used for loader standard loader spinner */
+  --progress-loader-fg-error: var(--mode-color-status-negative-default);
+  --progress-loader-fg-complete: var(--mode-color-status-positive-default);
+  --progress-loader-inverse-bg-default: var(--mode-color-generic-bg-inverse-delicate); /** used for inverse loader bgs */
+  --progress-loader-inverse-fg-default: var(--mode-color-generic-fg-nought); /** used on inverse loading spinner */
+  --progress-stepflow-bg-active: var(--mode-color-action-grayscale-active);
+  --progress-stepflow-bg-complete: var(--mode-color-status-positive-default);
+  --progress-stepflow-bg-default: var(--mode-color-generic-fg-nought);
+  --progress-stepflow-border-active-inner: var(--mode-color-generic-fg-nought);
+  --progress-stepflow-border-active-outer: var(--mode-color-action-grayscale-active);
+  --progress-stepflow-border-default: var(--mode-color-generic-fg-firm);
+  --progress-stepindicator-bg-active: var(--mode-color-action-grayscale-active);
+  --progress-stepindicator-bg-complete: var(--mode-color-status-positive-default);
+  --progress-stepindicator-border-active-outer: var(--mode-color-action-grayscale-active);
+  --progress-stepindicator-border-default: var(--mode-color-generic-fg-firm);
+  --progress-stepindicator-border-success: var(--mode-color-status-positive-default);
+  --progress-stepindicator-label-active: var(--mode-color-action-grayscale-with-active);
+  --progress-stepindicator-label-complete: var(--mode-color-action-grayscale-with-active);
+  --progress-fg-alt2: var(--mode-color-generic-txt-soft);
+  --progress-label-alt: var(--mode-color-generic-txt-moderate);
+  --progress-label-default: var(--mode-color-generic-txt-severe);
+  --progress-inverse-label-alt: var(--mode-color-generic-txt-inverse-soft);
+  --progress-stepflow-label-alt: var(--mode-color-generic-txt-soft);
+  --progress-stepflow-label-default: var(--mode-color-generic-txt-severe);
+  --progress-stepindicator-label-default: var(--mode-color-generic-txt-severe);
+}

@@ -1,0 +1,12 @@
+export const linkDestructiveLabelDefault = undefined;
+export const linkDestructiveLabelHover = undefined;
+export const linkDestructiveInverseLabelDefault = undefined;
+export const linkDestructiveInverseLabelHover = undefined;
+export const linkTypicalLabelDefault = undefined;
+export const linkTypicalLabelHover = undefined;
+export const linkTypicalInverseLabelDefault = undefined;
+export const linkTypicalInverseLabelHover = undefined;
+export const linkSubtleLabelDefault = undefined;
+export const linkSubtleLabelHover = undefined;
+export const linkSubtleInverseLabelDefault = undefined;
+export const linkSubtleInverseLabelHover = undefined;

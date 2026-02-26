@@ -1,0 +1,456 @@
+{
+  "table": {
+    "header": {
+      "subtle": {
+        "bg-alt": {
+          "key": "{table.header.subtle.bg-alt}",
+          "$type": "color",
+          "$value": "#f8fafc",
+          "$description": "header alt",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.bg.faint}",
+            "$description": "header alt",
+            "key": "{table.header.subtle.bg-alt}"
+          },
+          "name": "table-header-subtle-bg-alt",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "subtle",
+            "subitem": "bg-alt"
+          },
+          "path": [
+            "table",
+            "header",
+            "subtle",
+            "bg-alt"
+          ]
+        },
+        "bg-default": {
+          "key": "{table.header.subtle.bg-default}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.none}",
+            "key": "{table.header.subtle.bg-default}"
+          },
+          "name": "table-header-subtle-bg-default",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "subtle",
+            "subitem": "bg-default"
+          },
+          "path": [
+            "table",
+            "header",
+            "subtle",
+            "bg-default"
+          ]
+        },
+        "border-default": {
+          "key": "{table.header.subtle.border-default}",
+          "$type": "color",
+          "$value": "#94a3b8",
+          "$description": "Header borders",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.fg.soft}",
+            "$description": "Header borders",
+            "key": "{table.header.subtle.border-default}"
+          },
+          "name": "table-header-subtle-border-default",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "subtle",
+            "subitem": "border-default"
+          },
+          "path": [
+            "table",
+            "header",
+            "subtle",
+            "border-default"
+          ]
+        },
+        "label-default": {
+          "key": "{table.header.subtle.label-default}",
+          "$type": "color",
+          "$value": "#000000",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.txt.severe}",
+            "key": "{table.header.subtle.label-default}"
+          },
+          "name": "table-header-subtle-label-default",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "subtle",
+            "subitem": "label-default"
+          },
+          "path": [
+            "table",
+            "header",
+            "subtle",
+            "label-default"
+          ]
+        }
+      },
+      "harsh": {
+        "bg-alt": {
+          "key": "{table.header.harsh.bg-alt}",
+          "$type": "color",
+          "$value": "#0f172a",
+          "$description": "header alt",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.surface.severe}",
+            "$description": "header alt",
+            "key": "{table.header.harsh.bg-alt}"
+          },
+          "name": "table-header-harsh-bg-alt",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "harsh",
+            "subitem": "bg-alt"
+          },
+          "path": [
+            "table",
+            "header",
+            "harsh",
+            "bg-alt"
+          ]
+        },
+        "bg-default": {
+          "key": "{table.header.harsh.bg-default}",
+          "$type": "color",
+          "$value": "#1e293b",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.surface.harsh}",
+            "key": "{table.header.harsh.bg-default}"
+          },
+          "name": "table-header-harsh-bg-default",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "harsh",
+            "subitem": "bg-default"
+          },
+          "path": [
+            "table",
+            "header",
+            "harsh",
+            "bg-default"
+          ]
+        },
+        "border-default": {
+          "key": "{table.header.harsh.border-default}",
+          "$type": "color",
+          "$value": "#94a3b8",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.fg.soft}",
+            "key": "{table.header.harsh.border-default}"
+          },
+          "name": "table-header-harsh-border-default",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "harsh",
+            "subitem": "border-default"
+          },
+          "path": [
+            "table",
+            "header",
+            "harsh",
+            "border-default"
+          ]
+        },
+        "label-default": {
+          "key": "{table.header.harsh.label-default}",
+          "$type": "color",
+          "$value": "#FFFFFF",
+          "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+          "isSource": true,
+          "original": {
+            "$type": "color",
+            "$value": "{mode.color.generic.txt.inverse.severe}",
+            "key": "{table.header.harsh.label-default}"
+          },
+          "name": "table-header-harsh-label-default",
+          "attributes": {
+            "category": "table",
+            "type": "header",
+            "item": "harsh",
+            "subitem": "label-default"
+          },
+          "path": [
+            "table",
+            "header",
+            "harsh",
+            "label-default"
+          ]
+        }
+      }
+    },
+    "row": {
+      "bg-default": {
+        "key": "{table.row.bg-default}",
+        "$type": "color",
+        "$value": "#FFFFFF",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.nought}",
+          "key": "{table.row.bg-default}"
+        },
+        "name": "table-row-bg-default",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "bg-default"
+        },
+        "path": [
+          "table",
+          "row",
+          "bg-default"
+        ]
+      },
+      "bg-alt": {
+        "key": "{table.row.bg-alt}",
+        "$type": "color",
+        "$value": "#f1f5f9",
+        "$description": "Zebra stripes",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.delicate}",
+          "$description": "Zebra stripes",
+          "key": "{table.row.bg-alt}"
+        },
+        "name": "table-row-bg-alt",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "bg-alt"
+        },
+        "path": [
+          "table",
+          "row",
+          "bg-alt"
+        ]
+      },
+      "bg-alt2": {
+        "key": "{table.row.bg-alt2}",
+        "$type": "color",
+        "$value": "#f8fafc",
+        "$description": "Child rows",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.faint}",
+          "$description": "Child rows",
+          "key": "{table.row.bg-alt2}"
+        },
+        "name": "table-row-bg-alt2",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "bg-alt2"
+        },
+        "path": [
+          "table",
+          "row",
+          "bg-alt2"
+        ]
+      },
+      "bg-selected": {
+        "key": "{table.row.bg-selected}",
+        "$type": "color",
+        "$value": "#eef2f6",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.soft}",
+          "key": "{table.row.bg-selected}"
+        },
+        "name": "table-row-bg-selected",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "bg-selected"
+        },
+        "path": [
+          "table",
+          "row",
+          "bg-selected"
+        ]
+      },
+      "border-default": {
+        "key": "{table.row.border-default}",
+        "$type": "color",
+        "$value": "#94a3b8",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.fg.soft}",
+          "key": "{table.row.border-default}"
+        },
+        "name": "table-row-border-default",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "border-default"
+        },
+        "path": [
+          "table",
+          "row",
+          "border-default"
+        ]
+      },
+      "label-default": {
+        "key": "{table.row.label-default}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.txt.severe}",
+          "key": "{table.row.label-default}"
+        },
+        "name": "table-row-label-default",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "label-default"
+        },
+        "path": [
+          "table",
+          "row",
+          "label-default"
+        ]
+      },
+      "label-selected": {
+        "key": "{table.row.label-selected}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.txt.extreme}",
+          "key": "{table.row.label-selected}"
+        },
+        "name": "table-row-label-selected",
+        "attributes": {
+          "category": "table",
+          "type": "row",
+          "item": "label-selected"
+        },
+        "path": [
+          "table",
+          "row",
+          "label-selected"
+        ]
+      }
+    },
+    "footer": {
+      "bg-default": {
+        "key": "{table.footer.bg-default}",
+        "$type": "color",
+        "$value": "#eef2f6",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.bg.soft}",
+          "key": "{table.footer.bg-default}"
+        },
+        "name": "table-footer-bg-default",
+        "attributes": {
+          "category": "table",
+          "type": "footer",
+          "item": "bg-default"
+        },
+        "path": [
+          "table",
+          "footer",
+          "bg-default"
+        ]
+      },
+      "border-default": {
+        "key": "{table.footer.border-default}",
+        "$type": "color",
+        "$value": "#94a3b8",
+        "$description": "Header borders",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.fg.soft}",
+          "$description": "Header borders",
+          "key": "{table.footer.border-default}"
+        },
+        "name": "table-footer-border-default",
+        "attributes": {
+          "category": "table",
+          "type": "footer",
+          "item": "border-default"
+        },
+        "path": [
+          "table",
+          "footer",
+          "border-default"
+        ]
+      },
+      "label-default": {
+        "key": "{table.footer.label-default}",
+        "$type": "color",
+        "$value": "#000000",
+        "filePath": "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/components/table.json",
+        "isSource": true,
+        "original": {
+          "$type": "color",
+          "$value": "{mode.color.generic.txt.severe}",
+          "key": "{table.footer.label-default}"
+        },
+        "name": "table-footer-label-default",
+        "attributes": {
+          "category": "table",
+          "type": "footer",
+          "item": "label-default"
+        },
+        "path": [
+          "table",
+          "footer",
+          "label-default"
+        ]
+      }
+    }
+  }
+}

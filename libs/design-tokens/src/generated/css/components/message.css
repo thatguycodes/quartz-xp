@@ -1,0 +1,43 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --message-none: var(--mode-color-none); /** transparent override used for hiding colors when needed. */
+  --message-contextual-bg: var(--mode-color-generic-bg-nought);
+  --message-contextual-icon: var(--mode-color-generic-bg-nought); /** decorative icon on standard contxtual messages */
+  --message-contextual-icon-alt: var(--mode-color-status-neutral-default); /** icon on neutral status dialogs */
+  --message-contextual-ai-bg-default: var(--mode-color-status-ai-default-alt);
+  --message-contextual-ai-bg-alt: var(--mode-color-status-neutral-default-alt);
+  --message-contextual-ai-border-default: var(--mode-color-status-ai-default-alt);
+  --message-contextual-callout-bg-alt: var(--mode-color-status-callout-default-alt); /** Subtle message bg */
+  --message-contextual-error-bg-default: var(--mode-color-status-negative-default);
+  --message-contextual-error-bg-alt: var(--mode-color-status-negative-default-alt); /** Subtle message bg */
+  --message-contextual-error-border-default: var(--mode-color-status-negative-default);
+  --message-contextual-error-icon: var(--mode-color-status-negative-default); /** Icon on tinted bgs */
+  --message-contextual-info-bg-default: var(--mode-color-status-info-default);
+  --message-contextual-info-bg-alt: var(--mode-color-status-info-default-alt); /** Subtle message bg */
+  --message-contextual-info-border-default: var(--mode-color-status-info-default);
+  --message-contextual-info-icon: var(--mode-color-status-info-default); /** Icon on tinted bgs */
+  --message-contextual-success-bg-default: var(--mode-color-status-positive-default);
+  --message-contextual-success-bg-alt: var(--mode-color-status-positive-default-alt); /** Subtle message bg */
+  --message-contextual-success-border-default: var(--mode-color-status-positive-default);
+  --message-contextual-success-icon: var(--mode-color-status-positive-default); /** Icon on tinted bgs */
+  --message-contextual-warning-bg-default: var(--mode-color-status-warning-default);
+  --message-contextual-warning-bg-alt: var(--mode-color-status-warning-default-alt); /** Subtle message bg */
+  --message-contextual-warning-border-default: var(--mode-color-status-warning-default);
+  --message-contextual-warning-icon: var(--mode-color-status-warning-default); /** Icon on tinted bgs */
+  --message-global-label-hover: var(--mode-color-action-grayscale-with-hover);
+  --message-global-callout-bg-default: var(--mode-color-status-callout-default-alt); /** Global message bg */
+  --message-global-callout-bg-hover: var(--mode-color-status-callout-hover-alt); /** global message bg hover */
+  --message-global-info-bg-default: var(--mode-color-status-info-default-alt); /** Global message bg */
+  --message-global-info-bg-hover: var(--mode-color-status-info-hover-alt);
+  --message-global-info-icon: var(--mode-color-status-info-default); /** Icon on tinted bgs */
+  --message-global-warning-bg-default: var(--mode-color-status-warning-default-alt); /** Global message bg */
+  --message-global-warning-bg-hover: var(--mode-color-status-warning-hover-alt);
+  --message-global-warning-icon: var(--mode-color-status-warning-default); /** Icon on tinted bgs */
+  --message-contextual-txt: var(--mode-color-status-txt-with-hover-alt); /** Message txt. */
+  --message-contextual-callout-icon: var(--mode-color-status-txt-with-default-alt);
+  --message-global-label-default: var(--mode-color-status-txt-with-default-alt);
+  --message-global-callout-icon: var(--mode-color-status-txt-with-default-alt); /** Icon on tinted bgs */
+}

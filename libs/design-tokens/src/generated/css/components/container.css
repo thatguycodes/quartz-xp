@@ -1,0 +1,77 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --container-size-fluid-items-2-xs: 80px; /** min and max widths for responsive tile items */
+  --container-size-fluid-items-xs: 128px; /** min and max widths for responsive tile items */
+  --container-size-fluid-items-s: 160px; /** min and max widths for responsive tile items. Min width for Tile select txt wrapper. */
+  --container-size-fluid-items-m: 200px; /** min and max widths for responsive tile items */
+  --container-size-fluid-items-l: 240px; /** min and max widths for responsive tile items */
+  --container-size-fluid-items-xl: 288px; /** Small screen mid width inside page margins. */
+  --container-size-fluid-items-2-xl: 320px; /** Small screen full page width. */
+  --container-size-fluid-items-3-xl: 560px; /** min and max widths for responsive tile items */
+  --container-size-fluid-items-4-xl: 760px; /** Max width for single line of txt. */
+  --container-action-bg-footer-activated: var(--mode-color-status-positive-default); /**   */
+  --container-action-bg-footer-active: var(--mode-color-action-grayscale-active);
+  --container-action-border-activated: var(--mode-color-status-positive-default);
+  --container-action-bg-footer-default: var(--mode-color-generic-bg-nought); /** tile footer bg color  */
+  --container-action-bg-default: var(--mode-color-generic-bg-nought);
+  --container-action-bg-disabled: var(--mode-color-action-inactive-default-alt);
+  --container-action-border-active: var(--mode-color-action-grayscale-active);
+  --container-action-border-alt: var(--mode-color-generic-fg-moderate); /** Link preview.  */
+  --container-action-border-inactive: var(--mode-color-generic-fg-firm);
+  --container-action-border-default: var(--mode-color-generic-fg-firm);
+  --container-action-icon-active: var(--mode-color-action-grayscale-active); /** Active chevron for any accordion. */
+  --container-action-label-footer-active: var(--mode-color-action-grayscale-with-active);
+  --container-action-label-footer-activated: var(--mode-color-action-grayscale-with-active);
+  --container-action-txt-active: var(--mode-color-action-grayscale-active); /** Active label for any accordion. */
+  --container-action-detailedicon-bg: var(--mode-color-status-custom-green-default); /**   */
+  --container-action-target-bg-default: var(--mode-color-status-info-default); /** draggable drop target background color */
+  --container-scrollbar-bg-default: var(--mode-color-generic-bg-faint);
+  --container-scrollbar-fg-default: var(--mode-color-generic-fg-firm);
+  --container-scrollbar-inverse-bg-default: var(--mode-color-generic-bg-inverse-soft);
+  --container-scrollbar-inverse-fg-default: var(--mode-color-generic-fg-inverse-firm);
+  --container-standard-bg-alt: var(--mode-color-generic-bg-faint);
+  --container-standard-bg-default: var(--mode-color-generic-bg-nought);
+  --container-standard-bg-footer-default: var(--mode-color-generic-bg-faint); /** tile footer bg color  */
+  --container-standard-border-active: var(--mode-color-action-grayscale-active);
+  --container-standard-border-alt: var(--mode-color-generic-fg-firm);
+  --container-standard-border-default: var(--mode-color-generic-fg-soft);
+  --container-standard-dimmer: var(--mode-color-action-inactive-mask); /** dimmed mask for dialogs */
+  --container-standard-icon: var(--mode-color-generic-fg-firm); /** Link preview image thumbnail */
+  --container-standard-inverse-bg-alt: var(--mode-color-generic-bg-inverse-delicate);
+  --container-standard-inverse-border-alt: var(--mode-color-generic-fg-inverse-firm);
+  --container-standard-inverse-bg-default: var(--mode-color-generic-bg-inverse-nought);
+  --container-standard-inverse-border-default: var(--mode-color-generic-fg-inverse-soft);
+  --container-standard-priority-bg-caution: var(--mode-color-status-warning-default);
+  --container-standard-priority-bg-negative: var(--mode-color-status-negative-default);
+  --container-standard-priority-bg-prio: var(--mode-color-status-priority-default);
+  --container-standard-priority-bg-info: var(--mode-color-status-info-default);
+  --container-standard-priority-bg-neutral: var(--mode-color-status-neutral-default);
+  --container-standard-priority-bg-positive: var(--mode-color-status-positive-default);
+  --container-standard-priority-inverse-bg-caution: var(--mode-color-status-warning-inverse-default);
+  --container-standard-priority-inverse-bg-negative: var(--mode-color-status-negative-inverse-default);
+  --container-standard-priority-inverse-bg-prio: var(--mode-color-status-priority-inverse-default);
+  --container-standard-priority-inverse-bg-info: var(--mode-color-status-info-inverse-default);
+  --container-standard-priority-inverse-bg-neutral: var(--mode-color-status-neutral-inverse-default);
+  --container-standard-priority-inverse-bg-positive: var(--mode-color-status-positive-inverse-default);
+  --container-action-bg-hover: var(--mode-color-action-grayscale-hover-alt); /** Used for accordion hov backgrounds  */
+  --container-action-borderalt-hover: var(--mode-color-action-grayscale-default); /** For hov border on Link preview. */
+  --container-action-icon-default: var(--mode-color-action-grayscale-default); /** Enabled chevron for any accordion. */
+  --container-action-icon-alt-default: var(--mode-color-action-grayscale-default-alt); /** Enabled label for subtle accordion. */
+  --container-action-icon-hover: var(--mode-color-action-grayscale-default); /** hov chevron for any accordion. */
+  --container-action-txt-default: var(--mode-color-generic-txt-severe); /** Enabled label for standard accordion. */
+  --container-action-txt-alt-default: var(--mode-color-generic-txt-moderate); /** Enabled label for subtle accordion. */
+  --container-action-txt-hover: var(--mode-color-action-grayscale-default); /** hov label for any accordion. */
+  --container-standard-border-ai-h: var(--mode-color-status-ai-inverse-default-horizontal); /** top border for AI dialog component */
+  --container-standard-border-ai-v: var(--mode-color-status-ai-inverse-default-vertical); /** left and right border for AI nudge message component */
+  --container-standard-txt-alt: var(--mode-color-generic-txt-moderate); /** for subheadings etc */
+  --container-standard-txt-default: var(--mode-color-generic-txt-severe); /** for headings, paragraph txt etc  */
+  --container-standard-inverse-txt-alt: var(--mode-color-generic-txt-inverse-moderate); /** for subheadings etc */
+  --container-standard-inverse-txt-default: var(--mode-color-generic-txt-inverse-severe); /** for headings, paragraph txt etc  */
+  --container-standard-priority-bg-ai: var(--mode-color-status-ai-inverse-default-vertical);
+  --container-standard-priority-inverse-bg-ai: var(--mode-color-status-ai-inverse-default-vertical);
+  --container-quote-border: var(--mode-color-action-main-default);
+  --container-action-txt-disabled: var(--mode-color-action-inactive-txt);
+}

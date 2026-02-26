@@ -1,0 +1,26 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --tab-bg-active: var(--mode-color-action-grayscale-with-active);
+  --tab-bg-default: var(--mode-color-none);
+  --tab-border-active-alt: var(--mode-color-generic-fg-moderate);
+  --tab-border-active: var(--mode-color-action-grayscale-active);
+  --tab-border-default: var(--mode-color-generic-fg-moderate);
+  --tab-border-hover: var(--mode-color-generic-fg-firm);
+  --tab-icon-hover: var(--mode-color-action-grayscale-with-hover);
+  --tab-label-active: var(--mode-color-action-grayscale-active);
+  --tab-icon-active: var(--mode-color-action-grayscale-active);
+  --tab-label-hover: var(--mode-color-action-grayscale-with-hover);
+  --tab-nav-bg-default: var(--mode-color-generic-bg-nought); /** For previous/next buttons on responsive tabs */
+  --tab-validation-border-warning: var(--mode-color-status-warning-default);
+  --tab-validation-border-error: var(--mode-color-status-negative-default);
+  --tab-validation-icon-error: var(--mode-color-status-negative-default);
+  --tab-validation-icon-warning: var(--mode-color-status-warning-default);
+  --tab-validation-label-error: var(--mode-color-status-negative-default);
+  --tab-validation-label-warning: var(--mode-color-status-warning-txt);
+  --tab-bg-hover: var(--mode-color-action-grayscale-hover-alt); /** For anchor nav, not tab. */
+  --tab-icon-default: var(--mode-color-action-grayscale-default-alt);
+  --tab-label-default: var(--mode-color-action-grayscale-default);
+}

@@ -2,12 +2,7 @@ import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 // Import design tokens CSS variables
-import '../../../design-tokens/src/generated/css/variables-light.css';
-import '../../../design-tokens/src/generated/css/variables-dark.css';
-import '../../../design-tokens/src/generated/css/variables-quartz-light.css';
-import '../../../design-tokens/src/generated/css/variables-quartz-dark.css';
-import '../../../design-tokens/src/generated/css/variables-ruby-light.css';
-import '../../../design-tokens/src/generated/css/variables-ruby-dark.css';
+import '../../../design-tokens/src/generated/css/bundle.css';
 import '../src/lib/Introduction.css';
 
 const preview: Preview = {

@@ -1,0 +1,40 @@
+
+// Do not edit directly, this file was auto-generated.
+
+$message-none: $mode-color-none; // transparent override used for hiding colors when needed.
+$message-contextual-bg: $mode-color-generic-bg-nought;
+$message-contextual-icon: $mode-color-generic-bg-nought; // decorative icon on standard contxtual messages
+$message-contextual-icon-alt: $mode-color-status-neutral-default; // icon on neutral status dialogs
+$message-contextual-ai-bg-default: $mode-color-status-ai-default-alt;
+$message-contextual-ai-bg-alt: $mode-color-status-neutral-default-alt;
+$message-contextual-ai-border-default: $mode-color-status-ai-default-alt;
+$message-contextual-callout-bg-alt: $mode-color-status-callout-default-alt; // Subtle message bg
+$message-contextual-error-bg-default: $mode-color-status-negative-default;
+$message-contextual-error-bg-alt: $mode-color-status-negative-default-alt; // Subtle message bg
+$message-contextual-error-border-default: $mode-color-status-negative-default;
+$message-contextual-error-icon: $mode-color-status-negative-default; // Icon on tinted bgs
+$message-contextual-info-bg-default: $mode-color-status-info-default;
+$message-contextual-info-bg-alt: $mode-color-status-info-default-alt; // Subtle message bg
+$message-contextual-info-border-default: $mode-color-status-info-default;
+$message-contextual-info-icon: $mode-color-status-info-default; // Icon on tinted bgs
+$message-contextual-success-bg-default: $mode-color-status-positive-default;
+$message-contextual-success-bg-alt: $mode-color-status-positive-default-alt; // Subtle message bg
+$message-contextual-success-border-default: $mode-color-status-positive-default;
+$message-contextual-success-icon: $mode-color-status-positive-default; // Icon on tinted bgs
+$message-contextual-warning-bg-default: $mode-color-status-warning-default;
+$message-contextual-warning-bg-alt: $mode-color-status-warning-default-alt; // Subtle message bg
+$message-contextual-warning-border-default: $mode-color-status-warning-default;
+$message-contextual-warning-icon: $mode-color-status-warning-default; // Icon on tinted bgs
+$message-global-label-hover: $mode-color-action-grayscale-with-hover;
+$message-global-callout-bg-default: $mode-color-status-callout-default-alt; // Global message bg
+$message-global-callout-bg-hover: $mode-color-status-callout-hover-alt; // global message bg hover
+$message-global-info-bg-default: $mode-color-status-info-default-alt; // Global message bg
+$message-global-info-bg-hover: $mode-color-status-info-hover-alt;
+$message-global-info-icon: $mode-color-status-info-default; // Icon on tinted bgs
+$message-global-warning-bg-default: $mode-color-status-warning-default-alt; // Global message bg
+$message-global-warning-bg-hover: $mode-color-status-warning-hover-alt;
+$message-global-warning-icon: $mode-color-status-warning-default; // Icon on tinted bgs
+$message-contextual-txt: $mode-color-status-txt-with-hover-alt; // Message txt.
+$message-contextual-callout-icon: $mode-color-status-txt-with-default-alt;
+$message-global-label-default: $mode-color-status-txt-with-default-alt;
+$message-global-callout-icon: $mode-color-status-txt-with-default-alt; // Icon on tinted bgs
