@@ -90,9 +90,9 @@ Components must only reference semantic tokens. The primitive layer is an implem
 | Token | Light value | Dark value |
 |---|---|---|
 | `--color-primary-default` | `brand.60` `#7c3aed` | `brand.60` `#7c3aed` |
-| `--color-primary-hover` | `brand.70` `#6d28d9` | `brand.70` `#6d28d9` |
-| `--color-primary-active` | `brand.80` `#5b21b6` | `brand.80` `#5b21b6` |
-| `--color-primary-disabled` | `brand.20` `#ddd6fe` | `brand.80` `#5b21b6` |
+| `--color-primary-hover` | `brand.70` `#6d28d9` | `brand.50` `#8b5cf6` |
+| `--color-primary-active` | `brand.80` `#5b21b6` | `brand.40` `#a78bfa` |
+| `--color-primary-disabled` | `brand.20` `#ddd6fe` | `brand.90` `#4c1d95` |
 
 #### Text
 

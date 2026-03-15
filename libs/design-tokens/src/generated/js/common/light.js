@@ -9,7 +9,7 @@ module.exports = {
       $type: "color",
       $value: "#f5f3ff",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -28,7 +28,7 @@ module.exports = {
       $type: "color",
       $value: "#ede9fe",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -47,7 +47,7 @@ module.exports = {
       $type: "color",
       $value: "#ddd6fe",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -66,7 +66,7 @@ module.exports = {
       $type: "color",
       $value: "#c4b5fd",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -85,7 +85,7 @@ module.exports = {
       $type: "color",
       $value: "#a78bfa",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -104,7 +104,7 @@ module.exports = {
       $type: "color",
       $value: "#8b5cf6",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -123,7 +123,7 @@ module.exports = {
       $type: "color",
       $value: "#7c3aed",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -142,7 +142,7 @@ module.exports = {
       $type: "color",
       $value: "#6d28d9",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -161,7 +161,7 @@ module.exports = {
       $type: "color",
       $value: "#5b21b6",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -180,7 +180,7 @@ module.exports = {
       $type: "color",
       $value: "#4c1d95",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -199,7 +199,7 @@ module.exports = {
       $type: "color",
       $value: "#2e1065",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
       isSource: true,
       original: {
         $type: "color",
@@ -220,7 +220,7 @@ module.exports = {
       $type: "color",
       $value: "#f8f8f8",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -239,7 +239,7 @@ module.exports = {
       $type: "color",
       $value: "#eeeeee",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -258,7 +258,7 @@ module.exports = {
       $type: "color",
       $value: "#a0a0a0",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -277,7 +277,7 @@ module.exports = {
       $type: "color",
       $value: "#8b8b8b",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -296,7 +296,7 @@ module.exports = {
       $type: "color",
       $value: "#7c7c7c",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -315,7 +315,7 @@ module.exports = {
       $type: "color",
       $value: "#747474",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -334,7 +334,7 @@ module.exports = {
       $type: "color",
       $value: "#6f6f6f",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -353,7 +353,7 @@ module.exports = {
       $type: "color",
       $value: "#616161",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -372,7 +372,7 @@ module.exports = {
       $type: "color",
       $value: "#505050",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -391,7 +391,7 @@ module.exports = {
       $type: "color",
       $value: "#181818",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -410,7 +410,7 @@ module.exports = {
       $type: "color",
       $value: "#0b0b0b",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
       isSource: true,
       original: {
         $type: "color",
@@ -431,7 +431,7 @@ module.exports = {
       $type: "color",
       $value: "#f8fafc",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -450,7 +450,7 @@ module.exports = {
       $type: "color",
       $value: "#f1f5f9",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -469,7 +469,7 @@ module.exports = {
       $type: "color",
       $value: "#eef2f6",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -488,7 +488,7 @@ module.exports = {
       $type: "color",
       $value: "#e2e8f0",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -507,7 +507,7 @@ module.exports = {
       $type: "color",
       $value: "#d1d5db",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -526,7 +526,7 @@ module.exports = {
       $type: "color",
       $value: "#cbd5e1",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -545,7 +545,7 @@ module.exports = {
       $type: "color",
       $value: "#94a3b8",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -564,7 +564,7 @@ module.exports = {
       $type: "color",
       $value: "#64748b",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -583,7 +583,7 @@ module.exports = {
       $type: "color",
       $value: "#475569",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -602,7 +602,7 @@ module.exports = {
       $type: "color",
       $value: "#334155",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -621,7 +621,7 @@ module.exports = {
       $type: "color",
       $value: "#1e293b",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -640,7 +640,7 @@ module.exports = {
       $type: "color",
       $value: "#0f172a",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -659,7 +659,7 @@ module.exports = {
       $type: "color",
       $value: "#020617",
       filePath:
-        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+        "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
       isSource: true,
       original: {
         $type: "color",
@@ -681,7 +681,7 @@ module.exports = {
         $type: "color",
         $value: "#7c3aed",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -701,7 +701,7 @@ module.exports = {
         $type: "color",
         $value: "#6d28d9",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -721,7 +721,7 @@ module.exports = {
         $type: "color",
         $value: "#5b21b6",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -741,7 +741,7 @@ module.exports = {
         $type: "color",
         $value: "#ddd6fe",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -763,7 +763,7 @@ module.exports = {
         $type: "color",
         $value: "#f8fafc",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -783,7 +783,7 @@ module.exports = {
         $type: "color",
         $value: "#020617",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -803,7 +803,7 @@ module.exports = {
         $type: "color",
         $value: "#475569",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -823,7 +823,7 @@ module.exports = {
         $type: "color",
         $value: "#94a3b8",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -843,7 +843,7 @@ module.exports = {
         $type: "color",
         $value: "#f8fafc",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -865,7 +865,7 @@ module.exports = {
         $type: "color",
         $value: "#f8fafc",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -885,7 +885,7 @@ module.exports = {
         $type: "color",
         $value: "#f1f5f9",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -905,7 +905,7 @@ module.exports = {
         $type: "color",
         $value: "#e2e8f0",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -927,7 +927,7 @@ module.exports = {
         $type: "color",
         $value: "#e2e8f0",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -947,7 +947,7 @@ module.exports = {
         $type: "color",
         $value: "#8b5cf6",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -967,7 +967,7 @@ module.exports = {
         $type: "color",
         $value: "#f1f5f9",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -989,7 +989,7 @@ module.exports = {
         $type: "color",
         $value: "#f8fafc",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
@@ -1009,7 +1009,7 @@ module.exports = {
         $type: "color",
         $value: "#f1f5f9",
         filePath:
-          "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
+          "/home/runner/work/nx-enterprise/nx-enterprise/libs/design-tokens/src/tokens/themes/light.json",
         isSource: true,
         original: {
           $type: "color",
