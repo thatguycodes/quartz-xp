@@ -1,17 +1,15 @@
 {
-  "global": {
-    "smoke": {
-      "5": { "$type": "color", "$value": "#f8f8f8" },
-      "10": { "$type": "color", "$value": "#eeeeee" },
-      "20": { "$type": "color", "$value": "#a0a0a0" },
-      "30": { "$type": "color", "$value": "#8b8b8b" },
-      "40": { "$type": "color", "$value": "#7c7c7c" },
-      "50": { "$type": "color", "$value": "#747474" },
-      "60": { "$type": "color", "$value": "#6f6f6f" },
-      "70": { "$type": "color", "$value": "#616161" },
-      "80": { "$type": "color", "$value": "#505050" },
-      "90": { "$type": "color", "$value": "#181818" },
-      "95": { "$type": "color", "$value": "#0b0b0b" }
-    }
+  "smoke": {
+    "5": { "$type": "color", "$value": "#f8f8f8" },
+    "10": { "$type": "color", "$value": "#eeeeee" },
+    "20": { "$type": "color", "$value": "#a0a0a0" },
+    "30": { "$type": "color", "$value": "#8b8b8b" },
+    "40": { "$type": "color", "$value": "#7c7c7c" },
+    "50": { "$type": "color", "$value": "#747474" },
+    "60": { "$type": "color", "$value": "#6f6f6f" },
+    "70": { "$type": "color", "$value": "#616161" },
+    "80": { "$type": "color", "$value": "#505050" },
+    "90": { "$type": "color", "$value": "#181818" },
+    "95": { "$type": "color", "$value": "#0b0b0b" }
   }
 }

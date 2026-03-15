@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: var(--global-radius-action-xl);
+  border-radius: 6px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
@@ -18,109 +18,137 @@
 
   &:focus-visible {
     box-shadow:
-      0 0 0 2px var(--mode-color-action-focus-default),
-      0 0 0 4px var(--mode-color-action-focus-withDefault);
+      0 0 0 2px var(--color-background-base),
+      0 0 0 4px var(--color-border-focus);
   }
 
   &.primary {
-    background-color: var(--button-typical-primary-bg-default);
-    color: var(--button-typical-primary-label-default);
+    background-color: var(--color-primary-default);
+    color: var(--color-text-on-primary);
     box-shadow:
       0 4px 6px -1px rgba(0, 0, 0, 0.1),
       0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
     &:hover {
-      background-color: var(--button-typical-primary-bg-hover);
-      color: var(--button-typical-primary-label-hover);
+      background-color: var(--color-primary-hover);
       box-shadow:
         0 10px 15px -3px rgba(0, 0, 0, 0.1),
         0 4px 6px -2px rgba(0, 0, 0, 0.05);
     }
 
     &:active {
-      background-color: var(--button-typical-primary-bg-active);
-      color: var(--button-typical-primary-label-active);
+      background-color: var(--color-primary-active);
       box-shadow:
         0 1px 3px 0 rgba(0, 0, 0, 0.1),
         0 1px 2px 0 rgba(0, 0, 0, 0.06);
     }
 
     &:disabled {
-      background-color: var(--button-typical-primary-bg-disabled);
-      color: var(--button-typical-primary-label-disabled);
+      background-color: var(--color-primary-disabled);
+      color: var(--color-text-disabled);
       box-shadow: none;
     }
   }
 
   &.secondary {
-    background-color: var(--button-typical-secondary-bg-default);
-    color: var(--button-typical-secondary-label-default);
-    border: var(--global-borderwidth-xs) solid
-      var(--button-typical-secondary-border-default);
+    background-color: var(--color-background-subtle);
+    color: var(--color-text-base);
+    border: 2px solid var(--color-border-default);
 
     &:hover {
-      background-color: var(--button-typical-secondary-bg-hover);
-      color: var(--button-typical-secondary-label-hover);
-      border-color: var(--button-typical-secondary-border-hover);
+      background-color: var(--color-background-faint);
+      border-color: var(--color-border-default);
     }
 
     &:active {
-      background-color: var(--button-typical-secondary-bg-active);
-      color: var(--button-typical-secondary-label-active);
-      border-color: var(--button-typical-secondary-border-active);
+      background-color: var(--color-background-faint);
     }
 
     &:disabled {
-      color: var(--button-typical-secondary-label-disabled);
-      border-color: var(--button-typical-secondary-border-disabled);
+      color: var(--color-text-disabled);
+      border-color: var(--color-border-disabled);
     }
   }
 
   &.outline {
-    background-color: var(--button-typical-tertiary-bg-default);
-    border: var(--global-borderwidth-xs) solid
-      var(--button-typical-tertiary-border-default);
-    color: var(--button-typical-tertiary-label-default);
+    background-color: transparent;
+    border: 2px solid var(--color-primary-default);
+    color: var(--color-primary-default);
 
     &:hover {
-      background-color: var(--button-typical-tertiary-bg-hover);
-      border-color: var(--button-typical-tertiary-border-hover);
-      color: var(--button-typical-tertiary-label-hover);
+      background-color: var(--color-background-subtle);
+      border-color: var(--color-primary-hover);
+      color: var(--color-primary-hover);
     }
 
     &:active {
-      background-color: var(--button-typical-tertiary-bg-active);
-      border-color: var(--button-typical-tertiary-border-active);
-      color: var(--button-typical-tertiary-label-active);
+      background-color: var(--color-background-faint);
+      border-color: var(--color-primary-active);
+      color: var(--color-primary-active);
     }
 
     &:disabled {
-      background-color: var(--button-typical-tertiary-bg-default);
-      border-color: var(--button-typical-tertiary-border-disabled);
-      color: var(--button-typical-tertiary-label-disabled);
+      background-color: transparent;
+      border-color: var(--color-border-disabled);
+      color: var(--color-text-disabled);
     }
   }
 
   &.small {
-    padding: var(--global-space-comp-xs) var(--global-space-comp-s);
-    font-size: var(--core-font-size-static-small-step0);
+    padding: 6px 12px;
+    font-size: 0.8125rem;
     height: 32px;
   }
 
   &.medium {
-    padding: var(--global-space-comp-s) var(--global-space-comp-l);
-    font-size: var(--core-font-size-static-small-step1);
+    padding: 8px 16px;
+    font-size: 0.875rem;
     height: 40px;
   }
 
   &.large {
-    padding: var(--global-space-comp-l) var(--global-space-comp-2-xl);
-    font-size: var(--core-font-size-static-small-step2);
+    padding: 10px 20px;
+    font-size: 1rem;
     height: 48px;
   }
 
   &:disabled {
     cursor: not-allowed;
     opacity: 0.6;
+  }
+
+  /* WCAG 2.3.3 / 2.5.3 — disable animation for users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:active {
+      transform: none;
+    }
+  }
+
+  /* WCAG 1.4.3 — box-shadow is suppressed in forced-colors (Windows High Contrast).
+     Fall back to a real outline so keyboard focus remains visible. */
+  @media (forced-colors: active) {
+    &:focus-visible {
+      outline: 2px solid ButtonText;
+      box-shadow: none;
+    }
+  }
+}
+
+/* Dark mode outline: brand.60 (#7c3aed) only gives 3.54:1 on the dark canvas.
+   Shift to brand.40 (#a78bfa) → 8.06:1, brand.30 (#c4b5fd) on hover → 10.22:1 */
+:global([data-theme="dark"]) .button.outline {
+  border-color: var(--brand-40);
+  color: var(--brand-40);
+
+  &:hover {
+    border-color: var(--brand-30);
+    color: var(--brand-30);
+  }
+
+  &:active {
+    border-color: var(--brand-40);
+    color: var(--brand-40);
   }
 }

@@ -1,28 +1,31 @@
 {
-  "quartz": {
-    "semantics": {
-      "primary": {
-        "action": {
-          "$type": "color",
-          "$value": "{quartz.brand.60}"
-        },
-        "default": {
-          "$type": "color",
-          "$value": "{quartz.brand.60}"
-        }
-      },
-      "secondary": {
-        "default": {
-          "$type": "color",
-          "$value": "{quartz.brand.40}"
-        }
-      },
-      "tertiary": {
-        "default": {
-          "$type": "color",
-          "$value": "{quartz.brand.10}"
-        }
-      }
+  "color": {
+    "primary": {
+      "default": { "$type": "color", "$value": "{brand.60}", "$description": "Primary action color" },
+      "hover": { "$type": "color", "$value": "{brand.70}", "$description": "Hover state for primary actions" },
+      "active": { "$type": "color", "$value": "{brand.80}", "$description": "Active/Pressed state for primary actions" },
+      "disabled": { "$type": "color", "$value": "{brand.20}", "$description": "Disabled state background for primary elements" }
+    },
+    "text": {
+      "on-primary": { "$type": "color", "$value": "{storm.5}", "$description": "Text color to use on top of primary filled elements" },
+      "base": { "$type": "color", "$value": "{storm.95}", "$description": "Base text color" },
+      "muted": { "$type": "color", "$value": "{storm.60}", "$description": "Muted text color" },
+      "disabled": { "$type": "color", "$value": "{storm.40}", "$description": "Text color for disabled elements" },
+      "inverse": { "$type": "color", "$value": "{storm.5}", "$description": "Inverse text color" }
+    },
+    "background": {
+      "base": { "$type": "color", "$value": "{storm.5}", "$description": "Main app surface" },
+      "subtle": { "$type": "color", "$value": "{storm.10}", "$description": "Subtle background color" },
+      "faint": { "$type": "color", "$value": "{storm.20}", "$description": "Faint background color" }
+    },
+    "border": {
+      "default": { "$type": "color", "$value": "{storm.20}", "$description": "Default border color for inputs and outline buttons" },
+      "focus": { "$type": "color", "$value": "{brand.50}", "$description": "Focus ring color for interactive elements" },
+      "disabled": { "$type": "color", "$value": "{storm.10}", "$description": "Disabled border color" }
+    },
+    "surface": {
+      "base": { "$type": "color", "$value": "{storm.5}", "$description": "Base surface color" },
+      "muted": { "$type": "color", "$value": "{storm.10}", "$description": "Muted surface color" }
     }
   }
 }

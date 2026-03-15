@@ -1,14 +1,15 @@
 {
   "name": "@thatguycodes/design-tokens",
-  "version": "0.2.4",
+  "version": "0.3.0",
   "license": "MIT",
   "publishConfig": {
     "access": "public"
   },
   "private": false,
+  "type": "module",
   "sideEffects": false,
   "files": [
-    "generated/**",
+    "src/generated/**",
     "README.md"
   ],
   "exports": {
@@ -16,11 +17,22 @@
       "types": "./src/generated/js/es6/tokens.d.ts",
       "default": "./src/generated/js/es6/tokens.js"
     },
+    "./primitives": {
+      "types": "./src/generated/js/es6/primitives.d.ts",
+      "default": "./src/generated/js/es6/primitives.js"
+    },
+    "./light": {
+      "types": "./src/generated/js/es6/light.d.ts",
+      "default": "./src/generated/js/es6/light.js"
+    },
+    "./dark": {
+      "types": "./src/generated/js/es6/dark.d.ts",
+      "default": "./src/generated/js/es6/dark.js"
+    },
     "./css/*": "./src/generated/css/*.css",
     "./scss/*": "./src/generated/scss/*.scss",
-    "./json/*": "./src/generated/json/*.json",
-    "./js/*": "./src/generated/js/*.js"
+    "./json/*": "./src/generated/json/*.json"
   },
-  "types": "./src/generated/ts/tokens.d.ts",
-  "main": "./src/generated/ts/tokens.ts"
+  "types": "./src/generated/js/es6/tokens.d.ts",
+  "main": "./src/generated/js/es6/tokens.js"
 }

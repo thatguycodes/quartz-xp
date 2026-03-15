@@ -1,0 +1,677 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+module.exports = {
+  brand: {
+    5: {
+      key: "{brand.5}",
+      $type: "color",
+      $value: "#f5f3ff",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#f5f3ff",
+        key: "{brand.5}",
+      },
+      name: "brand5",
+      attributes: {
+        category: "brand",
+        type: "5",
+      },
+      path: ["brand", "5"],
+    },
+    10: {
+      key: "{brand.10}",
+      $type: "color",
+      $value: "#ede9fe",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#ede9fe",
+        key: "{brand.10}",
+      },
+      name: "brand10",
+      attributes: {
+        category: "brand",
+        type: "10",
+      },
+      path: ["brand", "10"],
+    },
+    20: {
+      key: "{brand.20}",
+      $type: "color",
+      $value: "#ddd6fe",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#ddd6fe",
+        key: "{brand.20}",
+      },
+      name: "brand20",
+      attributes: {
+        category: "brand",
+        type: "20",
+      },
+      path: ["brand", "20"],
+    },
+    30: {
+      key: "{brand.30}",
+      $type: "color",
+      $value: "#c4b5fd",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#c4b5fd",
+        key: "{brand.30}",
+      },
+      name: "brand30",
+      attributes: {
+        category: "brand",
+        type: "30",
+      },
+      path: ["brand", "30"],
+    },
+    40: {
+      key: "{brand.40}",
+      $type: "color",
+      $value: "#a78bfa",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#a78bfa",
+        key: "{brand.40}",
+      },
+      name: "brand40",
+      attributes: {
+        category: "brand",
+        type: "40",
+      },
+      path: ["brand", "40"],
+    },
+    50: {
+      key: "{brand.50}",
+      $type: "color",
+      $value: "#8b5cf6",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#8b5cf6",
+        key: "{brand.50}",
+      },
+      name: "brand50",
+      attributes: {
+        category: "brand",
+        type: "50",
+      },
+      path: ["brand", "50"],
+    },
+    60: {
+      key: "{brand.60}",
+      $type: "color",
+      $value: "#7c3aed",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#7c3aed",
+        key: "{brand.60}",
+      },
+      name: "brand60",
+      attributes: {
+        category: "brand",
+        type: "60",
+      },
+      path: ["brand", "60"],
+    },
+    70: {
+      key: "{brand.70}",
+      $type: "color",
+      $value: "#6d28d9",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#6d28d9",
+        key: "{brand.70}",
+      },
+      name: "brand70",
+      attributes: {
+        category: "brand",
+        type: "70",
+      },
+      path: ["brand", "70"],
+    },
+    80: {
+      key: "{brand.80}",
+      $type: "color",
+      $value: "#5b21b6",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#5b21b6",
+        key: "{brand.80}",
+      },
+      name: "brand80",
+      attributes: {
+        category: "brand",
+        type: "80",
+      },
+      path: ["brand", "80"],
+    },
+    90: {
+      key: "{brand.90}",
+      $type: "color",
+      $value: "#4c1d95",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#4c1d95",
+        key: "{brand.90}",
+      },
+      name: "brand90",
+      attributes: {
+        category: "brand",
+        type: "90",
+      },
+      path: ["brand", "90"],
+    },
+    95: {
+      key: "{brand.95}",
+      $type: "color",
+      $value: "#2e1065",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/brands/quartz/primitives.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#2e1065",
+        key: "{brand.95}",
+      },
+      name: "brand95",
+      attributes: {
+        category: "brand",
+        type: "95",
+      },
+      path: ["brand", "95"],
+    },
+  },
+  smoke: {
+    5: {
+      key: "{smoke.5}",
+      $type: "color",
+      $value: "#f8f8f8",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#f8f8f8",
+        key: "{smoke.5}",
+      },
+      name: "smoke5",
+      attributes: {
+        category: "smoke",
+        type: "5",
+      },
+      path: ["smoke", "5"],
+    },
+    10: {
+      key: "{smoke.10}",
+      $type: "color",
+      $value: "#eeeeee",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#eeeeee",
+        key: "{smoke.10}",
+      },
+      name: "smoke10",
+      attributes: {
+        category: "smoke",
+        type: "10",
+      },
+      path: ["smoke", "10"],
+    },
+    20: {
+      key: "{smoke.20}",
+      $type: "color",
+      $value: "#a0a0a0",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#a0a0a0",
+        key: "{smoke.20}",
+      },
+      name: "smoke20",
+      attributes: {
+        category: "smoke",
+        type: "20",
+      },
+      path: ["smoke", "20"],
+    },
+    30: {
+      key: "{smoke.30}",
+      $type: "color",
+      $value: "#8b8b8b",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#8b8b8b",
+        key: "{smoke.30}",
+      },
+      name: "smoke30",
+      attributes: {
+        category: "smoke",
+        type: "30",
+      },
+      path: ["smoke", "30"],
+    },
+    40: {
+      key: "{smoke.40}",
+      $type: "color",
+      $value: "#7c7c7c",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#7c7c7c",
+        key: "{smoke.40}",
+      },
+      name: "smoke40",
+      attributes: {
+        category: "smoke",
+        type: "40",
+      },
+      path: ["smoke", "40"],
+    },
+    50: {
+      key: "{smoke.50}",
+      $type: "color",
+      $value: "#747474",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#747474",
+        key: "{smoke.50}",
+      },
+      name: "smoke50",
+      attributes: {
+        category: "smoke",
+        type: "50",
+      },
+      path: ["smoke", "50"],
+    },
+    60: {
+      key: "{smoke.60}",
+      $type: "color",
+      $value: "#6f6f6f",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#6f6f6f",
+        key: "{smoke.60}",
+      },
+      name: "smoke60",
+      attributes: {
+        category: "smoke",
+        type: "60",
+      },
+      path: ["smoke", "60"],
+    },
+    70: {
+      key: "{smoke.70}",
+      $type: "color",
+      $value: "#616161",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#616161",
+        key: "{smoke.70}",
+      },
+      name: "smoke70",
+      attributes: {
+        category: "smoke",
+        type: "70",
+      },
+      path: ["smoke", "70"],
+    },
+    80: {
+      key: "{smoke.80}",
+      $type: "color",
+      $value: "#505050",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#505050",
+        key: "{smoke.80}",
+      },
+      name: "smoke80",
+      attributes: {
+        category: "smoke",
+        type: "80",
+      },
+      path: ["smoke", "80"],
+    },
+    90: {
+      key: "{smoke.90}",
+      $type: "color",
+      $value: "#181818",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#181818",
+        key: "{smoke.90}",
+      },
+      name: "smoke90",
+      attributes: {
+        category: "smoke",
+        type: "90",
+      },
+      path: ["smoke", "90"],
+    },
+    95: {
+      key: "{smoke.95}",
+      $type: "color",
+      $value: "#0b0b0b",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/smoke.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#0b0b0b",
+        key: "{smoke.95}",
+      },
+      name: "smoke95",
+      attributes: {
+        category: "smoke",
+        type: "95",
+      },
+      path: ["smoke", "95"],
+    },
+  },
+  storm: {
+    5: {
+      key: "{storm.5}",
+      $type: "color",
+      $value: "#f8fafc",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#f8fafc",
+        key: "{storm.5}",
+      },
+      name: "storm5",
+      attributes: {
+        category: "storm",
+        type: "5",
+      },
+      path: ["storm", "5"],
+    },
+    10: {
+      key: "{storm.10}",
+      $type: "color",
+      $value: "#f1f5f9",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#f1f5f9",
+        key: "{storm.10}",
+      },
+      name: "storm10",
+      attributes: {
+        category: "storm",
+        type: "10",
+      },
+      path: ["storm", "10"],
+    },
+    15: {
+      key: "{storm.15}",
+      $type: "color",
+      $value: "#eef2f6",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#eef2f6",
+        key: "{storm.15}",
+      },
+      name: "storm15",
+      attributes: {
+        category: "storm",
+        type: "15",
+      },
+      path: ["storm", "15"],
+    },
+    20: {
+      key: "{storm.20}",
+      $type: "color",
+      $value: "#e2e8f0",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#e2e8f0",
+        key: "{storm.20}",
+      },
+      name: "storm20",
+      attributes: {
+        category: "storm",
+        type: "20",
+      },
+      path: ["storm", "20"],
+    },
+    25: {
+      key: "{storm.25}",
+      $type: "color",
+      $value: "#d1d5db",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#d1d5db",
+        key: "{storm.25}",
+      },
+      name: "storm25",
+      attributes: {
+        category: "storm",
+        type: "25",
+      },
+      path: ["storm", "25"],
+    },
+    30: {
+      key: "{storm.30}",
+      $type: "color",
+      $value: "#cbd5e1",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#cbd5e1",
+        key: "{storm.30}",
+      },
+      name: "storm30",
+      attributes: {
+        category: "storm",
+        type: "30",
+      },
+      path: ["storm", "30"],
+    },
+    40: {
+      key: "{storm.40}",
+      $type: "color",
+      $value: "#94a3b8",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#94a3b8",
+        key: "{storm.40}",
+      },
+      name: "storm40",
+      attributes: {
+        category: "storm",
+        type: "40",
+      },
+      path: ["storm", "40"],
+    },
+    50: {
+      key: "{storm.50}",
+      $type: "color",
+      $value: "#64748b",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#64748b",
+        key: "{storm.50}",
+      },
+      name: "storm50",
+      attributes: {
+        category: "storm",
+        type: "50",
+      },
+      path: ["storm", "50"],
+    },
+    60: {
+      key: "{storm.60}",
+      $type: "color",
+      $value: "#475569",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#475569",
+        key: "{storm.60}",
+      },
+      name: "storm60",
+      attributes: {
+        category: "storm",
+        type: "60",
+      },
+      path: ["storm", "60"],
+    },
+    70: {
+      key: "{storm.70}",
+      $type: "color",
+      $value: "#334155",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#334155",
+        key: "{storm.70}",
+      },
+      name: "storm70",
+      attributes: {
+        category: "storm",
+        type: "70",
+      },
+      path: ["storm", "70"],
+    },
+    80: {
+      key: "{storm.80}",
+      $type: "color",
+      $value: "#1e293b",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#1e293b",
+        key: "{storm.80}",
+      },
+      name: "storm80",
+      attributes: {
+        category: "storm",
+        type: "80",
+      },
+      path: ["storm", "80"],
+    },
+    90: {
+      key: "{storm.90}",
+      $type: "color",
+      $value: "#0f172a",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#0f172a",
+        key: "{storm.90}",
+      },
+      name: "storm90",
+      attributes: {
+        category: "storm",
+        type: "90",
+      },
+      path: ["storm", "90"],
+    },
+    95: {
+      key: "{storm.95}",
+      $type: "color",
+      $value: "#020617",
+      filePath:
+        "/Users/letlhogonolotheodoreobonye/Code/monorepos/nx-enterprise/libs/design-tokens/src/tokens/global/storm.json",
+      isSource: true,
+      original: {
+        $type: "color",
+        $value: "#020617",
+        key: "{storm.95}",
+      },
+      name: "storm95",
+      attributes: {
+        category: "storm",
+        type: "95",
+      },
+      path: ["storm", "95"],
+    },
+  },
+};

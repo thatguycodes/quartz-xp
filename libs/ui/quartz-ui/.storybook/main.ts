@@ -1,5 +1,7 @@
 import { fileURLToPath } from 'node:url';
-import { dirname } from 'node:path';
+import { dirname, resolve } from 'node:path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import type { StorybookConfig } from '@storybook/react-vite';
 
@@ -19,6 +21,14 @@ const config: StorybookConfig = {
   viteFinal: async (config) =>
     mergeConfig(config, {
       plugins: [react(), nxViteTsPaths()],
+      resolve: {
+        alias: [
+          {
+            find: /^@thatguycodes\/design-tokens\/css\/(.+)$/,
+            replacement: resolve(__dirname, '../../../design-tokens/src/generated/css') + '/$1',
+          },
+        ],
+      },
     }),
 };
 

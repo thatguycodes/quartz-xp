@@ -1,17 +1,15 @@
 {
-  "quartz": {
-    "brand": {
-      "5": { "$type": "color", "$value": "#f5f3ff" },
-      "10": { "$type": "color", "$value": "#ede9fe" },
-      "20": { "$type": "color", "$value": "#ddd6fe" },
-      "30": { "$type": "color", "$value": "#c4b5fd" },
-      "40": { "$type": "color", "$value": "#a78bfa" },
-      "50": { "$type": "color", "$value": "#8b5cf6" },
-      "60": { "$type": "color", "$value": "#7c3aed" },
-      "70": { "$type": "color", "$value": "#6d28d9" },
-      "80": { "$type": "color", "$value": "#5b21b6" },
-      "90": { "$type": "color", "$value": "#4c1d95" },
-      "95": { "$type": "color", "$value": "#2e1065" }
-    }
+  "brand": {
+    "5": { "$type": "color", "$value": "#f5f3ff" },
+    "10": { "$type": "color", "$value": "#ede9fe" },
+    "20": { "$type": "color", "$value": "#ddd6fe" },
+    "30": { "$type": "color", "$value": "#c4b5fd" },
+    "40": { "$type": "color", "$value": "#a78bfa" },
+    "50": { "$type": "color", "$value": "#8b5cf6" },
+    "60": { "$type": "color", "$value": "#7c3aed" },
+    "70": { "$type": "color", "$value": "#6d28d9" },
+    "80": { "$type": "color", "$value": "#5b21b6" },
+    "90": { "$type": "color", "$value": "#4c1d95" },
+    "95": { "$type": "color", "$value": "#2e1065" }
   }
 }

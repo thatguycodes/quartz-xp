@@ -1,3 +1,4 @@
+import React from 'react';
 import styles from './Button.module.css';
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -10,12 +11,15 @@ export function Button({
   variant = 'primary',
   size = 'medium',
   className,
+  type = 'button',
   ...props
 }: ButtonProps) {
-  const buttonClass = `${styles.button} ${styles[variant]} ${styles[size]} ${className || ''}`;
+  const buttonClass = [styles.button, styles[variant], styles[size], className]
+    .filter(Boolean)
+    .join(' ');
 
   return (
-    <button className={buttonClass} {...props}>
+    <button type={type} className={buttonClass} {...props}>
       {children}
     </button>
   );

@@ -2,16 +2,10 @@ import type { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
 
 // Import design tokens CSS variables
-import '../../../design-tokens/src/generated/css/bundle.css';
-import '../src/lib/Introduction.css';
+import '@thatguycodes/design-tokens/css/bundle.css';
 
 const preview: Preview = {
   parameters: {
-    options: {
-      storySort: {
-        order: ['Introduction', 'Showcase', '*'],
-      },
-    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -25,10 +19,10 @@ const preview: Preview = {
   decorators: [
     withThemeByDataAttribute({
       themes: {
-        'Light Mode': 'light',
-        'Dark Mode': 'dark',
+        Light: 'light',
+        Dark: 'dark',
       },
-      defaultTheme: 'Light Mode',
+      defaultTheme: 'Light',
       attributeName: 'data-theme',
     }),
   ],

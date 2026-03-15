@@ -1,2 +1,1 @@
-export * from './generated/ts/tokens';
-export * from './lib/tokens';
+export * from './generated/js/es6/tokens.js';

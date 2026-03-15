@@ -1,13 +1,8 @@
 # @thatguycodes/design-tokens
 
-Design tokens are the single source of truth for all visual design decisions — colors, spacing, typography, border radii, and more. Instead of hard-coding values like `#2563eb` or `16px` directly in your styles, you reference a named token like `--brand-primary` or `spacingMd`. When a value changes, it changes once and propagates everywhere automatically.
+Design tokens are the single source of truth for all visual design decisions. Instead of hard-coding values like `#7c3aed` or `#1e293b` directly in styles, components reference semantic tokens like `--color-primary-default` or `--color-background-base`. When a theme changes, only the token mappings change — components are untouched.
 
-This package is generated from Figma and processed through [Style Dictionary](https://styledictionary.com/). It ships two consumable formats:
-
-| Format | File | Use case |
-|---|---|---|
-| CSS custom properties | `generated/css/variables.css` | Web apps, component libraries using CSS / CSS Modules |
-| TypeScript constants | `generated/ts/tokens.ts` | Logic, inline styles, CSS-in-JS, tests |
+Tokens are authored in JSON and processed through [Style Dictionary 5](https://styledictionary.com/).
 
 ---
 
@@ -19,167 +14,166 @@ npm install @thatguycodes/design-tokens
 
 ---
 
-## Usage in a Web App (Next.js, Vite, etc.)
+## Usage
 
-### 1. Import the CSS variables globally
+### Import the CSS bundle once
 
-In your root layout or global stylesheet, import the CSS file once:
+At your app or library entry point, import the bundle to load all token layers:
 
 ```ts
-// Next.js: app/layout.tsx  |  Vite: main.ts
-import '@thatguycodes/design-tokens/css';
+// Next.js: app/layout.tsx  |  Vite: main.ts  |  Component lib: src/index.ts
+import '@thatguycodes/design-tokens/css/bundle.css';
 ```
 
-All CSS custom properties are now available on `:root` across the entire app.
+Then set `data-theme` on `<html>` to activate a theme:
 
-### 2. Use tokens in your stylesheets
+```html
+<html data-theme="light"> ... </html>
+<!-- or -->
+<html data-theme="dark"> ... </html>
+```
+
+### Use tokens in CSS Modules
+
+Always use semantic tokens (`--color-*`) in components. Never use primitives (`--brand-*`, `--storm-*`, `--smoke-*`) directly.
 
 ```css
-/* any .css or .module.css file */
+/* Button.module.css */
 .button {
-  background-color: var(--brand-primary);
-  color: var(--text-on-brand);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-md);
+  background-color: var(--color-primary-default);
+  color: var(--color-text-on-primary);
 }
 
 .button:hover {
-  background-color: var(--brand-hover);
+  background-color: var(--color-primary-hover);
 }
 
-.card {
-  background-color: var(--surface-base);
-  border: 1px solid var(--border-default);
-  border-radius: var(--border-radius-lg);
-  padding: var(--spacing-lg);
+.button:focus-visible {
+  box-shadow: 0 0 0 2px var(--color-background-base),
+              0 0 0 4px var(--color-border-focus);
+}
+
+.button:disabled {
+  background-color: var(--color-primary-disabled);
+  color: var(--color-text-disabled);
 }
 ```
 
-### 3. Use TypeScript constants for inline styles or logic
+### Use TypeScript constants for inline styles or logic
 
 ```ts
-import { brandPrimary, spacingMd, borderRadiusMd } from '@thatguycodes/design-tokens';
+import { colorPrimaryDefault, colorTextOnPrimary } from '@thatguycodes/design-tokens';
 
 const styles = {
-  backgroundColor: brandPrimary,
-  padding: spacingMd,
-  borderRadius: borderRadiusMd,
+  backgroundColor: colorPrimaryDefault,
+  color: colorTextOnPrimary,
 };
 ```
 
 ---
 
-## Usage in a Component Library
+## Token Architecture
 
-### CSS Modules (recommended)
+### Two-layer system
 
-Import the CSS once at the library entry point so all components can reference the variables:
+| Layer | Variables | Scope | Purpose |
+|---|---|---|---|
+| Primitives | `--brand-*`, `--storm-*`, `--smoke-*` | `:root` | Raw palette values |
+| Semantic | `--color-*` | `[data-theme="light/dark"]` | Intent-named, theme-aware |
 
-```ts
-// src/index.ts
-import '@thatguycodes/design-tokens/css';
-export * from './components';
-```
+Components must only reference semantic tokens. The primitive layer is an implementation detail of the token system.
 
-Then in each component:
+### Semantic token reference
 
-```css
-/* Button.module.css */
-.root {
-  background-color: var(--brand-primary);
-  color: var(--text-on-brand);
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-md);
-  border: none;
-  cursor: pointer;
-}
+#### Primary action
 
-.root:hover {
-  background-color: var(--brand-hover);
-}
+| Token | Light value | Dark value |
+|---|---|---|
+| `--color-primary-default` | `brand.60` `#7c3aed` | `brand.60` `#7c3aed` |
+| `--color-primary-hover` | `brand.70` `#6d28d9` | `brand.70` `#6d28d9` |
+| `--color-primary-active` | `brand.80` `#5b21b6` | `brand.80` `#5b21b6` |
+| `--color-primary-disabled` | `brand.20` `#ddd6fe` | `brand.80` `#5b21b6` |
 
-.root.secondary {
-  background-color: var(--surface-muted);
-  color: var(--text-base);
-}
-```
+#### Text
 
-### Storybook
+| Token | Light value | Dark value |
+|---|---|---|
+| `--color-text-base` | `storm.95` `#020617` | `storm.5` `#f8fafc` |
+| `--color-text-muted` | `storm.60` `#475569` | `storm.40` `#94a3b8` |
+| `--color-text-disabled` | `storm.40` `#94a3b8` | `storm.60` `#475569` |
+| `--color-text-on-primary` | `storm.5` `#f8fafc` | `storm.5` `#f8fafc` |
+| `--color-text-inverse` | `storm.5` `#f8fafc` | `storm.95` `#020617` |
 
-Import the CSS in `.storybook/preview.ts` so tokens are available in all stories:
+#### Background
 
-```ts
-// .storybook/preview.ts
-import '@thatguycodes/design-tokens/css';
-```
+| Token | Light value | Dark value |
+|---|---|---|
+| `--color-background-base` | `storm.5` `#f8fafc` | `storm.90` `#0f172a` |
+| `--color-background-subtle` | `storm.10` `#f1f5f9` | `storm.80` `#1e293b` |
+| `--color-background-faint` | `storm.20` `#e2e8f0` | `storm.70` `#334155` |
+
+#### Border
+
+| Token | Light value | Dark value |
+|---|---|---|
+| `--color-border-default` | `storm.20` `#e2e8f0` | `storm.70` `#334155` |
+| `--color-border-focus` | `brand.50` `#8b5cf6` | `brand.50` `#8b5cf6` |
+| `--color-border-disabled` | `storm.10` `#f1f5f9` | `storm.80` `#1e293b` |
+
+#### Surface
+
+| Token | Light value |
+|---|---|
+| `--color-surface-base` | `storm.5` `#f8fafc` |
+| `--color-surface-muted` | `storm.10` `#f1f5f9` |
 
 ---
 
-## Available Tokens
+## Generated Outputs
 
-### Colors
+| File | Description |
+|---|---|
+| `src/generated/css/bundle.css` | Import this — loads all three layers |
+| `src/generated/css/primitives.css` | Primitive palette on `:root` |
+| `src/generated/css/light.css` | Semantic tokens scoped to `[data-theme="light"]` |
+| `src/generated/css/dark.css` | Semantic tokens scoped to `[data-theme="dark"]` |
+| `src/generated/js/es6/tokens.js` | ES module JS constants |
 
-| Token (CSS) | Token (TS) | Value |
-|---|---|---|
-| `--color-blue-500` | `colorBlue500` | `#3b82f6` |
-| `--color-blue-600` | `colorBlue600` | `#2563eb` |
-| `--color-blue-700` | `colorBlue700` | `#1d4ed8` |
-| `--color-gray-50` | `colorGray50` | `#f9fafb` |
-| `--color-gray-100` | `colorGray100` | `#f3f4f6` |
-| `--color-gray-700` | `colorGray700` | `#374151` |
-
-### Semantic Colors
-
-| Token (CSS) | Token (TS) | Value |
-|---|---|---|
-| `--brand-primary` | `brandPrimary` | `#2563eb` |
-| `--brand-hover` | `brandHover` | `#1d4ed8` |
-| `--surface-base` | `surfaceBase` | `#ffffff` |
-| `--surface-muted` | `surfaceMuted` | `#f3f4f6` |
-| `--text-base` | `textBase` | `#374151` |
-| `--text-muted` | `textMuted` | `#6b7280` |
-| `--text-on-brand` | `textOnBrand` | `#ffffff` |
-| `--border-default` | `borderDefault` | `#e5e7eb` |
-
-### Spacing
-
-| Token (CSS) | Token (TS) | Value |
-|---|---|---|
-| `--spacing-xs` | `spacingXs` | `4px` |
-| `--spacing-sm` | `spacingSm` | `8px` |
-| `--spacing-md` | `spacingMd` | `16px` |
-| `--spacing-lg` | `spacingLg` | `24px` |
-| `--spacing-xl` | `spacingXl` | `32px` |
-
-### Border Radius
-
-| Token (CSS) | Token (TS) | Value |
-|---|---|---|
-| `--border-radius-sm` | `borderRadiusSm` | `4px` |
-| `--border-radius-md` | `borderRadiusMd` | `6px` |
-| `--border-radius-lg` | `borderRadiusLg` | `8px` |
-
----
-
-## Token Design
-
-Tokens follow a two-layer system:
-
-- **Core tokens** — raw values tied to physical properties (`color-blue-600`, `spacing-md`). Never use these directly in components.
-- **Semantic tokens** — named by intent (`brand-primary`, `text-muted`, `surface-base`). These are what your components should reference.
-
-This means a rebrand or theme change only requires updating semantic token mappings, not touching every component.
+Never edit generated files. They are overwritten on every build.
 
 ---
 
 ## Updating Tokens
 
-Tokens are managed in Figma via the **Variables to JSON** free plugin. Changes flow into code through a two-step process:
+Source files live in `libs/design-tokens/src/tokens/`. Edit them directly, then rebuild:
 
-```
-Figma (Variables to JSON plugin export)
-  → commit src/tokens/figma.json → GitHub Actions (auto-triggered)
-  → PR review → Merge → Rebuild
+```bash
+npx nx run design-tokens:build
 ```
 
-See the [Designer Guide](../../docs/DESIGNER_GUIDE.md) for full step-by-step instructions.
+### Source file map
+
+| File | Contents |
+|---|---|
+| `src/tokens/global/smoke.json` | Smoke (neutral warm) palette |
+| `src/tokens/global/storm.json` | Storm (neutral cool) palette |
+| `src/tokens/brands/quartz/primitives.json` | Brand palette (must use `"brand"` root key) |
+| `src/tokens/brands/quartz/semantics.json` | Semantic mappings shared across themes |
+| `src/tokens/themes/light.json` | Light mode semantic overrides |
+| `src/tokens/themes/dark.json` | Dark mode semantic overrides |
+
+### Adding a new semantic token
+
+1. Add to `semantics.json` (both themes) or to `light.json`/`dark.json` for theme-specific values
+2. Use `{brand.60}` reference syntax to point at a primitive
+3. Run `npx nx run design-tokens:build`
+4. Verify it appears in `src/generated/css/light.css` and `dark.css`
+
+---
+
+## Publishing
+
+```bash
+npx nx release version --projects design-tokens
+npx nx release publish --projects design-tokens
+```
