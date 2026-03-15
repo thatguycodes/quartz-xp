@@ -98,11 +98,11 @@ Components must only reference semantic tokens. The primitive layer is an implem
 
 | Token | Light value | Dark value |
 |---|---|---|
-| `--color-text-base` | `storm.95` `#020617` | `storm.5` `#f8fafc` |
-| `--color-text-muted` | `storm.60` `#475569` | `storm.40` `#94a3b8` |
-| `--color-text-disabled` | `storm.40` `#94a3b8` | `storm.60` `#475569` |
-| `--color-text-on-primary` | `storm.5` `#f8fafc` | `storm.5` `#f8fafc` |
-| `--color-text-inverse` | `storm.5` `#f8fafc` | `storm.95` `#020617` |
+| `--color-text-base` | `storm.95` `#020617` | `smoke.5` `#f8f8f8` |
+| `--color-text-muted` | `storm.60` `#475569` | `smoke.30` `#8b8b8b` |
+| `--color-text-disabled` | `storm.40` `#94a3b8` | `smoke.60` `#6f6f6f` |
+| `--color-text-on-primary` | `storm.5` `#f8fafc` | `smoke.5` `#f8f8f8` |
+| `--color-text-inverse` | `storm.5` `#f8fafc` | `smoke.95` `#0b0b0b` |
 
 #### Background
 
