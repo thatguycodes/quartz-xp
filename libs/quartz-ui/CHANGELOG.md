@@ -2,7 +2,7 @@
 
 ### 🩹 Fixes
 
-- patch ([bf415f2](https://github.com/thatguycodes/nx-enterprise/commit/bf415f2))
+- patch ([bf415f2](https://github.com/thatguycodes/quartz-xp/commit/bf415f2))
 
 ### 🧱 Updated Dependencies
 
@@ -22,7 +22,7 @@
 
 ### 🩹 Fixes
 
-- **quartz-ui:** align design-tokens dependency ([0660a49](https://github.com/thatguycodes/nx-enterprise/commit/0660a49))
+- **quartz-ui:** align design-tokens dependency ([0660a49](https://github.com/thatguycodes/quartz-xp/commit/0660a49))
 
 ### ❤️ Thank You
 
@@ -38,8 +38,8 @@
 
 ### 🚀 Features
 
-- **storbook:** make storybook our documentation of choice to deploy to vercel. delete nextjs. update docs with storybook configs ([730f984](https://github.com/thatguycodes/nx-enterprise/commit/730f984))
-- refactor design tokens and quartz-ui build, remove codeowners, update ci ([0c1a53f](https://github.com/thatguycodes/nx-enterprise/commit/0c1a53f))
+- **storybook:** make storybook our documentation of choice to deploy to vercel. delete nextjs. update docs with storybook configs ([730f984](https://github.com/thatguycodes/quartz-xp/commit/730f984))
+- refactor design tokens and quartz-ui build, remove codeowners, update ci ([0c1a53f](https://github.com/thatguycodes/quartz-xp/commit/0c1a53f))
 
 ### 🧱 Updated Dependencies
 

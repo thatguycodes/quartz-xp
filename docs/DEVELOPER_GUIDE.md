@@ -13,7 +13,7 @@
 
 ```bash
 git clone <repository-url>
-cd nx-enterprise
+cd quartz-xp
 npm install
 ```
 
@@ -49,7 +49,7 @@ All application commands go through Nx.
 ## Project Structure
 
 ```
-nx-enterprise/
+quartz-xp/
 ├── apps/                 # Reserved for future applications
 ├── libs/
 │   ├── tokens/
