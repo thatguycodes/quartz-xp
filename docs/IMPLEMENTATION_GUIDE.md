@@ -1,6 +1,6 @@
 # Implementation Guide
 
-This guide provides step-by-step instructions for implementing common tasks in the Nx Enterprise monorepo. For architectural context and rationale, see [ARCHITECTURE.md](./ARCHITECTURE.md).
+This guide provides step-by-step instructions for implementing common tasks in the `quartz-xp` monorepo. For architectural context and rationale, see [ARCHITECTURE.md](./ARCHITECTURE.md).
 
 ## Table of Contents
 
