@@ -70,11 +70,13 @@
         "version": {
           "conventionalCommits": true
         },
-        "releaseTagPattern": "{projectName}@{version}",
         "changelog": {
           "automaticFromRef": true,
           "workspaceChangelog": false,
           "projectChangelogs": true
+        },
+        "releaseTag": {
+          "pattern": "{projectName}@{version}"
         }
       }
     },
