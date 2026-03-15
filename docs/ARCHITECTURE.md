@@ -755,7 +755,7 @@ All tokens in Figma **must follow kebab-case naming with at least one group**:
 #### Method 2: GitHub CLI
 
 ```bash
-gh workflow run figma-token-sync.yml --repo your-org/nx-enterprise
+gh workflow run figma-token-sync.yml --repo your-org/quartz-xp
 ```
 
 ### Auto-Close Policy (Stale PRs)

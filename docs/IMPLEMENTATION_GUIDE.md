@@ -27,7 +27,7 @@ This guide provides step-by-step instructions for implementing common tasks in t
 
    ```bash
    git clone <repository-url>
-   cd nx-enterprise
+   cd quartz-xp
    npm install
    ```
 
@@ -46,7 +46,7 @@ This guide provides step-by-step instructions for implementing common tasks in t
 ### Project Structure Quick Reference
 
 ```
-nx-enterprise/
+quartz-xp/
 ├── apps/                  # Reserved for future applications
 ├── libs/
 │   ├── design-tokens/ # Design tokens (@thatguycodes/design-tokens)

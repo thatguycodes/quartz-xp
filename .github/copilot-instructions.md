@@ -30,7 +30,7 @@ This is an **Nx Enterprise monorepo** implementing a token-first design system. 
 ## Project Structure
 
 ```
-nx-enterprise/
+quartz-xp/
 ├── apps/
 │   ├── docs/             # Next.js documentation site
 │   └── docs-e2e/         # Playwright E2E tests

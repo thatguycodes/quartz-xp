@@ -2,7 +2,7 @@
 
 ### 🩹 Fixes
 
-- patch ([bf415f2](https://github.com/thatguycodes/nx-enterprise/commit/bf415f2))
+- patch ([bf415f2](https://github.com/thatguycodes/quartz-xp/commit/bf415f2))
 
 ### ❤️ Thank You
 
@@ -16,7 +16,7 @@ This was a version bump only for design-tokens to align it with other projects, 
 
 ### 🩹 Fixes
 
-- **token:** switch default to blue palette and darken purple theme ([680222c](https://github.com/thatguycodes/nx-enterprise/commit/680222c))
+- **token:** switch default to blue palette and darken purple theme ([680222c](https://github.com/thatguycodes/quartz-xp/commit/680222c))
 
 ### ❤️ Thank You
 
@@ -26,7 +26,7 @@ This was a version bump only for design-tokens to align it with other projects, 
 
 ### 🩹 Fixes
 
-- update tokens ([e10bf7e](https://github.com/thatguycodes/nx-enterprise/commit/e10bf7e))
+- update tokens ([e10bf7e](https://github.com/thatguycodes/quartz-xp/commit/e10bf7e))
 
 ### ❤️ Thank You
 
@@ -36,15 +36,15 @@ This was a version bump only for design-tokens to align it with other projects, 
 
 ### 🚀 Features
 
-- **tokens:** change primary brand color from blue to red ([db3b0d9](https://github.com/thatguycodes/nx-enterprise/commit/db3b0d9))
-- add spacing-2xl (3rem) token to design-tokens ([c1fc5f0](https://github.com/thatguycodes/nx-enterprise/commit/c1fc5f0))
-- **tokens:** replace Figma REST API with free plugin export workflow ([432ead3](https://github.com/thatguycodes/nx-enterprise/commit/432ead3))
-- refactor design tokens and quartz-ui build, remove codeowners, update ci ([0c1a53f](https://github.com/thatguycodes/nx-enterprise/commit/0c1a53f))
+- **tokens:** change primary brand color from blue to red ([db3b0d9](https://github.com/thatguycodes/quartz-xp/commit/db3b0d9))
+- add spacing-2xl (3rem) token to design-tokens ([c1fc5f0](https://github.com/thatguycodes/quartz-xp/commit/c1fc5f0))
+- **tokens:** replace Figma REST API with free plugin export workflow ([432ead3](https://github.com/thatguycodes/quartz-xp/commit/432ead3))
+- refactor design tokens and quartz-ui build, remove codeowners, update ci ([0c1a53f](https://github.com/thatguycodes/quartz-xp/commit/0c1a53f))
 
 ### 🩹 Fixes
 
-- **tokens:** correct src/tokens vs src/generated directory semantics ([e06470f](https://github.com/thatguycodes/nx-enterprise/commit/e06470f))
-- **token:** update the export of tokens, update docs, update the app to import css properly ([042954c](https://github.com/thatguycodes/nx-enterprise/commit/042954c))
+- **tokens:** correct src/tokens vs src/generated directory semantics ([e06470f](https://github.com/thatguycodes/quartz-xp/commit/e06470f))
+- **token:** update the export of tokens, update docs, update the app to import css properly ([042954c](https://github.com/thatguycodes/quartz-xp/commit/042954c))
 
 ### ❤️ Thank You
 
