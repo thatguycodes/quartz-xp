@@ -2,8 +2,8 @@
   "color": {
     "primary": {
       "default": { "$type": "color", "$value": "{brand.60}" },
-      "hover": { "$type": "color", "$value": "{brand.70}" },
-      "active": { "$type": "color", "$value": "{brand.80}" },
+      "hover": { "$type": "color", "$value": "{brand.50}" },
+      "active": { "$type": "color", "$value": "{brand.40}" },
       "disabled": { "$type": "color", "$value": "{brand.90}" }
     },
     "text": {
